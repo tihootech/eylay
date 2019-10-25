@@ -1,105 +1,12 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.landing')
 
-<head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/favicon.ico')}}">
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.ico')}}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
+@section('body_class') index-page @endsection
+@section('title')
     <title> Eylay </title>
+@endsection
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-    <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-
-    <!-- CSS Files -->
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
-    <link href="{{asset('assets/css/material-kit.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/css/rtl.css')}}" rel="stylesheet" />
-
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{asset('assets/assets-for-demo/vertical-nav.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/assets-for-demo/demo.css')}}" rel="stylesheet" />
-
-</head>
-
-<body class="index-page">
-    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll=" " id="sectionsNav">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="presentation.html">Eylay</a>
-            </div>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">
-                            <i class="material-icons">group_add</i> ثبت نام در دوره های آموزشی
-                        </a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="material-icons">view_day</i> صفحات وبسایت
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-with-icons">
-
-                            <li>
-                                <a href="sections.html#blogs">
-                                    <i class="material-icons">collections</i> وبلاگ
-                                </a>
-                            </li>
-                            <li>
-                                <a href="sections.html#blogs">
-                                    <i class="material-icons">movie</i> ویدئو های آموزشی
-                                </a>
-                            </li>
-                            <li>
-                                <a href="sections.html#blogs">
-                                    <i class="material-icons">business</i> دوره های حضوری
-                                </a>
-                            </li>
-                            <li>
-                                <a href="sections.html#blogs">
-                                    <i class="material-icons">comment</i> نظرات کاربران
-                                </a>
-                            </li>
-                            <li>
-                                <a href="sections.html#blogs">
-                                    <i class="material-icons">person</i> درباره من
-                                </a>
-                            </li>
-                            <li>
-                                <a href="sections.html#headers">
-                                    <i class="material-icons">cloud_download</i> دانلود فایل  دوره های آموزشی
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="button-container">
-                        <a href="{{route('home')}}" target="_blank" class="btn btn-rose btn-round">
-                            <i class="material-icons">person</i> ناحیه کاربری
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+@section('content')
     <div class="page-header header-filter clear-filter" data-parallax="true" style="background-image: url('{{asset('assets/img/bg0.jpg')}}');" id="header">
         <div class="container">
             <div class="row">
@@ -107,7 +14,7 @@
                     <div class="brand">
                         <h1>
                             Eylay
-						</h1>
+                        </h1>
 
                         <h3 class="title"> با ما بیاموزید </h3>
                     </div>
@@ -334,8 +241,8 @@
                                 </div>
                                 <div class="card-content">
                                     <h5 class="card-description">
-        								Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!
-        							</h5>
+                                        Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!
+                                    </h5>
                                 </div>
 
                                 <div class="footer">
@@ -357,8 +264,8 @@
                                 </div>
                                 <div class="card-content">
                                     <h5 class="card-description">
-        								"Don't be scared of the truth because we need to restart the human foundation in truth. That's why I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is not so attractive"
-        							</h5>
+                                        "Don't be scared of the truth because we need to restart the human foundation in truth. That's why I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is not so attractive"
+                                    </h5>
                                 </div>
 
                                 <div class="footer">
@@ -380,8 +287,8 @@
                                 </div>
                                 <div class="card-content">
                                     <h5 class="card-description">
-        								"Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!"
-        							</h5>
+                                        "Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!"
+                                    </h5>
                                 </div>
 
                                 <div class="footer">
@@ -428,8 +335,8 @@
                                     <div class="col-md-8">
                                         <h6 class="category text-info">Enterprise</h6>
                                         <h3 class="card-title">
-        									<a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-        								</h3>
+                                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
+                                        </h3>
                                         <p class="card-description">
                                             Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story — and… <a href="#pablo"> Read More </a>
                                         </p>
@@ -451,8 +358,8 @@
                                         <div class="card-content">
                                             <h6 class="category text-info">Enterprise</h6>
                                             <h4 class="card-title">
-        										<a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-        									</h4>
+                                                <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
+                                            </h4>
                                             <p class="card-description">
                                                 Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses.<a href="#pablo"> Read More </a>
                                             </p>
@@ -469,11 +376,11 @@
                                         </div>
                                         <div class="card-content">
                                             <h6 class="category text-success">
-        										Startups
-        									</h6>
+                                                Startups
+                                            </h6>
                                             <h4 class="card-title">
-        										<a href="#pablo">Lyft launching cross-platform service this week</a>
-        									</h4>
+                                                <a href="#pablo">Lyft launching cross-platform service this week</a>
+                                            </h4>
                                             <p class="card-description">
                                                 Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses.<a href="#pablo"> Read More </a>
                                             </p>
@@ -491,11 +398,11 @@
 
                                         <div class="card-content">
                                             <h6 class="category text-danger">
-        										<i class="material-icons">trending_up</i> Enterprise
-        									</h6>
+                                                <i class="material-icons">trending_up</i> Enterprise
+                                            </h6>
                                             <h4 class="card-title">
-        										<a href="#pablo">6 insights into the French Fashion landscape</a>
-        									</h4>
+                                                <a href="#pablo">6 insights into the French Fashion landscape</a>
+                                            </h4>
                                             <p class="card-description">
                                                 Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses.<a href="#pablo"> Read More </a>
                                             </p>
@@ -531,7 +438,7 @@
                                     </div>
                                     <div class="card-content">
                                         <div class="form-group label-floating">
-                                            <label class="control-label"> نام کاربری </label>
+                                            <label class="control-label"> نام شما </label>
                                             <input type="text" name="name" class="form-control">
                                         </div>
                                         <div class="form-group label-floating">
@@ -674,121 +581,52 @@
 
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <nav class="pull-left">
-                <ul>
-                    <li>
-                        <a href="http://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                    </li>
-                    <li>
-                        <a href="http://presentation.creative-tim.com">
-                       About Us
-                    </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                       Blog
-                    </a>
-                    </li>
-                    <li>
-                        <a href="http://www.creative-tim.com/license">
-                        Licenses
-                    </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright pull-right">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>, made with <i class="material-icons">favorite</i> by Creative Tim for a better web.
-            </div>
-        </div>
-    </footer>
+    @include('includes.footer')
 
     <nav id="cd-vertical-nav">
         <ul>
             <li>
                 <a href="#header" data-number="1">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">Headers</span>
+                    <span class="cd-label">ابتدا</span>
                 </a>
             </li>
             <li>
                 <a href="#features" data-number="2">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">Features</span>
+                    <span class="cd-label">نحوه آموزش</span>
                 </a>
             </li>
             <li>
                 <a href="#projects" data-number="3">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">Projects</span>
+                    <span class="cd-label">دوره های آموزشی</span>
                 </a>
             </li>
             <li>
                 <a href="#testimonials" data-number="4">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">Testimonials</span>
+                    <span class="cd-label">پاسخ به سوالات برنامه نویسی</span>
                 </a>
             </li>
             <li>
                 <a href="#blogs" data-number="5">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">Blogs</span>
+                    <span class="cd-label">مطالب منتشر شده</span>
                 </a>
             </li>
             <li>
                 <a href="#contactus" data-number="6">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">Contact Us</span>
+                    <span class="cd-label">عضویت در سایت</span>
                 </a>
             </li>
             <li>
                 <a href="#pricing" data-number="7">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">Pricing</span>
+                    <span class="cd-label">حمایت از ما</span>
                 </a>
             </li>
         </ul>
     </nav>
-
-</body>
-<!--   Core JS Files   -->
-<script src="{{asset('assets/js/jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/js/material.min.js')}}"></script>
-
-<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
-<script src="{{asset('assets/js/moment.min.js')}}"></script>
-
-<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="{{asset('assets/js/nouislider.min.js')}}" type="text/javascript"></script>
-
-<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-<script src="{{asset('assets/js/bootstrap-datetimepicker.js')}}" type="text/javascript"></script>
-
-<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-<script src="{{asset('assets/js/bootstrap-selectpicker.js')}}" type="text/javascript"></script>
-
-<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
-<script src="{{asset('assets/js/bootstrap-tagsinput.js')}}"></script>
-
-<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-<script src="{{asset('assets/js/jasny-bootstrap.min.js')}}"></script>
-
-<!-- Plugin For Google Maps -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
-<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-<script src="{{asset('assets/js/material-kit.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/js/main.js')}}" type="text/javascript"></script>
-
-<!-- Fixed Sidebar Nav - JS For Demo Purpose, Don't Include it in your project -->
-<script src="{{asset('assets/assets-for-demo/modernizr.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/assets-for-demo/vertical-nav.js')}}" type="text/javascript"></script>
-
-</html>
+@endsection

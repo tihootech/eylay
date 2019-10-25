@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 
 .btn > i {
 	margin-left:3px;
+	margin-right:3px;
 }
 
 .form-group.label-static label.control-label, .form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label {
@@ -62,4 +63,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 .checkbox .checkbox-material .check:before {
 	margin-right: 11px;
 	margin-left: unset;
+}
+
+.dropdown-menu.dropdown-with-icons {
+	right: 0;
+	min-width: 225px;
+}
+
+.card-signup .card-content {
+	padding: 0px 10px 0px 30px;
+}
+
+.info-horizontal .icon {
+	float: right;
+	margin-left: 10px;
+	margin-right: unset;
 }
