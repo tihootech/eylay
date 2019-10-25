@@ -54,10 +54,6 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
     line-height: 1.5em;
 }
 
-.serif-font {
-    font-family: "Roboto Slab", "Times New Roman", serif;
-}
-
 a {
     color: #9c27b0;
 }
@@ -3700,7 +3696,6 @@ h6, .h6 {
 .footer-big h4,
 .media .media-heading {
     font-weight: 700;
-    font-family: "Roboto Slab", "Times New Roman", serif;
 }
 
 .title,
@@ -4389,6 +4384,10 @@ h2.title {
     margin-top: 15px;
 }
 
+.card-avatar img {
+    width: 90px;
+}
+
 .card-profile.card-plain .card-avatar,
 .card-testimonial.card-plain .card-avatar {
     margin-top: 0;
@@ -5047,10 +5046,6 @@ hr.on-light {
 
 .media .avatar img {
     width: 100%;
-}
-
-.media .media-heading small {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .media .media-body {
@@ -6823,6 +6818,7 @@ select[data-dropdownjs][disabled] + .dropdownjs > input[readonly] {
 
 .features-1 {
     text-align: center;
+    margin-bottom:100px;
 }
 
 .features-3 .info {
@@ -9593,4 +9589,8 @@ select.selectpicker {
     .main.main-raised .container {
         width: 920px;
     }
+}
+
+#cd-vertical-nav {
+    right:-98px !important;
 }

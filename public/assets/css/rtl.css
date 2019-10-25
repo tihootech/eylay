@@ -1,0 +1,65 @@
+@font-face {
+	font-family: "Yekan";
+	src: url(../fonts/Yekan.woff);
+}
+@font-face {
+	font-family: "Dinar";
+	src: url(../fonts/Dinar.ttf);
+}
+
+body {
+	direction: rtl;
+	text-align: right;
+}
+
+body {
+	font-family: "Yekan", "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+	font-family: "Dinar", "Roboto", "Helvetica", "Arial", sans-serif;
+	font-weight: normal;
+}
+
+.navbar .navbar-nav > li > a:not(.btn) .material-icons {
+	margin-left: 3px;
+	margin-right: unset;
+}
+
+.caret {
+	margin-left: unset;
+	margin-right: 3px;
+}
+
+.dropdown-menu.dropdown-with-icons li > a {
+	text-align: right;
+	padding: 12px;
+}
+
+.dropdown-menu.dropdown-with-icons li > a .material-icons {
+	margin-left:12px;
+	margin-right: unset;
+}
+
+.navbar .navbar-nav > li > a {
+	font-size: 14px;
+}
+
+.btn > i {
+	margin-left:3px;
+}
+
+.form-group.label-static label.control-label, .form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label {
+	right: 0;
+	left: unset;
+}
+
+.checkbox .checkbox-material {
+	padding-left: 5px;
+	padding-right: unset;
+}
+
+.checkbox .checkbox-material .check:before {
+	margin-right: 11px;
+	margin-left: unset;
+}
