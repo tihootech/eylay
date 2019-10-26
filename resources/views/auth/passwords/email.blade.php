@@ -16,9 +16,14 @@
                                 <h4 class="card-title"> فراموشی رمزعبور </h4>
                             </div>
                             <p class="description text-center mt-30"> ایمیل خود را وارد کنید </p>
+
                             <div class="card-content">
 
-
+                                @if (session('status'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
 
                                 <div class="input-group @error('email') has-error @enderror">
                                     <span class="input-group-addon">
