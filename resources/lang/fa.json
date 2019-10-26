@@ -1,6 +1,11 @@
 {
     "YOUR_PANEL": "پنل مدیریت شما",
-    "RR": "rrr.",
-    "SS": "sss.",
+    "MAIN_PAGE": "صفحه اصلی",
+    "DASHBOARD": "داشبورد",
+    "SEARCH": "جستجو",
+    "NOTIFICATIONS": "اعلان‌ها",
+    "ACCOUNT": "حساب کاربری",
+    "MANAGE_ACCOUNT": "مدیریت حساب کاربری",
+    "LOGOUT": "خروج از حساب کاربری",
     "": ""
 }
