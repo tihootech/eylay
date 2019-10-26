@@ -15,7 +15,7 @@
                             <div class="header header-primary text-center">
                                 <h4 class="card-title"> فراموشی رمزعبور </h4>
                             </div>
-                            <p class="description text-center mt-30"> ایمیل خود را وارد کنید </p>
+                            <p class="description text-center mt-3"> ایمیل خود را وارد کنید </p>
 
                             <div class="card-content">
 

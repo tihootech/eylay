@@ -3,37 +3,24 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('dashboard/img/apple-icon.png')}}">
-    <link rel="icon" type="image/png" href="{{asset('dashboard/img/favicon.png')}}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>
-        داشبورد متریال توسط تیم خلاق
-    </title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-    <!--     Fonts and icons     -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/favicon.ico')}}">
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.ico')}}">
+
+	@yield('title')
+
+	<!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
     <!-- CSS Files -->
-    <link href="{{asset('dashboard/css/material-dashboard.css?v=2.1.0')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/css/material-dashboard-rtl.css?v=1.1')}}" rel="stylesheet" />
+    <link href="{{asset('dashboard/css/material-dashboard.css')}}" rel="stylesheet" />
+    <link href="{{asset('dashboard/css/material-dashboard-rtl.css')}}" rel="stylesheet" />
+	<link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet" />
+	<link href="{{asset('assets/css/dashboard-custom.css')}}" rel="stylesheet" />
 
-    <!-- Style Just for persian demo purpose, don't include it in your project -->
-    <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .h1,
-        .h2,
-        .h3,
-        .h4 {
-            font-family: "Cairo";
-        }
-    </style>
 </head>
 
 <body>

@@ -18,13 +18,12 @@
     <!-- CSS Files -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
+    <link href="{{asset('assets/css/vertical-nav.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/material-kit.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/rtl.css')}}" rel="stylesheet" />
 
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{asset('assets/assets-for-demo/vertical-nav.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/assets-for-demo/demo.css')}}" rel="stylesheet" />
 
 </head>
 

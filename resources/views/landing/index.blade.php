@@ -6,7 +6,7 @@
 
 
 @section('content')
-    <div class="page-header header-filter clear-filter" data-parallax="true" style="background-image: url('{{asset('assets/img/bg0.jpg')}}');" id="header">
+    <div class="page-header header-filter" filter-color="rose" style="background-image: url('{{asset('assets/img/eylay.jpg')}}');" id="header">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -38,7 +38,7 @@
                                 سوالات برنامه نویسی خود را از ما بپرسید
                                 ایلای میکوشد که در کوتاه ترین زمان به شما پاسخ دهد.
                             </h5>
-                            <a href="https://t.me/eylay" target="_blank" class="btn btn-rose"> پرسیدن سوال </a>
+                            <a href="https://t.me/eylay" target="_blank" class="btn btn-primary"> پرسیدن سوال </a>
                             <hr>
                             <h2> نحوه آموزش ما چگونه است؟ </h2>
                         </div>
@@ -48,7 +48,7 @@
 
                         <div class="col-md-4">
                             <div class="info">
-                                <div class="icon icon-rose">
+                                <div class="icon icon-primary">
                                     <i class="material-icons">movie</i>
                                 </div>
                                 <h4 class="info-title">ویدئو های آموزشی</h4>
@@ -58,7 +58,7 @@
 
                         <div class="col-md-4">
                             <div class="info">
-                                <div class="icon icon-rose">
+                                <div class="icon icon-primary">
                                     <i class="material-icons">file_copy</i>
                                 </div>
                                 <h4 class="info-title">فایل ها</h4>
@@ -68,7 +68,7 @@
 
                         <div class="col-md-4">
                             <div class="info">
-                                <div class="icon icon-rose">
+                                <div class="icon icon-primary">
                                     <i class="material-icons">perm_phone_msg</i>
                                 </div>
                                 <h4 class="info-title">پشتیبانی و همیاری</h4>
@@ -140,7 +140,7 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="#" class="btn btn-round"> مشاهده همه </a>
+                        <a href="#" class="btn btn-round btn-rose"> مشاهده همه </a>
                     </div>
 
                 </div>
@@ -222,7 +222,7 @@
 
             <!--     *********    TESTIMONIALS 1     *********      -->
 
-            <div class="testimonials-1 section-image" style="background-image: url({{asset('assets/img/dg2.jpg')}})">
+            <div class="testimonials-1 section-image" style="background-image: url({{asset('assets/img/faq.jpg')}})">
 
                 <div class="container">
                     <div class="row">
@@ -420,45 +420,6 @@
             <!--     *********    END BLOGS 1      *********      -->
 
         </div>
-
-        <div class="cd-section" id="contactus">
-
-            <!--     *********    CONTACT US 1     *********      -->
-
-            <div class="contactus-1 section-image" style="background-image: url('{{asset('assets/img/examples/city.jpg')}}')">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="card card-contact">
-                                <form role="form" id="contact-form" method="post">
-                                    <div class="header header-raised header-primary text-center">
-                                        <h4 class="card-title"> عضویت در سایت </h4>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label"> نام شما </label>
-                                            <input type="text" name="name" class="form-control">
-                                        </div>
-                                        <div class="form-group label-floating">
-                                            <label class="control-label"> ایمیل </label>
-                                            <input type="email" name="email" class="form-control" />
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-md-offset-4">
-                                                <button type="submit" class="btn btn-primary btn-block">ثبت نام</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
     </div>
 

@@ -1,14 +1,7 @@
-/*!
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+    font-family: "Yekan", "Roboto", "Helvetica", "Arial", sans-serif;
+}
 
- =========================================================
- * Material Dashboard rtl - v1.1
- =========================================================
- *
- * author: Alireza Esfahani <aynzad@gmail.com>
- * https://github.com/aynzad
- * http://gonjeshk.ir
- *
- */
 html[dir="rtl"] {
   text-align: right;
   direction: rtl;

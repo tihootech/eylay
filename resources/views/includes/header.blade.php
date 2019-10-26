@@ -14,7 +14,7 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-left">
 				<li class="button-container">
-					<a href="{{route('home')}}" class="btn btn-rose btn-round">
+					<a href="{{route('home')}}" class="btn btn-primary btn-round">
 						<i class="material-icons">person</i> ناحیه کاربری
 					</a>
 				</li>
@@ -46,11 +46,6 @@
 						<li>
 							<a href="sections.html#blogs">
 								<i class="material-icons">business</i> دوره های حضوری
-							</a>
-						</li>
-						<li>
-							<a href="sections.html#blogs">
-								<i class="material-icons">comment</i> نظرات کاربران
 							</a>
 						</li>
 						<li>

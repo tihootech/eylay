@@ -17,7 +17,7 @@
                             <div class="header header-primary text-center">
                                 <h4 class="card-title">  بازنشانی رمزعبور </h4>
                             </div>
-                            <p class="description mt-30 text-center">
+                            <p class="description mt-3 text-center">
                                 رمزعبور جدید خود را وارد کنید. حداقل 8 کاراکتر
                             </p>
                             <div class="card-content">

@@ -100,7 +100,7 @@
 
                                     </div>
                                     <div class="footer text-center">
-                                        <button type="submit" class="btn btn-rose btn-round"> ثبت نام </button>
+                                        <button type="submit" class="btn btn-primary btn-round"> ثبت نام </button>
                                     </div>
                                 </form>
                             </div>
