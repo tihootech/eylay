@@ -45,10 +45,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 	font-size: 14px;
 }
 
-.btn > i {
-	margin-left:3px;
-	margin-right:3px;
-}
 
 .form-group.label-static label.control-label, .form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label {
 	right: 0;

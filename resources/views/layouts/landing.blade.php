@@ -28,7 +28,7 @@
 
 </head>
 
-<body class="@yield('body_class')">
+<body class="@yield('body_class', 'index-page')">
 
 	@include('includes.header')
 

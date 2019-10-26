@@ -1,6 +1,5 @@
 @extends('layouts.landing')
 
-@section('body_class') index-page @endsection
 @section('title')
     <title> Eylay </title>
 @endsection
