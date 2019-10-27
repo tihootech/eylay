@@ -1,24 +1,29 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+@extends('layouts.dashboard')
+@section('title')
+    <title> @lang('VERIFY_EMAIL') </title>
+@endsection
+@section('content')
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h5 class="card-title ">@lang('VERIFY_YOUR_EMAIL_ADDRESS')</h5>
+        </div>
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
-
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                    </form>
+        <div class="card-body">
+            @if (session('resent'))
+                <div class="alert alert-success" role="alert">
+                    @lang('A_FRESH_VERIFICATION_LINK_HAS_BEEN_SENT_TO_YOUR_EMAIL_ADDRESS')
                 </div>
+            @endif
+
+            <div class="alert alert-warning">
+                {{ __('BEFORE_PROCEEDING_PLEASE_CHECK_YOUR_EMAIL_FOR_A_VERIFICATION_LINK') }}
+                {{ __('IF_YOU_DID_NOT_RECEIVE_THE_EMAIL') }}
+                {{ __('CLICK_HERE_TO_REQUEST_ANOTHER') }}
             </div>
+            <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                @csrf
+                <button type="submit" class="btn btn-primary">{{ __('CLICK_HERE_TO_REQUEST_ANOTHER') }}</button>
+            </form>
         </div>
     </div>
-</div>
+@endsection

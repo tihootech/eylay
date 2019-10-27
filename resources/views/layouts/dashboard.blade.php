@@ -34,6 +34,17 @@
 
             <div class="content">
 
+                @isset ($message)
+                    <div class="alert alert-success">
+                        {{$message}}
+                    </div>
+                @endisset
+                @isset ($error)
+                    <div class="alert alert-danger">
+                        {{$error}}
+                    </div>
+                @endisset
+
                 @yield('content')
 
                 @include('includes.dashboard_footer')

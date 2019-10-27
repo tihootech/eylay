@@ -7,5 +7,15 @@
     "ACCOUNT": "حساب کاربری",
     "MANAGE_ACCOUNT": "مدیریت حساب کاربری",
     "LOGOUT": "خروج از حساب کاربری",
+    "VERIFY_EMAIL": "تایید ایمیل",
+    "VERIFY_YOUR_EMAIL_ADDRESS": "ایمیل خود را تایید کنید",
+    "A_FRESH_VERIFICATION_LINK_HAS_BEEN_SENT_TO_YOUR_EMAIL_ADDRESS": "لینک جدید جهت تایید ایمیل، برای شما ارسال شد",
+    "BEFORE_PROCEEDING_PLEASE_CHECK_YOUR_EMAIL_FOR_A_VERIFICATION_LINK": "قبل از درخواست، لطفا ابتدا ایمیل خود را چک کنید",
+    "IF_YOU_DID_NOT_RECEIVE_THE_EMAIL": "اگر ایمیلی دریافت نکردید",
+    "CLICK_HERE_TO_REQUEST_ANOTHER": " برای دریافت لینک جدید کلیک کنید ",
+    "PLEASE_CONFIRM_YOUR_EMAIL": "لطفا ایمیل خود را تایید کنید.",
+    "CONFIRM_EMAIL": "برای تایید ایمیل خود، کلیک کنید",
+    "YOUR_EMAIL_IS_CONFIRMED": "ایمیل شما تایید شده است",
+    "": "",
     "": ""
 }
