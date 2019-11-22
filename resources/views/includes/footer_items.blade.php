@@ -1,5 +1,5 @@
 <li>
-	<a href="{{route('home')}}">
+	<a href="{{route('dashboard')}}">
 		ناحیه کاربری
 	</a>
 </li>

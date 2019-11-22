@@ -13,7 +13,7 @@
         <div class="alert alert-warning">
             <i class="material-icons text-light mr-2">warning</i>
             @lang('PLEASE_CONFIRM_YOUR_EMAIL')
-            <a href="{{route('verification.notice')}}" class="btn btn-outline-dark mr-auto"> @lang('CONFIRM_EMAIL') </a>
+            <a href="{{route('verification.notice')}}" class="btn btn-link"> @lang('CONFIRM_EMAIL') </a>
         </div>
     @endif
 

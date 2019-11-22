@@ -11,12 +11,20 @@
 	</div>
 	<div class="sidebar-wrapper">
 		<ul class="nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="./dashboard.html">
+			<li class="nav-item @if(rn() == 'dashboard') active @endif">
+				<a class="nav-link" href="{{route('dashboard')}}">
 					<i class="material-icons">dashboard</i>
 					<p>داشبورد</p>
 				</a>
 			</li>
+			@master
+				<li class="nav-item @if(rn() == 'course.index') active @endif">
+					<a class="nav-link" href="{{route('course.index')}}">
+						<i class="material-icons">movie</i>
+						<p>@lang('COURSES')</p>
+					</a>
+				</li>
+			@endmaster
 		</ul>
 	</div>
 </div>

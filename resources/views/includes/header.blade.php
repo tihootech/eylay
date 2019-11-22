@@ -14,7 +14,7 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-left">
 				<li class="button-container">
-					<a href="{{route('home')}}" class="btn btn-primary btn-round">
+					<a href="{{route('dashboard')}}" class="btn btn-primary btn-round">
 						<i class="material-icons">person</i> ناحیه کاربری
 					</a>
 				</li>

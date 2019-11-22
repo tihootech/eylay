@@ -16,6 +16,17 @@
     "PLEASE_CONFIRM_YOUR_EMAIL": "لطفا ایمیل خود را تایید کنید.",
     "CONFIRM_EMAIL": "برای تایید ایمیل خود، کلیک کنید",
     "YOUR_EMAIL_IS_CONFIRMED": "ایمیل شما تایید شده است",
+    "COURSES": "دوره ها",
+    "NEW_COURSE": "دوره جدید",
+    "EDIT": "ویرایش",
+    "LIST_ALL_COURSES": "لیست همه دوره ها",
+    "TITLE": "عنوان",
+    "COURSE_TYPE": "نوع دوره",
+    "WORKSHOP": "دوره حضوری",
+    "ONLINE": "آنلاین",
+    "": "",
+    "": "",
+    "": "",
     "": "",
     "": ""
 }

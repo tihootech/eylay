@@ -1206,3 +1206,8 @@ html[dir="rtl"] .card .card-body, html[dir="rtl"] .card .card-footer {
   }
 }
 /*# sourceMappingURL=material-dashboard-rtl.css.map */
+
+.bmd-form-group .bmd-label-static {
+    left: unset;
+    right: 0;
+}

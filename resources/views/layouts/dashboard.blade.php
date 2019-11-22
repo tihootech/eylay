@@ -18,6 +18,7 @@
     <!-- CSS Files -->
     <link href="{{asset('dashboard/css/material-dashboard.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/css/material-dashboard-rtl.css')}}" rel="stylesheet" />
+	<link href="{{asset('assets/css/nice-select.css')}}" rel="stylesheet" />
 	<link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet" />
 	<link href="{{asset('assets/css/dashboard-custom.css')}}" rel="stylesheet" />
 
@@ -56,6 +57,7 @@
         <script src="{{asset('dashboard/js/core/popper.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('dashboard/js/core/bootstrap-material-design.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('dashboard/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
+        <script src="{{asset('dashboard/js/jquery.nice-select.min.js')}}"></script>
         <!--  Google Maps Plugin    -->
         <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
         <!-- Chartist JS -->
@@ -63,7 +65,8 @@
         <!--  Notifications Plugin    -->
         <script src="{{asset('dashboard/js/plugins/bootstrap-notify.js')}}"></script>
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-        <script src="{{asset('dashboard/js/material-dashboard.min.js?v=2.1.0')}}" type="text/javascript"></script>
+        <script src="{{asset('dashboard/js/material-dashboard.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('dashboard/js/dashboard-custom.js')}}" type="text/javascript"></script>
 
 </body>
 

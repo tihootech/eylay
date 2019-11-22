@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 class CreateUsersTable extends Migration
 {
@@ -29,6 +30,7 @@ class CreateUsersTable extends Migration
             'email' => 'ali.seyfi68@gmail.com',
             'type' => 'master',
             'password' => bcrypt('eylay8624password'),
+            'email_verified_at' => Carbon::now(),
         ]);
     }
 
