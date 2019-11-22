@@ -1,13 +1,13 @@
 @extends('layouts.dashboard')
 @section('title')
-    <title>@lang('COURSES')</title>
+    @lang('COURSES')
 @endsection
 @section('content')
 
-    <div class="card card-body">
+    <div class="tile">
 		<div class="row justify-content-end">
 			<div class="col-md-2">
-				<a href="{{route('course.create')}}" class="btn btn-info btn-round">
+				<a href="{{route('course.create')}}" class="btn btn-primary btn-round">
 					<i class="fa fa-plus mr-1"></i>
 					@lang('NEW_COURSE')
 				</a>
@@ -15,7 +15,7 @@
 		</div>
     </div>
 
-	<div class="card card-body">
+	<div class="tile">
 
 	</div>
 

@@ -1,72 +1,66 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 
 <head>
-    <meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
-	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/favicon.ico')}}">
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.ico')}}">
+    <title> @yield('title', __('MANAGEMENT_PANEL')) </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	@yield('title')
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-	<!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('favicon/favicon.ico')}}">
 
-    <!-- CSS Files -->
-    <link href="{{asset('dashboard/css/material-dashboard.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/css/material-dashboard-rtl.css')}}" rel="stylesheet" />
-	<link href="{{asset('assets/css/nice-select.css')}}" rel="stylesheet" />
-	<link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet" />
-	<link href="{{asset('assets/css/dashboard-custom.css')}}" rel="stylesheet" />
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/font-awesome.min.css")}}">
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/pdp.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/dashmain.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/dashcustom.css")}}">
 
 </head>
 
-<body>
-    <div class="wrapper ">
+<body class="app sidebar-mini rtl">
 
-        @include('includes.dashboard_sidebar')
+    @include("dashboard.header")
+    @include("dashboard.aside")
 
-        <div class="main-panel">
-
-            @include('includes.dashboard_header')
-
-            <div class="content">
-
-                @isset ($message)
-                    <div class="alert alert-success">
-                        {{$message}}
-                    </div>
-                @endisset
-                @isset ($error)
-                    <div class="alert alert-danger">
-                        {{$error}}
-                    </div>
-                @endisset
-
-                @yield('content')
-
-                @include('includes.dashboard_footer')
-
+    <main class="app-content">
+        @isset ($message)
+            <div class="alert alert-success">
+                {{$message}}
             </div>
-        </div>
-        <!--   Core JS Files   -->
-        <script src="{{asset('dashboard/js/core/jquery.min.js')}}" type="text/javascript"></script>
-        <script src="{{asset('dashboard/js/core/popper.min.js')}}" type="text/javascript"></script>
-        <script src="{{asset('dashboard/js/core/bootstrap-material-design.min.js')}}" type="text/javascript"></script>
-        <script src="{{asset('dashboard/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
-        <script src="{{asset('dashboard/js/jquery.nice-select.min.js')}}"></script>
-        <!--  Google Maps Plugin    -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-        <!-- Chartist JS -->
-        <script src="{{asset('dashboard/js/plugins/chartist.min.js')}}"></script>
-        <!--  Notifications Plugin    -->
-        <script src="{{asset('dashboard/js/plugins/bootstrap-notify.js')}}"></script>
-        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-        <script src="{{asset('dashboard/js/material-dashboard.min.js')}}" type="text/javascript"></script>
-        <script src="{{asset('dashboard/js/dashboard-custom.js')}}" type="text/javascript"></script>
+        @endisset
+        @isset ($error)
+            <div class="alert alert-danger">
+                {{$error}}
+            </div>
+        @endisset
+        @yield('content')
+    </main>
+
+    <!-- Essential javascripts for application to work-->
+    <script src="{{asset("dashboard/js/jquery-3.2.1.min.js")}}"></script>
+    <script src="{{asset("dashboard/js/jq-ui.js")}}"></script>
+    <script src="{{asset("dashboard/js/popper.min.js")}}"></script>
+    <script src="{{asset("dashboard/js/bootstrap.min.js")}}"></script>
+
+    <!-- Plugins -->
+    <script src="{{asset("dashboard/js/plugins/pace.min.js")}}"></script>
+    <script src="{{asset("dashboard/js/plugins/sweetalert.min.js")}}"></script>
+    <script src="{{asset("dashboard/js/plugins/select2.min.js")}}"></script>
+
+    <!-- Main -->
+    <script src="{{asset("dashboard/js/cats-treeview.js")}}"></script>
+    <script src="{{asset("dashboard/js/pdp.min.js")}}"></script>
+    <script src="{{asset("dashboard/js/dashmain.js")}}"></script>
+    <script src="{{asset("dashboard/js/plugins/chart.js")}}"></script>
 
 </body>
 

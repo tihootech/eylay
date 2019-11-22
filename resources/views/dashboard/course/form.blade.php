@@ -1,10 +1,10 @@
 @extends('layouts.dashboard')
 @section('title')
-    <title>@if($course->id) @lang('EDIT') {{$course->title}} @else @lang('NEW_COURSE') @endif</title>
+    @if($course->id) @lang('EDIT') {{$course->title}} @else @lang('NEW_COURSE') @endif
 @endsection
 @section('content')
 
-    <div class="card card-body">
+    <div class="tile">
 		<div class="row justify-content-end">
 			<div class="col-md-2">
 				<a href="{{route('course.index')}}" class="btn btn-info btn-round">
@@ -15,7 +15,7 @@
 		</div>
     </div>
 
-	<div class="card card-body">
+	<div class="tile">
         <form class="row" action="{{route('course.store')}}" method="post">
 			@csrf
 
@@ -26,7 +26,7 @@
 
 			<div class="col-md-3 form-group">
 				<label for="type"> @lang('COURSE_TYPE') </label>
-				<select class="nice-select" id="type" name="type">
+				<select class="form-control" id="type" name="type">
                     <option value="online">@lang('ONLINE')</option>
                     <option value="workshop">@lang('WORKSHOP')</option>
                 </select>
