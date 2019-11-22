@@ -12,6 +12,11 @@
 	font-family: 'Dinar';
 }
 
+@font-face {
+	src: url(../fonts/Calibri.ttf);
+	font-family: 'Calibri';
+}
+
 .yekan {
 	font-family: 'Yekan';
 }
@@ -20,22 +25,26 @@
 	font-family: 'Dinar';
 }
 
+.calibri {
+	font-family: 'Calibri';
+}
+
 /*******************************/
 /* Main */
 /*******************************/
 
 body {
-	font-family: 'Yekan', 'Dinar';
+	font-family: 'Yekan', 'Dinar', 'Calibri';
 	direction: rtl;
 	text-align: right;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-family: 'Dinar'
+	font-family: 'Dinar', 'Calibri';
 }
 
 .popover, ::placeholder {
-	font-family: 'Yekan', 'Dinar';
+	font-family: 'Yekan', 'Dinar', 'Calibri';
 }
 
 .hidden {
@@ -63,6 +72,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	text-decoration: underline;
 }
 
+
+/*******************************/
+/* Realy Custom */
+/*******************************/
+
+.course-images img {
+	max-height: 200px;
+}
 
 /*******************************/
 /* RTL */

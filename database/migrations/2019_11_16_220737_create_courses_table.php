@@ -15,12 +15,12 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title')->unique()->index();
             $table->string('type')->default('online'); // online, workshop
-            $table->string('category');
-            $table->string('title');
+            $table->string('supertitle');
+            $table->string('subtitle');
             $table->string('image');
             $table->string('bg');
-            $table->string('subtitle');
             $table->text('info');
             $table->timestamps();
         });

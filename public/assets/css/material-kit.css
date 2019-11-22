@@ -9594,3 +9594,7 @@ select.selectpicker {
 #cd-vertical-nav {
     right:-98px !important;
 }
+
+.ml-1 {
+    margin-left: .25em;
+}

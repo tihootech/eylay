@@ -43,7 +43,7 @@
 	//are-you-sures
 	$('.delete').click(function(){
 		var htmlID = $(this).attr('data-target');
-		var target = $('form#'+htmlID);
+		var target = htmlID ? $('form#'+htmlID) : $(this).parents('form');
 		swal({
 			title: "آیا مطمئن هستید؟",
 			text: "شما دیگر قادر به باز گردانی آن نخواهید بود!",

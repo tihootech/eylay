@@ -40,7 +40,7 @@
             <ul class="dropdown-menu settings-menu text-right">
                 <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> مدیریت حساب کاربری </a></li>
                 <li>
-                    <a class="dropdown-item pointer" onclick="document.getElementById('logout-form').submit();">
+                    <a class="dropdown-item pointer" href="javascript:void" onclick="document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out ml-1"></i> خروج
                     </a>
                     <form id="logout-form" class="hidden" action="{{url("logout")}}" method="POST">

@@ -32,17 +32,21 @@
     @include("dashboard.aside")
 
     <main class="app-content">
-        @isset ($message)
+
+        @if (session('message'))
             <div class="alert alert-success">
-                {{$message}}
+                <i class="fa fa-check ml-1"></i>
+                {{session('message')}}
             </div>
-        @endisset
-        @isset ($error)
+        @endif
+        @if (session('error'))
             <div class="alert alert-danger">
-                {{$error}}
+                <i class="fa fa-warning ml-1"></i>
+                {{session('error')}}
             </div>
-        @endisset
+        @endif
         @yield('content')
+
     </main>
 
     <!-- Essential javascripts for application to work-->

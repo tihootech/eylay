@@ -99,44 +99,28 @@
                     </div>
 
                     <div class="row">
-
-                        <div class="col-md-5 col-md-offset-1">
-                            <div class="card card-plain">
-                                <a href="#pablo">
-                                    <div class="card-image">
-                                        <img src="{{asset('assets/img/examples/card-project1.jpg')}}" />
-                                    </div>
-                                </a>
-                                <div class="card-content">
-                                    <h6 class="category">Web Design</h6>
-                                    <a href="#pablo">
-                                        <h4 class="card-title">Famous Website Redesign</h4>
+                        <div class="col-md-1"></div>
+                        @foreach ($workshops as $workshop)
+                            <div class="col-md-5">
+                                <div class="card card-plain">
+                                    <a href="{{$workshop->public_link()}}">
+                                        <div class="card-image">
+                                            <img src="{{asset($workshop->image)}}" />
+                                        </div>
                                     </a>
-                                    <p class="card-description">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth.
-                                    </p>
+                                    <div class="card-content">
+                                        <h6 class="category">{{$workshop->supertitle}}</h6>
+                                        <a href="{{$workshop->public_link()}}">
+                                            <h4 class="card-title">{{$workshop->title}}</h4>
+                                        </a>
+                                        <p class="card-description">
+                                            {{short($workshop->info)}}
+                                        </p>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="card card-plain">
-                                <a href="#pablo">
-                                    <div class="card-image">
-                                        <img src="{{asset('assets/img/examples/card-project2.jpg')}}" />
-                                    </div>
-                                </a>
-                                <div class="card-content">
-                                    <h6 class="category">Productivity Tools</h6>
-                                    <a href="#pablo">
-                                        <h4 class="card-title">Beautiful Desktop for Designers</h4>
-                                    </a>
-                                    <p class="card-description">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                     <div class="text-center">
@@ -157,57 +141,26 @@
                     <h2 class="title text-center">ویدئو های آموزشی</h2>
 
                     <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
 
-                        </div>
+                        @foreach ($online_courses as $course)
+                            <div class="col-md-6">
+                                <div class="card card-raised card-background" style="background-image: url('{{asset($course->image)}}')">
 
-                        <div class="col-md-6">
-                            <div class="card card-raised card-background" style="background-image: url('{{asset('assets/img/examples/office2.jpg')}}')">
-
-                                <div class="card-content">
-                                    <h6 class="category text-info">Productivity</h6>
-                                    <a href="#pablo">
-                                        <h3 class="card-title">The Best Productivity Apps on Market</h3>
-                                    </a>
-                                    <p class="card-description">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                    </p>
-                                    <a href="#pablo" class="btn btn-rose btn-round">
-                                        <i class="material-icons">content_copy</i> View App
-                                    </a>
+                                    <div class="card-content">
+                                        <h6 class="category text-info">{{$course->supertitle}}</h6>
+                                        <a href="{{$course->public_link()}}">
+                                            <h3 class="card-title">{{$course->title}}</h3>
+                                        </a>
+                                        <p class="card-description">
+                                            {{short($course->info)}}
+                                        </p>
+                                        <a href="{{$course->public_link()}}" class="btn btn-rose btn-round">
+                                            <i class="material-icons ml-1">remove_red_eye</i> مشاهده
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="card card-raised card-background" style="background-image: url('{{asset('assets/img/examples/card-blog3.jpg')}}')">
-                                <div class="card-content">
-                                    <h6 class="category text-info">Design</h6>
-                                    <h3 class="card-title">The Sculpture Where Details Matter</h3>
-                                    <p class="card-description">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                    </p>
-                                    <a href="#pablo" class="btn btn-rose btn-round">
-                                        <i class="material-icons">build</i> View Project
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="card card-raised card-background" style="background-image: url('{{asset('assets/img/examples/card-project6.jpg')}}')">
-                                <div class="card-content">
-                                    <h6 class="category text-info">Marketing</h6>
-                                    <h3 class="card-title">0 to 100.000 Customers in 6 months</h3>
-                                    <p class="card-description">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                    </p>
-                                    <a href="#pablo" class="btn btn-rose btn-round">
-                                        <i class="material-icons">subject</i> Case Study
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
                 </div>
