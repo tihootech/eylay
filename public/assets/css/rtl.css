@@ -66,3 +66,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 	margin-left: 10px;
 	margin-right: unset;
 }
+
+.card-form-horizontal .input-group .input-group-addon {
+	padding-right: 0;
+	padding-left: 15px;
+}
+
+.card-plain .card-content {
+	text-align: right;
+}

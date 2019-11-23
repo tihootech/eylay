@@ -6684,6 +6684,10 @@ select[data-dropdownjs][disabled] + .dropdownjs > input[readonly] {
     padding-top: 20vh;
 }
 
+.background-fixed {
+    background-attachment: fixed;
+}
+
 .header-filter {
     position: relative;
 }

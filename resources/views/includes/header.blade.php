@@ -34,18 +34,18 @@
 					<ul class="dropdown-menu dropdown-with-icons">
 
 						<li>
-							<a href="sections.html#blogs">
+							<a href="{{route('blogs')}}">
 								<i class="material-icons">collections</i> وبلاگ
 							</a>
 						</li>
 						<li>
-							<a href="sections.html#blogs">
-								<i class="material-icons">movie</i> ویدئو های آموزشی
+							<a href="{{route('courses', urlfriendly(__('EDU_VIDEOS')))}}">
+								<i class="material-icons">movie</i> @lang('EDU_VIDEOS')
 							</a>
 						</li>
 						<li>
-							<a href="sections.html#blogs">
-								<i class="material-icons">business</i> دوره های حضوری
+							<a href="{{route('courses', urlfriendly(__('WORKSHOPS')))}}">
+								<i class="material-icons">business</i> @lang('WORKSHOPS')
 							</a>
 						</li>
 						<li>

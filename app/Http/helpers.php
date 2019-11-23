@@ -63,3 +63,7 @@ function random_rgba($opacity=null)
 function urlfriendly($input){
     return str_replace(' ', '-', $input);
 }
+
+function raw($input){
+    return str_replace('-', ' ', $input);
+}

@@ -1,3 +1,17 @@
 .mx-2 {
 	margin: 0 .25em
 }
+
+.nav-pills > li {
+	float: unset;
+	display: inline-block;
+}
+
+
+/* backgrounds */
+.blogs-bg {
+	background-image: url('../img/blogs.jpg')
+}
+.authors-bg {
+	background-image: url('../img/authors.jpg')
+}
