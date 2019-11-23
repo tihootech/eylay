@@ -33,18 +33,8 @@
 
     <main class="app-content">
 
-        @if (session('message'))
-            <div class="alert alert-success">
-                <i class="fa fa-check ml-1"></i>
-                {{session('message')}}
-            </div>
-        @endif
-        @if (session('error'))
-            <div class="alert alert-danger">
-                <i class="fa fa-warning ml-1"></i>
-                {{session('error')}}
-            </div>
-        @endif
+
+        @include('partials.errors_and_messages')
         @yield('content')
 
     </main>

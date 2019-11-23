@@ -31,3 +31,10 @@
 		<span class="app-menu__label"> دوره ها </span>
 	</a>
 </li>
+
+<li>
+	<a class="app-menu__item @if( rn() == 'acc' ) active @endif" href="{{route("acc")}}">
+		<i class="ml-2 material-icons">lock</i>
+		<span class="app-menu__label"> مدیریت حساب کاربری </span>
+	</a>
+</li>

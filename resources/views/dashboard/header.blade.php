@@ -38,7 +38,7 @@
                 <i class="material-icons">person</i>
             </a>
             <ul class="dropdown-menu settings-menu text-right">
-                <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> مدیریت حساب کاربری </a></li>
+                <li><a class="dropdown-item" href="{{route('acc')}}"><i class="fa fa-lock fa-lg"></i> مدیریت حساب کاربری </a></li>
                 <li>
                     <a class="dropdown-item pointer" href="javascript:void" onclick="document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out ml-1"></i> خروج

@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-    <title>@lang('YOUR_PANEL')</title>
+    @lang('YOUR_PANEL')
 @endsection
 @section('content')
 
