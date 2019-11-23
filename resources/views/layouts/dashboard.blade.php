@@ -34,7 +34,7 @@
     <main class="app-content">
 
 
-        @include('partials.errors_and_messages')
+        @include('dashboard.partials.errors_and_messages')
         @yield('content')
 
     </main>

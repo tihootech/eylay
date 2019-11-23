@@ -7,7 +7,7 @@
     <div class="tile text-left">
         <a href="{{route('course.index')}}" class="btn btn-primary btn-round">
             <i class="fa fa-list ml-2"></i>
-            @lang('LIST_ALL_COURSES')
+            @lang('LIST_ALL') @lang('COURSES')
         </a>
     </div>
 
@@ -63,21 +63,6 @@
 		</form>
 	</div>
 
-    @if ($course->id)
-        <div class="tile course-images">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2> @lang('IMAGE') @lang('CURRENT') </h2>
-                    <hr>
-                    <img src="{{asset($course->image)}}">
-                </div>
-                <div class="col-md-6">
-                    <h2> @lang('BG') @lang('CURRENT') </h2>
-                    <hr>
-                    <img src="{{asset($course->bg)}}">
-                </div>
-            </div>
-        </div>
-    @endif
+    @include('dashboard.partials.display_images', ['object' => $course])
 
 @endsection

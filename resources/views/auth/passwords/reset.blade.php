@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 @section('body_class') login-page @endsection
 @section('title')
-    <title> بازنشانی رمزعبور </title>
+    بازنشانی رمزعبور
 @endsection
 
 @section('content')

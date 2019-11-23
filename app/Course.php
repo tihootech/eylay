@@ -10,12 +10,12 @@ class Course extends Model
 
     public function public_link()
     {
-        return route('show_course', str_replace(' ', '-', $this->title));
+        return route('show_course', urlfriendly($this->title));
     }
 
     public function persian_type($dash_seperated=false)
     {
         $result = __(strtoupper($this->type));
-        return $dash_seperated ? str_replace(' ', '-', $result) : $result;
+        return $dash_seperated ? urlfriendly($result) : $result;
     }
 }

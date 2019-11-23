@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 @section('body_class') signup-page @endsection
 @section('title')
-    <title> ایجاد حساب کاربری </title>
+    ایجاد حساب کاربری
 @endsection
 
 @section('content')

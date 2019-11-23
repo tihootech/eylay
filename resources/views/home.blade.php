@@ -12,7 +12,7 @@
             </div>
         @else
             <div class="alert alert-warning">
-                <i class="material-icons text-light mr-2">warning</i>
+                <i class="fa fa-warning ml-1"></i>
                 @lang('PLEASE_CONFIRM_YOUR_EMAIL')
                 <a href="{{route('verification.notice')}}" class="btn btn-link"> @lang('CONFIRM_EMAIL') </a>
             </div>

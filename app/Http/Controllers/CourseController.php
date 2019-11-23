@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CourseController extends Controller
 {
@@ -16,7 +17,7 @@ class CourseController extends Controller
 
     public function index()
     {
-        $courses = Course::all();
+        $courses = Course::latest()->get();
         return view('dashboard.course.index', compact('courses'));
     }
 
@@ -28,7 +29,7 @@ class CourseController extends Controller
 
     public function store(Request $request)
     {
-        $data = self::validation();
+        $data = self::validation(new Course);
         Course::create($data);
         return redirect()->route('course.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }
@@ -40,34 +41,35 @@ class CourseController extends Controller
 
     public function update(Request $request, Course $course)
     {
-        $data = self::validation($course->id);
+        $data = self::validation($course);
         $course->update($data);
         return redirect()->route('course.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }
 
     public function destroy(Course $course)
     {
+        delete_file([$course->image, $course->bg]);
         $course->delete();
         return redirect()->route('course.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }
 
-    public static function validation($id=0)
+    public static function validation($course)
     {
         $data = request()->validate([
             'type' => 'nullable',
             'supertitle' => 'required',
-            'title' => 'required|unique:courses,title,'.$id,
+            'title' => 'required|unique:courses,title,'.$course->id,
             'subtitle' => 'required',
-            'image' => $id ? 'nullable' : 'required',
-            'bg' => $id ? 'nullable' : 'required',
             'info' => 'required',
+            'image' => Rule::requiredIf(!$course->id),
+            'bg' => Rule::requiredIf(!$course->id),
         ]);
 
         if ( isset($data['image']) && $data['image'] ) {
-            $data['image'] = upload($data['image']);
+            $data['image'] = upload($data['image'], $course->image);
         }
         if ( isset($data['bg']) && $data['bg'] ) {
-            $data['bg'] = upload($data['bg']);
+            $data['bg'] = upload($data['bg'], $course->bg);
         }
 
         return $data;

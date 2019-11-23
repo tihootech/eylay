@@ -38,10 +38,13 @@ function upload($new_file, $old_file=null)
     }
 }
 
-function delete_file($file)
+function delete_file($income)
 {
-    if ($file && file_exists($file)) {
-        \File::delete($file);
+    $files = is_array($income) ? $income : [$income];
+    foreach ($files as $file) {
+        if ($file && file_exists($file)) {
+            \File::delete($file);
+        }
     }
 }
 
@@ -55,4 +58,8 @@ function random_rgba($opacity=null)
 {
     $opacity = $opacity ?? rand(0,10)/10;
     return "rgba(".rand(1,255).", ".rand(1,255).", ".rand(1,255).", $opacity)";
+}
+
+function urlfriendly($input){
+    return str_replace(' ', '-', $input);
 }

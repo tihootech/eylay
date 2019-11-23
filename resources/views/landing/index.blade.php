@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-    <title> Eylay </title>
+    Eylay | با ما بیاموزید
 @endsection
 
 
@@ -277,92 +277,65 @@
                             <h2 class="title"> آخرین مطالب منتشر شده </h2>
 
                             <br />
-                            <div class="card card-plain card-blog">
+                            @if ($blog)
+                                <div class="card card-plain card-blog">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card-image">
+                                                <img class="img img-raised" src="{{$blog->image}}" alt="{{$blog->title}}" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="category text-info">{{$blog->category->name ?? 'Database Error'}}</h6>
+                                            <h3 class="card-title">
+                                                <a href="{{$blog->public_link()}}">{{$blog->title}}</a>
+                                            </h3>
+                                            <p class="card-description">
+                                                {{short($blog->content, 200)}}
+                                                <hr>
+                                                <a href="{{$blog->public_link()}}"> <i class="fa fa-arrow-left ml-1"></i> ادامه مطلب </a>
+                                            </p>
+                                            <p class="author">
+                                                نوشته شده توسط :
+                                                <a href="{{route('blogs_by_author', urlfriendly($blog->author_name()))}}">
+                                                    <b>{{$blog->author_name()}}</b>
+                                                </a>
+                                                {{-- {{human_date($blog->created_at)}} --}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @if ($latest_blogs && $latest_blogs->count())
+
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="card-image">
-                                            <img class="img img-raised" src="{{asset('assets/img/examples/card-blog4.jpg')}}" />
+
+                                    @foreach ($latest_blogs as $blog)
+                                        <div class="col-md-4">
+                                            <div class="card card-plain card-blog">
+                                                <div class="card-image">
+                                                    <a href="{{$blog->public_link()}}">
+                                                        <img class="img img-raised" src="{{$blog->image}}" alt="{{$blog->title}}" />
+                                                    </a>
+                                                </div>
+
+                                                <div class="card-content">
+                                                    <h6 class="category text-info">{{$blog->category->name ?? 'Database Error'}}</h6>
+                                                    <h4 class="card-title">
+                                                        <a href="{{$blog->public_link()}}">{{$blog->title}}</a>
+                                                    </h4>
+                                                    <p class="card-description">
+                                                        {{short($blog->content, 100)}}
+                                                        <hr>
+                                                        <a href="{{$blog->public_link()}}"> <i class="fa fa-arrow-left ml-1"></i> ادامه مطلب </a>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="category text-info">Enterprise</h6>
-                                        <h3 class="card-title">
-                                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-                                        </h3>
-                                        <p class="card-description">
-                                            Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story — and… <a href="#pablo"> Read More </a>
-                                        </p>
-                                        <p class="author">
-                                            by <a href="#pablo"><b>Mike Butcher</b></a>, 2 days ago
-                                            </a>
-                                    </div>
+                                    @endforeach
+
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-plain card-blog">
-                                        <div class="card-image">
-                                            <a href="#pablo">
-                                                <img class="img img-raised" src="{{asset('assets/img/examples/card-blog4.jpg')}}" />
-                                            </a>
-                                        </div>
-
-                                        <div class="card-content">
-                                            <h6 class="category text-info">Enterprise</h6>
-                                            <h4 class="card-title">
-                                                <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-                                            </h4>
-                                            <p class="card-description">
-                                                Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses.<a href="#pablo"> Read More </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="card card-plain card-blog">
-                                        <div class="card-image">
-                                            <a href="#pablo">
-                                                <img class="img img-raised" src="{{asset('assets/img/examples/blog5.jpg')}}" />
-                                            </a>
-                                        </div>
-                                        <div class="card-content">
-                                            <h6 class="category text-success">
-                                                Startups
-                                            </h6>
-                                            <h4 class="card-title">
-                                                <a href="#pablo">Lyft launching cross-platform service this week</a>
-                                            </h4>
-                                            <p class="card-description">
-                                                Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses.<a href="#pablo"> Read More </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="card card-plain card-blog">
-                                        <div class="card-image">
-                                            <a href="#pablo">
-                                                <img class="img img-raised" src="{{asset('assets/img/examples/blog7.jpg')}}" />
-                                            </a>
-                                        </div>
-
-                                        <div class="card-content">
-                                            <h6 class="category text-danger">
-                                                <i class="material-icons">trending_up</i> Enterprise
-                                            </h6>
-                                            <h4 class="card-title">
-                                                <a href="#pablo">6 insights into the French Fashion landscape</a>
-                                            </h4>
-                                            <p class="card-description">
-                                                Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses.<a href="#pablo"> Read More </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                            @endif
                         </div>
 
                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-    <title> @lang('VERIFY_EMAIL') </title>
+    @lang('VERIFY_EMAIL')
 @endsection
 @section('content')
     <div class="card">

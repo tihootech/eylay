@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 @section('body_class') login-page @endsection
 @section('title')
-    <title> ورود به حساب کاربری </title>
+    ورود به حساب کاربری
 @endsection
 
 @section('content')
