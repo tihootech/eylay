@@ -35,6 +35,12 @@
 			<span class="app-menu__label"> @lang('BLOGS') </span>
 		</a>
 	</li>
+	<li>
+		<a class="app-menu__item @if( rn() == 'comment.index' ) active @endif" href="{{route("comment.index")}}">
+			<i class="ml-2 material-icons">comment</i>
+			<span class="app-menu__label"> @lang('COMMENTS') </span>
+		</a>
+	</li>
 @endmaster
 
 <li>

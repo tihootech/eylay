@@ -20,18 +20,26 @@
                         <th scope="col"> @lang('TITLE') </th>
                         <th scope="col"> @lang('CATEGORY') </th>
                         <th scope="col"> @lang('AUTHOR') </th>
+                        <th scope="col"> @lang('SEENS') </th>
                         <th scope="col"> @lang('CONTENT') </th>
-                        <th scope="col" colspan="2"> @lang('OPERATIONS') </th>
+                        <th scope="col" colspan="3"> @lang('OPERATIONS') </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($blogs as $i => $blog)
                         <tr>
                             <th scope="row"> {{$i+1}} </th>
-                            <td> {{$blog->title}} </td>
+                            <td> <a href="{{$blog->public_link()}}" target="_blank"> {{$blog->title}} </a> </td>
                             <td> {{$blog->category->name ?? 'Database Error'}} </td>
                             <td> {{$blog->author_name()}} </td>
+                            <td> {{$blog->seens}} </td>
                             <td> {{short($blog->content, 50)}} </td>
+                            <td>
+                                <a href="{{route('comment.create')}}?otype=blog&oid={{$blog->id}}" class="btn btn-round btn-outline-primary">
+                                    <i class="fa fa-comment-o ml-2"></i>
+                                    @lang('FAKE_COMMENT')
+                                </a>
+                            </td>
                             <td>
                                 <a href="{{route('blog.edit', $blog->id)}}" class="btn btn-round btn-outline-success">
                                     <i class="fa fa-edit ml-2"></i>

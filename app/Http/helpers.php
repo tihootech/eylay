@@ -67,3 +67,19 @@ function urlfriendly($input){
 function raw($input){
     return str_replace('-', ' ', $input);
 }
+
+function class_name($string)
+{
+    $class = str_replace('_', '', ucwords($string, '_'));;
+    return "App\\$class";
+}
+
+function liked($otype, $oid)
+{
+    if ($user = auth()->user()) {
+        $owner_type = class_name($otype);
+        return \App\Like::where('owner_type', $owner_type)->where('owner_id', $oid)->where('liker_id', $user->class_id())->where('liker_type', $user->class_type())->first();
+    }else {
+        return false;
+    }
+}

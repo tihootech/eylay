@@ -58,6 +58,11 @@
 			</div>
 
             <div class="col-md-12 form-group">
+				<label for="subtitle"> @lang('SUBTITLE') </label>
+				<textarea name="subtitle" id="subtitle" rows="1" class="form-control">{{old('subtitle') ?? $blog->subtitle}}</textarea>
+			</div>
+
+            <div class="col-md-12 form-group">
 				<label for="content"> @lang('CONTENT') </label>
 				<textarea name="content" id="content" rows="8" class="form-control" required>{!!old('content') ?? $blog->content!!}</textarea>
 			</div>

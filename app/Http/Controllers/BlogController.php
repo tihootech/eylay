@@ -63,6 +63,7 @@ class BlogController extends Controller
         // init validation
         $data = request()->validate([
             'title' => 'required|unique:blogs,title,'.$blog->id,
+            'subtitle' => 'nullable',
             'category_id' => 'nullable|required_without:category_name|exists:categories,id',
             'category_name' => 'nullable|unique:categories,name,NULL,id,type,'.Blog::class,
             'tags' => 'nullable',
@@ -87,6 +88,9 @@ class BlogController extends Controller
         }
         if ( isset($data['bg']) && $data['bg'] ) {
             $data['bg'] = upload($data['bg'], $blog->bg);
+        }
+        if ( isset($data['tags']) && $data['tags'] ) {
+            $data['tags'] = str_replace("\r\n", ",", $data['tags']);
         }
 
         return $data;

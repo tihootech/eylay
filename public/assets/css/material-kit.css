@@ -13,6 +13,11 @@
 /* ANIMATION */
 /* SHADOWS */
 /* Shadows (from mdl http://www.getmdl.io/) */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #E5E5E5;
     color: #3C4858;

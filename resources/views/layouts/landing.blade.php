@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>@yield('title', 'Eylay')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="root" content="{{ url('/') }}">
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -20,6 +22,7 @@
     <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
     <link href="{{asset('assets/css/vertical-nav.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/material-kit.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/rtl.css')}}" rel="stylesheet" />
@@ -63,9 +66,5 @@
 <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 <script src="{{asset('assets/js/material-kit.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/main.js')}}" type="text/javascript"></script>
-
-<!-- Fixed Sidebar Nav - JS For Demo Purpose, Don't Include it in your project -->
-<script src="{{asset('assets/assets-for-demo/modernizr.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/assets-for-demo/vertical-nav.js')}}" type="text/javascript"></script>
 
 </html>

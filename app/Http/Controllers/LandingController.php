@@ -40,9 +40,19 @@ class LandingController extends Controller
                 $current_cat = $text;
                 $category = Category::whereName($current_cat)->firstOrFail();
                 $blogs = $blogs->where('category_id', $category->id);
+            }elseif($route == 'blogs_by_tag') {
+                $tag = $text;
+                $blogs = $blogs->whereRaw("FIND_IN_SET('$tag',tags)");
             }
         }
         $blogs = $blogs->latest()->get();
         return view('landing.blogs', compact('blogs', 'cats', 'count', 'current_cat', 'author'));
+    }
+
+    public function show_blog($title)
+    {
+        $blog = Blog::whereTitle(raw($title))->firstOrFail();
+        $blog->increment('seens');
+        return view('landing.blog', compact('blog'));
     }
 }

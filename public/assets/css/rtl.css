@@ -3,7 +3,7 @@ body {
 	text-align: right;
 }
 
-body {
+body, .tooltip-inner {
 	font-family: "Yekan", "Roboto", "Helvetica", "Arial", sans-serif;
 }
 

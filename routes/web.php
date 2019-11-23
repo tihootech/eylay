@@ -15,9 +15,17 @@ Route::resource('course', 'CourseController')->except('show');
 Route::get('دوره-ها/{type}', 'LandingController@courses')->name('courses');
 Route::get('دوره/{title}', 'LandingController@show_course')->name('show_course');
 
+// like
+Route::post('like', 'LikeController@like')->name('like');
+
+// comment
+Route::put('comment/{comment}/confirm', 'CommentController@confirm')->name('comment.confirm');
+Route::resource('comment', 'CommentController')->except('show');
+
 // blogs
 Route::resource('blog', 'BlogController')->except('show');
 Route::get('مطالب-منتشر-شده', 'LandingController@blogs')->name('blogs');
-Route::get('{title}', 'LandingController@show_blog')->name('show_blog');
 Route::get('مطالب-منتشر-شده/نویسنده/{text}', 'LandingController@blogs')->name('blogs_by_author');
 Route::get('مطالب-منتشر-شده/دسته-بندی/{text}', 'LandingController@blogs')->name('blogs_by_cat');
+Route::get('مطالب-منتشر-شده/برچسب/{text}', 'LandingController@blogs')->name('blogs_by_tag');
+Route::get('{title}', 'LandingController@show_blog')->name('show_blog');

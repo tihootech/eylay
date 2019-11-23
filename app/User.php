@@ -29,8 +29,7 @@ class User extends Authenticatable
 
     public function class_type()
     {
-        $class = str_replace('_', '', ucwords($this->type, '_'));;
-        return "App\\$class";
+        return class_name($this->type);
     }
 
     public function class_id()
