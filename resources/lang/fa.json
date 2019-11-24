@@ -65,6 +65,8 @@
     "OWNER": "مالک",
     "CONFIRMED": "تاییدشده",
     "COMMENT_CONFIRMED": "کامنت موردنظر تایید شد.",
+    "ALL_COMMENTS_CONFIRMED": " همه کامنت ها تایید شدند. ",
+    "CONFIRM_ALL_COMMENTS": " تایید همه کامنت ها ",
     "CONFIRM": "تایید",
     "DECLINE": "ردکرن",
     "NOT": "عدم",

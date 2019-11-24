@@ -9,6 +9,13 @@
             <i class="fa fa-plus ml-2"></i>
             @lang('FAKE_COMMENT')
         </a>
+        <form class="d-inline" action="{{route('confirm_all_comments')}}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-warning btn-round">
+                <i class="fa fa-check ml-2"></i>
+                @lang('CONFIRM_ALL_COMMENTS')
+            </button>
+        </form>
     </div>
 
 	<div class="tile">

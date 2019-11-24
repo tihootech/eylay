@@ -61,11 +61,19 @@ class CommentController extends Controller
         return redirect()->route('comment.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }
 
-    public function confirm(Request $request, Comment $comment)
+    public function confirm(Comment $comment)
     {
         $comment->confirmed = !$comment->confirmed;
         $comment->save();
         return back()->withMessage(__('COMMENT_CONFIRMED'));
+    }
+
+    public function confirm_all()
+    {
+        Comment::whereConfirmed(0)->update([
+            'confirmed' => 1
+        ]);
+        return back()->withMessage(__('ALL_COMMENTS_CONFIRMED'));
     }
 
     public function destroy(Comment $comment)

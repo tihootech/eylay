@@ -37,6 +37,7 @@ Route::post('like', 'LikeController@like')->name('like');
 
 // comment
 Route::put('comment/{comment}/confirm', 'CommentController@confirm')->name('comment.confirm');
+Route::post('comment/confirm_all', 'CommentController@confirm_all')->name('confirm_all_comments');
 Route::resource('comment', 'CommentController')->except('show');
 
 //files and downloads
