@@ -1,6 +1,9 @@
 .mx-2 {
 	margin: 0 .25em
 }
+.mx-3 {
+	margin: 0 .5em
+}
 .ml-2 {
 	margin-left: .25em
 }
@@ -26,7 +29,34 @@
 .section {
 	padding: 45px 0;
 }
+.label {
+	margin: 0 3px;
+}
 
+:target {
+	border: 2px solid #F44336;
+	padding: 10px;
+}
+:target {
+  animation: highlight 1s ease;
+}
+@keyframes highlight {
+	0% {
+		border: 2px solid #F44336;
+		padding: 10px;
+	}
+	100% {
+		border: 2px solid #fff;
+	}
+}
+
+/* same heights */
+.random-blogs .card-description {
+	min-height: 100px;
+}
+.latest-blogs .card-description {
+	min-height: 75px;
+}
 
 /* backgrounds */
 .blogs-bg {

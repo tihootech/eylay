@@ -282,7 +282,7 @@
                             @endif
                             @if ($latest_blogs && $latest_blogs->count())
 
-                                <div class="row">
+                                <div class="row latest-blogs">
 
                                     @foreach ($latest_blogs as $blog)
                                         <div class="col-md-4">
@@ -294,7 +294,11 @@
                                                 </div>
 
                                                 <div class="card-content">
-                                                    <h6 class="category text-info">{{$blog->category->name ?? 'Database Error'}}</h6>
+                                                    <h6 class="category">
+                                                        <a href="{{route('blogs_by_cat', urf($blog->category_name()))}}" class="text-info">
+                                                            {{$blog->category_name()}}
+                                                        </a>
+                                                    </h6>
                                                     <h4 class="card-title">
                                                         <a href="{{$blog->public_link()}}">{{$blog->title}}</a>
                                                     </h4>

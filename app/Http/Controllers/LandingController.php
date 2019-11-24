@@ -24,8 +24,10 @@ class LandingController extends Controller
         // init vars
         $current_cat = null;
         $author = null;
+        $tag = null;
         $cats = Category::whereType(Blog::class)->get();
         $count = Blog::count();
+        $order = request('order');
 
         // prepare query
         $blogs = Blog::query();
@@ -45,14 +47,23 @@ class LandingController extends Controller
                 $blogs = $blogs->whereRaw("FIND_IN_SET('$tag',tags)");
             }
         }
-        $blogs = $blogs->latest()->get();
-        return view('landing.blogs', compact('blogs', 'cats', 'count', 'current_cat', 'author'));
+        if ($order == 'seens') {
+            $blogs = $blogs->orderBy('seens', 'DESC')->get();
+        }elseif($order == 'likes') {
+            $blogs = $blogs->withCount('likes')->orderBy('likes_count', 'DESC')->get();
+        }else {
+            $blogs = $blogs->latest()->get();
+            $order = null;
+        }
+        $random_blogs = Blog::inRandomOrder()->limit(3)->get();
+        return view('landing.blogs', compact('blogs', 'cats', 'count', 'tag', 'current_cat', 'author', 'order', 'random_blogs'));
     }
 
     public function show_blog($title)
     {
         $blog = Blog::whereTitle(raw($title))->firstOrFail();
+        $random_blogs = Blog::where('id', '!=', $blog->id)->inRandomOrder()->limit(3)->get();
         $blog->increment('seens');
-        return view('landing.blog', compact('blog'));
+        return view('landing.blog', compact('blog', 'random_blogs'));
     }
 }

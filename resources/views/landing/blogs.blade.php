@@ -25,18 +25,41 @@
 					<div class="col-md-6 col-md-offset-3">
 
                         <ul class="nav nav-pills nav-pills-primary text-center">
-                            <li @unless($current_cat) class="active" @endunless><a href="{{route('blogs')}}">همه مطالب</a></li>
-                            @foreach ($cats as $cat)
-                                <li @if($current_cat == $cat->name) class="active" @endif>
-                                    <a href="{{route('blogs_by_cat', urlfriendly($cat->name))}}">{{$cat->name}}</a>
-                                </li>
-                            @endforeach
+                            <li @if(!$order) class="active" @endif>
+                                <a href="?order=latest"> جدیدترین ها </a>
+                            </li>
+                            <li @if($order=='seens') class="active" @endif>
+                                <a href="?order=seens"> بیشترین بازدید </a>
+                            </li>
+                            <li @if($order=='likes') class="active" @endif>
+                                <a href="?order=likes"> محبوب ترین </a>
+                            </li>
                         </ul>
 
 					</div>
 				</div>
                 <hr>
-
+                @if ($current_cat || $author || $tag)
+                    <div class="card">
+                        <div class="card-content content-warning text-center">
+                            <a href="{{route('blogs')}}" class="btn btn-white btn-round" rel="tooltip" title="
+                            شما در حال مشاهده مطالبی هستید که
+                            @if ($current_cat)
+                                در دسته بندی '{{$current_cat}}' قرار گرفته اند.
+                            @endif
+                            @if ($author)
+                                که توسط '{{$author}}' نوشته شده اند.
+                            @endif
+                            @if ($tag)
+                                که دارای تگ '{{$tag}}' هستند.
+                            @endif
+                            ">
+                                <i class="fa fa-list ml-2"></i>
+                                 مشاهده همه مطالب
+                            </a>
+                        </div>
+                    </div>
+                @endif
                 @foreach ($blogs as $blog)
                     @include('landing.partials.blog')
                 @endforeach
@@ -121,6 +144,8 @@
 			</div>
 		</div>
     </div>
+
+    @include('landing.partials.random_blogs')
 
     @include('includes.footer')
 

@@ -24,7 +24,7 @@ $(document).ready(function () {
 		}else {
 			target.text(count-1)
 		}
-		$(this).toggleClass('btn-danger btn-default like unlike');
+		$(this).toggleClass('btn-rose btn-default like unlike');
 	});
 
 });

@@ -31,6 +31,9 @@ class CommentController extends Controller
     {
         $data = self::validation();
         if($request->ajax()){
+            if (master()) {
+                $data['confirmed'] = 1;
+            }
             Comment::create($data);
             return view('ajaxes.comment_ok');
         }elseif(master()) {

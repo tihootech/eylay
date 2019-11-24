@@ -35,6 +35,12 @@ function human_date($timestamp)
     return \Morilog\Jalali\Jalalian::forge($timestamp)->format('%d %B، %Y');
 }
 
+function modern_date($timestamp)
+{
+    return \Morilog\Jalali\Jalalian::forge($timestamp)->ago();
+}
+
+
 function date_picker_date($income)
 {
     return $income ? \Morilog\Jalali\Jalalian::forge($income)->format('%Y/%m/%d') : null;

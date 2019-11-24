@@ -18,7 +18,7 @@ class Comment extends Model
         return $this->morphTo();
     }
 
-    public function comments()
+    public function replies()
     {
         return $this->morphMany(Comment::class, 'owner')->whereConfirmed(1)->latest();
     }
@@ -33,8 +33,25 @@ class Comment extends Model
         return $this->author_type == 'guest' ? __('GUEST') : $this->author->user->name ?? 'Database Error';
     }
 
-    public function posted_by_master()
+    public function public_link()
     {
-        return $this->author_type == Master::class;
+        if ($this->owner) {
+            if ($this->owner_type != Comment::class) {
+                return $this->owner->public_link() . '#comment-' . $this->id;
+            }else {
+                return $this->owner->public_link();
+            }
+        }else {
+            return '#';
+        }
+    }
+
+    public function posted_by($type)
+    {
+        if ($type == 'guest') {
+            return $this->author_type == 'guest';
+        }else {
+            return $this->author_type == class_name($type);
+        }
     }
 }

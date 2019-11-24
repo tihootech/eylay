@@ -60,7 +60,7 @@ function random_rgba($opacity=null)
     return "rgba(".rand(1,255).", ".rand(1,255).", ".rand(1,255).", $opacity)";
 }
 
-function urlfriendly($input){
+function urf($input){
     return str_replace(' ', '-', $input);
 }
 
@@ -78,7 +78,8 @@ function liked($otype, $oid)
 {
     if ($user = auth()->user()) {
         $owner_type = class_name($otype);
-        return \App\Like::where('owner_type', $owner_type)->where('owner_id', $oid)->where('liker_id', $user->class_id())->where('liker_type', $user->class_type())->first();
+        $like = \App\Like::where('owner_type', $owner_type)->where('owner_id', $oid)->where('liker_id', $user->class_id())->where('liker_type', $user->class_type())->first();
+        return $like;
     }else {
         return false;
     }

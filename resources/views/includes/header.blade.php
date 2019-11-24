@@ -39,12 +39,12 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{route('courses', urlfriendly(__('EDU_VIDEOS')))}}">
+							<a href="{{route('courses', urf(__('EDU_VIDEOS')))}}">
 								<i class="material-icons">movie</i> @lang('EDU_VIDEOS')
 							</a>
 						</li>
 						<li>
-							<a href="{{route('courses', urlfriendly(__('WORKSHOPS')))}}">
+							<a href="{{route('courses', urf(__('WORKSHOPS')))}}">
 								<i class="material-icons">business</i> @lang('WORKSHOPS')
 							</a>
 						</li>
