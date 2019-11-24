@@ -32,8 +32,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $data = self::validation(new Blog);
-        $data['author_type'] = auth()->user()->class_type();
-        $data['author_id'] = auth()->user()->class_id();
+        $data['author_id'] = auth()->id();
         Blog::create($data);
         return redirect()->route('blog.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }

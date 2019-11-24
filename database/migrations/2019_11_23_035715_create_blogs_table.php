@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->text('subtitle')->nullable();
             $table->unsignedBigInteger('seens')->default(0);
             $table->unsignedInteger('category_id');
-            $table->morphs('author');
+            $table->unsignedBigInteger('author_id'); // author_id is a user_id
             $table->string('image');
             $table->string('bg');
             $table->text('content');

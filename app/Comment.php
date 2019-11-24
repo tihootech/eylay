@@ -10,7 +10,7 @@ class Comment extends Model
 
     public function author()
     {
-        return $this->morphTo();
+        return $this->belongsTo(User::class);
     }
 
     public function owner()
@@ -30,7 +30,7 @@ class Comment extends Model
 
     public function author_name()
     {
-        return $this->author_type == 'guest' ? __('GUEST') : $this->author->user->name ?? 'Database Error';
+        return $this->author ? $this->author->name : __('GUEST');
     }
 
     public function public_link()
@@ -48,10 +48,6 @@ class Comment extends Model
 
     public function posted_by($type)
     {
-        if ($type == 'guest') {
-            return $this->author_type == 'guest';
-        }else {
-            return $this->author_type == class_name($type);
-        }
+        return $type == 'guest' ? !$this->user_id : ($this->author && $this->author->type == $type);
     }
 }

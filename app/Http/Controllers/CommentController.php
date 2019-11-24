@@ -38,6 +38,7 @@ class CommentController extends Controller
             return view('ajaxes.comment_ok');
         }elseif(master()) {
             $data['confirmed'] = $request->confirmed;
+            $data['author_id'] = null; // for fake comments
             Comment::create($data);
             return redirect()->route('comment.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
         }else {
@@ -80,13 +81,7 @@ class CommentController extends Controller
             'owner_id'=>'required',
             'owner_type'=> Rule::in(['comment', 'blog', 'course']),
         ]);
-        if ($user = auth()->user()) {
-            $data['author_type'] = $user->class_type();
-            $data['author_id'] = $user->class_id();
-        }else {
-            $data['author_type'] = 'guest';
-            $data['author_id'] = 0;
-        }
+        $data['author_id'] = auth()->id();
         $data['owner_type'] = class_name($data['owner_type']);
         return $data;
     }

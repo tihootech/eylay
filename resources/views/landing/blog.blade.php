@@ -33,8 +33,8 @@
                                     {{human_date($blog->created_at)}}
                                 </p>
                                 <small>
-        							    {{ $blog->author_name() }}
-        							</small>
+    							    {{ $blog->author_name() }}
+    							</small>
                             </blockquote>
                             <div class="blog-tags">
                                 تگ ها:

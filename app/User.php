@@ -26,16 +26,5 @@ class User extends Authenticatable
     {
         return $this->email_verified_at ? true : false;
     }
-
-    public function class_type()
-    {
-        return class_name($this->type);
-    }
-
-    public function class_id()
-    {
-        $class = $this->class_type();
-        $found = $class::where('user_id', auth()->id())->first();
-        return $found ? $found->id : 0;
-    }
+    
 }

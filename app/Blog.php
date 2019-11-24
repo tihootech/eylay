@@ -15,7 +15,7 @@ class Blog extends Model
 
     public function author()
     {
-        return $this->morphTo();
+        return $this->belongsTo(User::class);
     }
 
     public function comments()
@@ -40,7 +40,7 @@ class Blog extends Model
 
     public function author_name()
     {
-        return $this->author->user->name ?? 'Database Error';
+        return $this->author->name ?? 'Database Error';
     }
 
     public function tags_list()

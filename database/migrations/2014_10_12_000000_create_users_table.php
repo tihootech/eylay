@@ -18,9 +18,10 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('type')->default('code_amooz');
+            $table->string('type')->default('code_amooz'); // code_amooz, student, admin, master, ...
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('profile')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

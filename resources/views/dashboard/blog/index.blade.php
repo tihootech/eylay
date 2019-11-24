@@ -30,7 +30,7 @@
                         <tr>
                             <th scope="row"> {{$i+1}} </th>
                             <td> <a href="{{$blog->public_link()}}" target="_blank"> {{$blog->title}} </a> </td>
-                            <td> {{$blog->category->name ?? 'Database Error'}} </td>
+                            <td> {{$blog->category_name()}} </td>
                             <td> {{$blog->author_name()}} </td>
                             <td> {{$blog->seens}} </td>
                             <td> {{short($blog->content, 50)}} </td>

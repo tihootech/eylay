@@ -11,8 +11,7 @@ class Like extends Model
     	$like = new self;
 		$like->owner_id = $oid;
 		$like->owner_type = class_name($otype);
-		$like->liker_id = $user->class_id();
-		$like->liker_type = $user->class_type();
+		$like->liker_id = $user->id;
 		$like->save();
 		return $like;
     }

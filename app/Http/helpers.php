@@ -22,7 +22,7 @@ function short($string, $n=100)
 function master()
 {
     $user = auth()->user();
-    return $user->type == 'master';
+    return $user && $user->type == 'master';
 }
 
 function upload($new_file, $old_file=null)
@@ -78,7 +78,7 @@ function liked($otype, $oid)
 {
     if ($user = auth()->user()) {
         $owner_type = class_name($otype);
-        $like = \App\Like::where('owner_type', $owner_type)->where('owner_id', $oid)->where('liker_id', $user->class_id())->where('liker_type', $user->class_type())->first();
+        $like = \App\Like::where('owner_type', $owner_type)->where('owner_id', $oid)->where('liker_id', $user->id)->first();
         return $like;
     }else {
         return false;

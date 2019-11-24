@@ -38,7 +38,7 @@ class LandingController extends Controller
             if ($route == 'blogs_by_author') {
                 $author = $text;
                 $user = User::whereName($author)->firstOrFail();
-                $blogs = $blogs->where('author_id', $user->class_id());
+                $blogs = $blogs->where('author_id', $user->id);
             }elseif ($route == 'blogs_by_cat') {
                 $current_cat = $text;
                 $category = Category::whereName($current_cat)->firstOrFail();

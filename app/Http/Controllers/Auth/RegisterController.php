@@ -72,8 +72,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        CodeAmooz::create(['user_id'=>$user->id]);
-
         // Mail::to($data['email'])->send(new WelcomeMail($user));
 
         return $user;

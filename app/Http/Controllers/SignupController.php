@@ -33,9 +33,7 @@ class SignupController extends Controller
 			return view('ajaxes.already_signed_up', compact('found'));
 		}elseif($course->status != 'closed') {
 			$data['step'] = $course->step;
-			if (auth()->user()) {
-				$data['user_id'] = auth()->id();
-			}
+			$data['user_id'] = auth()->id();
 			Signup::create($data);
 			return view('ajaxes.signup_ok');
 		}else {

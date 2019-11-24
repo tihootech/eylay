@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->text('content');
             $table->morphs('owner');
-            $table->morphs('author');
+            $table->unsignedBigInteger('author_id')->nullable(); // author_id is a user_id, null for guests
             $table->boolean('confirmed')->default(0);
             $table->timestamps();
         });
