@@ -91,6 +91,12 @@ class CommentController extends Controller
         ]);
         $data['author_id'] = auth()->id();
         $data['owner_type'] = class_name($data['owner_type']);
+
+        $found = $data['owner_type']::find($data['owner_id']);
+        if (!$found) {
+            abort(403);
+        }
+
         return $data;
     }
 }

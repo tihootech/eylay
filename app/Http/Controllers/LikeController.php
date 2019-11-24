@@ -19,6 +19,11 @@ class LikeController extends Controller
 			if ($like) {
 				$like->delete();
 			}else {
+                $class = class_name($request->otype);
+                $found = $class::find($request->oid);
+                if (!$found) {
+                    abort(403);
+                }
 				Like::make($request->otype, $request->oid, $user);
 			}
 			return ['success' => true];
