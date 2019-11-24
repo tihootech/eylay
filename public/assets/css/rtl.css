@@ -79,3 +79,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 	margin-right: 0;
 	margin-left: 15px;
 }
+.nav-tabs > li .material-icons {
+	margin : -1px 0 0 5px;
+}

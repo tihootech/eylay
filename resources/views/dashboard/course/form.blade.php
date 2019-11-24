@@ -22,14 +22,6 @@
 				<input type="text" class="form-control" name="title" id="title" value="{{old('title') ?? $course->title}}" required>
 			</div>
 
-			<div class="col-md-3 form-group">
-				<label for="type"> @lang('COURSE_TYPE') </label>
-				<select class="form-control" id="type" name="type">
-                    <option value="online">@lang('ONLINE')</option>
-                    <option value="workshop">@lang('WORKSHOP')</option>
-                </select>
-			</div>
-
             <div class="col-md-3 form-group">
 				<label for="supertitle"> @lang('SUPERTITLE') </label>
 				<input type="text" class="form-control" name="supertitle" id="supertitle" value="{{old('supertitle') ?? $course->supertitle}}" required>
@@ -41,13 +33,33 @@
 			</div>
 
             <div class="col-md-3 form-group">
+				<label for="step"> @lang('STEP') </label>
+				<input type="number" class="form-control" name="step" id="step" value="{{old('step') ?? $course->step ?? 1}}">
+			</div>
+
+            <div class="col-md-3 form-group">
+				<label for="status"> @lang('STATUS') </label>
+                <select class="form-control" name="status" id="status" required>
+                    <option value="registering" @if(old('status') ?? $course->status == 'registering') @endif>
+                        @lang(strtoupper('registering'))
+                    </option>
+                    <option value="performing" @if(old('status') ?? $course->status == 'performing') @endif>
+                        @lang(strtoupper('performing'))
+                    </option>
+                    <option value="closed" @if(old('status') ?? $course->status == 'closed') @endif>
+                        @lang(strtoupper('closed'))
+                    </option>
+                </select>
+			</div>
+
+            <div class="col-md-3 form-group">
 				<label for="image"> @lang('IMAGE') </label>
 				<input type="file" class="form-control" name="image" id="image" @unless($course->id) required @endunless>
 			</div>
 
             <div class="col-md-3 form-group">
 				<label for="bg"> @lang('BG') </label>
-				<input type="file" class="form-control" name="bg" id="bg" @unless($course->id) required @endunless>
+				<input type="file" class="form-control" name="bg" id="bg">
 			</div>
 
             <div class="col-md-12 form-group">

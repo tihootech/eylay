@@ -25,7 +25,7 @@
 @master
 	<li>
 		<a class="app-menu__item @if( rn() == 'course.index' ) active @endif" href="{{route("course.index")}}">
-			<i class="ml-2 material-icons">movie</i>
+			<i class="ml-2 material-icons">perm_contact_calendar</i>
 			<span class="app-menu__label"> @lang('COURSES') </span>
 		</a>
 	</li>

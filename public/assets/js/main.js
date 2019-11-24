@@ -10,6 +10,40 @@ $(document).ready(function () {
 		ajax(url, data, $(this));
 	});
 
+	$('.signup-form').submit(function (e) {
+
+		e.preventDefault();
+
+		var url = $(this).attr('action');
+		var data = {};
+		$(this).find('.data').each(function () {
+			data[$(this).attr('name')] = $(this).val();
+		});
+
+		// validation
+		var valid = true;
+		var name = $('.data[name=name]').val();
+		var phone = $('.data[name=phone]').val();
+		if (name.length > 150) {
+			$(this).find('.name-error').slideDown();
+			valid = false;
+		}else {
+			$(this).find('.name-error').slideUp();
+		}
+		if (phone.length != 11) {
+			$(this).find('.phone-error').slideDown();
+			valid = false;
+		}else {
+			$(this).find('.phone-error').slideUp();
+		}
+
+		// ajax call
+		if (valid) {
+			ajax(url, data, $(this));
+		}
+
+	});
+
 	$('.like, .unlike').click(function () {
 		var url = $('meta[name=root]').attr('content') + '/like';
 		var data = {

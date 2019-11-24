@@ -141,24 +141,7 @@
                                                 >
                                                 <i class="material-icons">reply</i> پاسخ دادن
                                             </a>
-                                            @guest
-                                                <a href="javascript:void" class="btn btn-rose btn-simple pull-right" data-toggle="modal" data-target="#loginModal">
-                                                    <i class="material-icons">favorite</i>
-                                                    <span class="count"> {{$comment->likes->count()}}</span>
-                                                </a>
-                                            @else
-                                                @if (liked('comment', $comment->id))
-                                                    <a href="javascript:void" data-oid="{{$comment->id}}" data-otype="comment" class="unlike btn btn-rose btn-simple pull-right">
-                                                        <i class="material-icons">favorite</i>
-                                                        <span class="count"> {{$comment->likes->count()}}</span>
-                                                    </a>
-                                                @else
-                                                    <a href="javascript:void" data-oid="{{$comment->id}}" data-otype="comment" class="like btn btn-default btn-simple pull-right">
-                                                        <i class="material-icons">favorite</i>
-                                                        <span class="count">{{$comment->likes->count()}}</span>
-                                                    </a>
-                                                @endif
-                                            @endguest
+                                            @include('landing.partials.like_comment')
                                         </div>
                                         <div class="collapse" id="answer-comment-{{$comment->id}}">
                                             <form action="{{route('comment.store')}}" method="AJAX" class="media-body">
@@ -178,6 +161,7 @@
                                                 <div class="media-body">
 
                                                     @include('landing.partials.comment_text', ['comment'=>$reply])
+                                                    @include('landing.partials.like_comment', ['comment'=>$reply])
 
                                                 </div>
                                             </div>

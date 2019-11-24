@@ -19,10 +19,11 @@
                     <tr>
                         <th scope="col"> @lang('ROW') </th>
                         <th scope="col"> @lang('TITLE') </th>
-                        <th scope="col"> @lang('COURSE_TYPE') </th>
                         <th scope="col"> @lang('SUPERTITLE') </th>
                         <th scope="col"> @lang('SUBTITLE') </th>
-                        <th scope="col" colspan="2"> @lang('OPERATIONS') </th>
+                        <th scope="col"> @lang('STATUS') </th>
+                        <th scope="col"> @lang('STEP') </th>
+                        <th scope="col" colspan="3"> @lang('OPERATIONS') </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,9 +31,16 @@
                         <tr>
                             <th scope="row"> {{$i+1}} </th>
                             <td> {{$course->title}} </td>
-                            <td> {{$course->persian_type()}} </td>
                             <td> {{$course->supertitle}} </td>
                             <td> {{$course->subtitle}} </td>
+                            <td> @lang(strtoupper($course->subtitle)) </td>
+                            <td> {{$course->step}} </td>
+                            <td>
+                                <a href="{{route('course.show', $course->id)}}" class="btn btn-round btn-outline-primary">
+                                    <i class="fa fa-list ml-2"></i>
+                                    @lang('DETAILS')
+                                </a>
+                            </td>
                             <td>
                                 <a href="{{route('course.edit', $course->id)}}" class="btn btn-round btn-outline-success">
                                     <i class="fa fa-edit ml-2"></i>

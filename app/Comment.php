@@ -20,7 +20,7 @@ class Comment extends Model
 
     public function replies()
     {
-        return $this->morphMany(Comment::class, 'owner')->whereConfirmed(1)->latest();
+        return $this->morphMany(Comment::class, 'owner')->withCount('likes')->whereConfirmed(1)->orderBy('likes_count', 'desc')->latest();
     }
 
     public function likes()

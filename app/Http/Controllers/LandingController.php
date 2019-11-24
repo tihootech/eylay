@@ -12,11 +12,11 @@ class LandingController extends Controller
 {
     public function index()
     {
-        $workshops = Course::whereType('workshop')->latest()->limit(2)->get();
-        $online_courses = Course::whereType('online')->latest()->limit(4)->get();
+        $courses = Course::latest()->limit(2)->get();
         $blog = Blog::latest()->first();
         $latest_blogs = Blog::latest()->skip(1)->limit(3)->get();
-    	return view('landing.index', compact('workshops', 'online_courses', 'blog', 'latest_blogs'));
+        $random_blogs = Blog::inRandomOrder()->limit(3)->get();
+    	return view('landing.index', compact('courses', 'blog', 'latest_blogs', 'random_blogs'));
     }
 
     public function blogs($text=null)
@@ -65,5 +65,13 @@ class LandingController extends Controller
         $random_blogs = Blog::where('id', '!=', $blog->id)->inRandomOrder()->limit(3)->get();
         $blog->increment('seens');
         return view('landing.blog', compact('blog', 'random_blogs'));
+    }
+
+    public function signup_page()
+    {
+        $registering_courses = Course::whereStatus('registering')->get();
+        $performing_courses = Course::whereStatus('performing')->get();
+        $closed_courses = Course::whereStatus('closed')->get();
+        return view('landing.signup_page', compact('registering_courses', 'performing_courses', 'closed_courses'));
     }
 }

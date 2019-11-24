@@ -24,7 +24,7 @@
 
     <div class="main main-raised">
 
-        <div class="cd-section" id="features">
+        <div class="cd-section" id="education">
 
             <div class="container">
 
@@ -88,7 +88,7 @@
 
             <!--     *********    PROJECTS 3     *********      -->
 
-            <div class="projects-3 section-dark" id="projects-3">
+            <div class="projects-3 section-image workshops-bg background-fixed" id="projects-3">
 
                 <div class="container">
                     <div class="row">
@@ -100,21 +100,21 @@
 
                     <div class="row">
                         <div class="col-md-1"></div>
-                        @foreach ($workshops as $workshop)
+                        @foreach ($courses as $course)
                             <div class="col-md-5">
                                 <div class="card card-plain">
-                                    <a href="{{$workshop->public_link()}}">
+                                    <a href="{{route('signup_page')}}">
                                         <div class="card-image">
-                                            <img src="{{asset($workshop->image)}}" />
+                                            <img src="{{asset($course->image)}}" />
                                         </div>
                                     </a>
                                     <div class="card-content">
-                                        <h6 class="category">{{$workshop->supertitle}}</h6>
-                                        <a href="{{$workshop->public_link()}}">
-                                            <h4 class="card-title">{{$workshop->title}}</h4>
+                                        <h6 class="category">{{$course->supertitle}}</h6>
+                                        <a href="{{route('signup_page')}}">
+                                            <h4 class="card-title">{{$course->title}}</h4>
                                         </a>
                                         <p class="card-description">
-                                            {{short($workshop->info)}}
+                                            {{short($course->info)}}
                                         </p>
 
                                     </div>
@@ -124,7 +124,10 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="#" class="btn btn-round btn-rose"> مشاهده همه </a>
+                        <a href="{{route('signup_page')}}" class="btn btn-round btn-rose">
+                            <i class="material-icons ml-2">group_add</i>
+                            ثبت نام در دوره های آموزشی
+                        </a>
                     </div>
 
                 </div>
@@ -132,50 +135,66 @@
 
             <!--     *********    END PROJECTS 3      *********      -->
 
-            <!--     *********    PROJECTS 1     *********      -->
+        </div>
 
-            <div class="projects-1" id="projects-1">
+        <div class="cd-section" id="features">
 
-                <div class="container">
+            <div class="container">
 
-                    <h2 class="title text-center">ویدئو های آموزشی</h2>
+                <!--     *********     FEATURES 1      *********      -->
+
+                <div class="features-1">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h2> معرفی ابزار های پرکاربرد </h2>
+                        </div>
+                    </div>
 
                     <div class="row">
 
-                        @foreach ($online_courses as $course)
-                            <div class="col-md-6">
-                                <div class="card card-raised card-background" style="background-image: url('{{asset($course->image)}}')">
-
-                                    <div class="card-content">
-                                        <h6 class="category text-info">{{$course->supertitle}}</h6>
-                                        <a href="{{$course->public_link()}}">
-                                            <h3 class="card-title">{{$course->title}}</h3>
-                                        </a>
-                                        <p class="card-description">
-                                            {{short($course->info)}}
-                                        </p>
-                                        <a href="{{$course->public_link()}}" class="btn btn-rose btn-round">
-                                            <i class="material-icons ml-1">remove_red_eye</i> مشاهده
-                                        </a>
-                                    </div>
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-primary">
+                                    <i class="material-icons">movie</i>
                                 </div>
+                                <h4 class="info-title">ویدئو های آموزشی</h4>
+                                <p>تهیه ویدئو های آموزشی از مباحث و زبان های مختلف برنامه نویسی در سطح های مختلف (از مبتدی تا پیشرفته) به صورت جامع و با الگوگیری از ویدئو های آموزشی سایت لیندا . لیندا یک از کامل ترین منابع آموزشی به زبان انگلیسی میباشد.</p>
                             </div>
-                        @endforeach
+                        </div>
 
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-primary">
+                                    <i class="material-icons">file_copy</i>
+                                </div>
+                                <h4 class="info-title">فایل ها</h4>
+                                <p>یکی از مشکلاتی که برخی از ویدئو های آموزشی دارند این است که فایل های استفاده شده در اختیار کدآموزان قرار نمیگیرد. در ایلای تمام فایل ها و کد های استفاده شده در پروژه، در قالب یک فایل فشرده در اختیار کدآموز قرار میگیرد.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-primary">
+                                    <i class="material-icons">perm_phone_msg</i>
+                                </div>
+                                <h4 class="info-title">پشتیبانی و همیاری</h4>
+                                <p>ضبط ویدئو های آموزشی پایان کار ما نیست. درصورتی که در حین مشاهده ویدئو ها با سوالی مواجه شدید میتوانید با ایجاد حساب کاربری سوالات خود را در همین سایت از ما بپرسید. ایلای میکوشد به سوالات شما پاسخ دهد.</p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
 
+                <!--     *********    END FEATURES 1      *********      -->
+
             </div>
-
-            <!--     *********    END PROJECTS 1      *********      -->
-
         </div>
 
         <div class="cd-section" id="testimonials">
 
             <!--     *********    TESTIMONIALS 1     *********      -->
 
-            <div class="testimonials-1 section-image" style="background-image: url({{asset('assets/img/faq.jpg')}})">
+            <div class="testimonials-1 section-image faq-bg background-fixed">
 
                 <div class="container">
                     <div class="row">
@@ -327,121 +346,7 @@
 
     </div>
 
-    <div class="cd-section" id="pricing">
-
-        <!--     *********    PRICING 5     *********      -->
-
-        <div class="pricing-5 section-gray" id="pricing-5">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2 class="title">حمایت از ما</h2>
-                        <ul class="nav nav-pills" role="tablist">
-                            <li class="active">
-                                <a href="#personal" role="tab" data-toggle="tab">
-                                6 ماهه
-                            </a>
-                            </li>
-                            <li>
-                                <a href="#commercial" role="tab" data-toggle="tab">
-                                1 ساله
-                            </a>
-                            </li>
-                        </ul>
-
-                        <p class="text-gray"> دسترسی به تمامی دوره های آموزشی به مدت 6 یا 12 ماه </p>
-                    </div>
-
-                    <div class="col-md-7 col-md-offset-1">
-                        <div class="tab-content tab-space">
-                            <div class="tab-pane active" id="personal">
-
-                                <div class="col-md-6">
-                                    <div class="card card-pricing card-raised">
-                                        <div class="card-content">
-                                            <h6 class="category">HTML Package</h6>
-                                            <h1 class="card-title"><small>$</small>0</h1>
-                                            <ul>
-                                                <li><b>1</b> Developer</li>
-                                                <li><b>99+</b> Components</li>
-                                                <li><b>HTML</b> Elements</li>
-                                                <li><b>14</b> Page Examples</li>
-                                            </ul>
-                                            <a href="#pablo" class="btn btn-primary btn-round">
-                                            Free Download
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="card card-pricing card-plain">
-                                        <div class="card-content">
-                                            <h6 class="category">HTML & Sketch Package</h6>
-                                            <h1 class="card-title"><small>$</small>79</h1>
-                                            <ul>
-                                                <li><b>1</b> Developer</li>
-                                                <li><b>199+</b> Components</li>
-                                                <li><b>HTML & Sketch</b> Elements</li>
-                                                <li><b>22</b> Page Examples</li>
-                                            </ul>
-                                            <a href="#pablo" class="btn btn-white btn-round">
-                                            Buy Now!
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="tab-pane" id="commercial">
-                                <div class="col-md-6">
-                                    <div class="card card-pricing card-raised">
-                                        <div class="card-content">
-                                            <h6 class="category">HTML Package</h6>
-                                            <h1 class="card-title"><small>$</small>159</h1>
-                                            <ul>
-                                                <li><b>5+</b> Developers</li>
-                                                <li><b>199+</b> Components</li>
-                                                <li><b>HTML</b> Elements</li>
-                                                <li><b>24</b> Page Examples</li>
-                                            </ul>
-                                            <a href="#pablo" class="btn btn-primary btn-round">
-                                            Buy Now!
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="card card-pricing card-plain">
-                                        <div class="card-content">
-                                            <h6 class="category">HTML & Sketch Package</h6>
-                                            <h1 class="card-title"><small>$</small>299</h1>
-                                            <ul>
-                                                <li><b>10+</b> Developers</li>
-                                                <li><b>299+</b> Components</li>
-                                                <li><b>HTML & Sketch</b> Elements</li>
-                                                <li><b>45</b> Page Examples</li>
-                                            </ul>
-                                            <a href="#pablo" class="btn btn-white btn-round">
-                                            Buy Now!
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <!--     *********    END PRICING 5      *********      -->
+    @include('landing.partials.random_blogs')
 
     </div>
 
@@ -456,7 +361,7 @@
                 </a>
             </li>
             <li>
-                <a href="#features" data-number="2">
+                <a href="#education" data-number="2">
                     <span class="cd-dot"></span>
                     <span class="cd-label">نحوه آموزش</span>
                 </a>
@@ -465,6 +370,12 @@
                 <a href="#projects" data-number="3">
                     <span class="cd-dot"></span>
                     <span class="cd-label">دوره های آموزشی</span>
+                </a>
+            </li>
+            <li>
+                <a href="#features" data-number="3">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label"> معرفی ابزار های پرکاربرد </span>
                 </a>
             </li>
             <li>
@@ -480,15 +391,9 @@
                 </a>
             </li>
             <li>
-                <a href="#contactus" data-number="6">
+                <a href="#random-blogs" data-number="7">
                     <span class="cd-dot"></span>
-                    <span class="cd-label">عضویت در سایت</span>
-                </a>
-            </li>
-            <li>
-                <a href="#pricing" data-number="7">
-                    <span class="cd-dot"></span>
-                    <span class="cd-label">حمایت از ما</span>
+                    <span class="cd-label"> مطالب اتفاقی </span>
                 </a>
             </li>
         </ul>

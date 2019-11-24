@@ -16,12 +16,13 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->unique()->index();
-            $table->string('type')->default('online'); // online, workshop
             $table->string('supertitle');
             $table->string('subtitle');
             $table->string('image');
-            $table->string('bg');
+            $table->string('bg')->nullable();
             $table->text('info');
+            $table->string('status')->default('registering'); // registering, performing, closed
+            $table->integer('step')->default(1); // step for reopening a course
             $table->timestamps();
         });
     }

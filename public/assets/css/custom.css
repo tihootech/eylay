@@ -4,6 +4,9 @@
 .mx-3 {
 	margin: 0 .5em
 }
+.mt-2 {
+	margin-top: .25em
+}
 .ml-2 {
 	margin-left: .25em
 }
@@ -32,12 +35,17 @@
 .label {
 	margin: 0 3px;
 }
-
-:target {
+.not-shown {
+	display: none;
+}
+.subscribe-line{
+	margin: 25px 0px;
+}
+.media:target {
 	border: 2px solid #F44336;
 	padding: 10px;
 }
-:target {
+.media:target {
   animation: highlight 1s ease;
 }
 @keyframes highlight {
@@ -64,4 +72,16 @@
 }
 .authors-bg {
 	background-image: url('../img/authors.jpg')
+}
+.faq-bg {
+	background-image: url('../img/faq.jpg')
+}
+.workshops-bg {
+	background-image: url('../img/workshops.jpg')
+}
+.signup-bg {
+	background-image: url('../img/signup.jpg')
+}
+.background-fixed {
+    background-attachment: fixed;
 }

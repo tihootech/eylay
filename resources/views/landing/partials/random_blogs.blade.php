@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section" id="random-blogs">
     <div class="container">
         <div class="row">
 

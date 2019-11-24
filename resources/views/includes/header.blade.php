@@ -39,22 +39,17 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{route('courses', urf(__('EDU_VIDEOS')))}}">
-								<i class="material-icons">movie</i> @lang('EDU_VIDEOS')
-							</a>
-						</li>
-						<li>
-							<a href="{{route('courses', urf(__('WORKSHOPS')))}}">
+							<a href="#">
 								<i class="material-icons">business</i> @lang('WORKSHOPS')
 							</a>
 						</li>
 						<li>
-							<a href="sections.html#blogs">
+							<a href="#">
 								<i class="material-icons">person</i> درباره من
 							</a>
 						</li>
 						<li>
-							<a href="sections.html#headers">
+							<a href="#">
 								<i class="material-icons">cloud_download</i> دانلود فایل  دوره های آموزشی
 							</a>
 						</li>

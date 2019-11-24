@@ -10,10 +10,12 @@ Route::get('acc', 'AccController@edit')->name('acc');
 Route::put('acc', 'AccController@update')->name('acc_update');
 Route::post('newsletter', 'AccController@newsletter')->name('newsletter');
 
-// courses
-Route::resource('course', 'CourseController')->except('show');
-Route::get('دوره-ها/{type}', 'LandingController@courses')->name('courses');
-Route::get('دوره/{title}', 'LandingController@show_course')->name('show_course');
+// courses and signups
+Route::resource('course', 'CourseController');
+Route::redirect('join', 'signup');
+Route::get('signup', 'LandingController@signup_page')->name('signup_page');
+Route::post('signup', 'SignupController@signup')->name('signup');
+Route::delete('signup/{signup}', 'SignupController@destroy')->name('signup.destroy');
 
 // like
 Route::post('like', 'LikeController@like')->name('like');

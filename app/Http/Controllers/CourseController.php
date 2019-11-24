@@ -21,6 +21,11 @@ class CourseController extends Controller
         return view('dashboard.course.index', compact('courses'));
     }
 
+    public function show(Course $course)
+    {
+        return view('dashboard.course.show', compact('course'));
+    }
+
     public function create()
     {
         $course = new Course;
@@ -56,13 +61,14 @@ class CourseController extends Controller
     public static function validation($course)
     {
         $data = request()->validate([
-            'type' => 'nullable',
-            'supertitle' => 'required',
             'title' => 'required|unique:courses,title,'.$course->id,
+            'supertitle' => 'required',
             'subtitle' => 'required',
             'info' => 'required',
             'image' => Rule::requiredIf(!$course->id),
-            'bg' => Rule::requiredIf(!$course->id),
+            'bg' => 'nullable',
+            'status' => 'nullable',
+            'step' => 'nullable',
         ]);
 
         if ( isset($data['image']) && $data['image'] ) {
