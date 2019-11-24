@@ -117,8 +117,7 @@
 					<div class="col-md-6">
 						<div class="card card-plain card-form-horizontal">
 							<div class="card-content">
-								<form method="POST" action="{{ route('newsletter') }}">
-                                    @csrf
+								<form method="AJAX" action="{{ route('newsletter') }}">
 									<div class="row">
 										<div class="col-md-8">
 
@@ -126,11 +125,11 @@
 												<span class="input-group-addon">
 													<i class="material-icons">mail</i>
 												</span>
-												<input type="email" placeholder="ایمیل شما..." class="form-control" />
+												<input type="email" name="email" placeholder="ایمیل شما..." class="form-control data" />
 											</div>
 										</div>
 										<div class="col-md-4">
-											<button type="button" class="btn btn-primary btn-round btn-block">
+											<button type="submit" class="btn btn-primary btn-round btn-block">
                                                 عضویت در خبرنامه
                                             </button>
 										</div>

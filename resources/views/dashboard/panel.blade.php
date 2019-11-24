@@ -47,6 +47,12 @@
 			<span class="app-menu__label"> @lang('FILES') </span>
 		</a>
 	</li>
+	<li>
+		<a class="app-menu__item @if( rn() == 'newsletter.index' ) active @endif" href="{{route("newsletter.index")}}">
+			<i class="ml-2 material-icons">style</i>
+			<span class="app-menu__label"> @lang('NEWSLETTER') </span>
+		</a>
+	</li>
 @endmaster
 
 <li>

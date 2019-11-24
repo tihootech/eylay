@@ -16,7 +16,11 @@ Route::get('download', function () {
 // general user account control
 Route::get('acc', 'AccController@edit')->name('acc');
 Route::put('acc', 'AccController@update')->name('acc_update');
-Route::post('newsletter', 'AccController@newsletter')->name('newsletter');
+
+// newsletter
+Route::post('newsletter', 'NewsletterController@join')->name('newsletter');
+Route::get('newsletter', 'NewsletterController@index')->name('newsletter.index');
+Route::delete('newsletter/{newsletter}', 'NewsletterController@destroy')->name('newsletter.destroy');
 
 // courses and signups
 Route::resource('course', 'CourseController');

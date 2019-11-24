@@ -52,7 +52,7 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
-        delete_file([$course->image, $course->bg]);
+        delete_file([$blog->image, $blog->bg]);
         $blog->delete();
         return redirect()->route('blog.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }
