@@ -41,6 +41,12 @@
 			<span class="app-menu__label"> @lang('COMMENTS') </span>
 		</a>
 	</li>
+	<li>
+		<a class="app-menu__item @if( rn() == 'file.index' ) active @endif" href="{{route("file.index")}}">
+			<i class="ml-2 material-icons">cloud</i>
+			<span class="app-menu__label"> @lang('FILES') </span>
+		</a>
+	</li>
 @endmaster
 
 <li>

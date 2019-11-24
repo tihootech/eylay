@@ -7,6 +7,7 @@ use App\Course;
 use App\Blog;
 use App\User;
 use App\Category;
+use App\File;
 
 class LandingController extends Controller
 {
@@ -73,5 +74,16 @@ class LandingController extends Controller
         $performing_courses = Course::whereStatus('performing')->get();
         $closed_courses = Course::whereStatus('closed')->get();
         return view('landing.signup_page', compact('registering_courses', 'performing_courses', 'closed_courses'));
+    }
+
+    public function about()
+    {
+        return view('landing.about');
+    }
+
+    public function download_files()
+    {
+        $files = File::whereAccess('public')->latest()->get();
+        return view('landing.download_files', compact('files'));
     }
 }

@@ -82,6 +82,12 @@
 .signup-bg {
 	background-image: url('../img/signup.jpg')
 }
+.about-bg {
+	background-image: url('../img/about.jpg')
+}
+.download-bg {
+	background-image: url('../img/download.jpg')
+}
 .background-fixed {
     background-attachment: fixed;
 }

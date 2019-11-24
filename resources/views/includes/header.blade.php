@@ -20,9 +20,16 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+
 				<li>
-					<a href="index.html">
+					<a href="{{route('signup_page')}}">
 						<i class="material-icons">group_add</i> ثبت نام در دوره های آموزشی
+					</a>
+				</li>
+
+				<li>
+					<a href="{{route('blogs')}}">
+						<i class="material-icons">collections</i> وبلاگ
 					</a>
 				</li>
 
@@ -34,22 +41,12 @@
 					<ul class="dropdown-menu dropdown-with-icons">
 
 						<li>
-							<a href="{{route('blogs')}}">
-								<i class="material-icons">collections</i> وبلاگ
+							<a href="{{route('about')}}">
+								<i class="material-icons">group</i> درباره ما
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<i class="material-icons">business</i> @lang('WORKSHOPS')
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="material-icons">person</i> درباره من
-							</a>
-						</li>
-						<li>
-							<a href="#">
+							<a href="{{route('download_files')}}">
 								<i class="material-icons">cloud_download</i> دانلود فایل  دوره های آموزشی
 							</a>
 						</li>

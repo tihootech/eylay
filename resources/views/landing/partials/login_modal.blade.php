@@ -13,14 +13,15 @@
 					</div>
 				</div>
 				<div class="modal-body">
-					<form class="form" method="POST" action="{{ route('login') }}">
+					<form class="form" method="POST" action="{{ route('login') }}" id="modal-login">
                         @csrf
+						<input type="hidden" name="redirect_to" value="{{request()->fullUrl()}}">
 						<p class="description text-center mt-3"> ایمیل و رمز عبور خود را وارد کنید </p>
 						@include('landing.partials.login_inputs')
 					</form>
 				</div>
 				<div class="modal-footer text-center">
-                    <button type="submit" class="btn btn-primary">ورود به حساب کاربری</button>
+                    <button type="submit" form="modal-login" class="btn btn-primary">ورود به حساب کاربری</button>
                     <div class="row">
                         <div class="col-md-6">
                             <a class="btn btn-primary btn-simple btn-wd" href="{{ route('register') }}">
