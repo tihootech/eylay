@@ -12,6 +12,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 	font-weight: normal;
 }
 
+pre, code {
+	direction: ltr;
+	text-align: left;
+}
+
 .navbar .navbar-nav > li > a:not(.btn) .material-icons {
 	margin-left: 3px;
 	margin-right: unset;
@@ -81,4 +86,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 }
 .nav-tabs > li .material-icons {
 	margin : -1px 0 0 5px;
+}
+.radio label span {
+	left: unset;
+}
+.radio label {
+	padding-left: unset;
+	padding-right: 35px;
+}
+.radio .radio-text {
+	margin-right: 20px;
 }

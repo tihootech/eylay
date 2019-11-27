@@ -43,11 +43,7 @@
                             <td> {{$comment->author_name()}} </td>
                             <td> {{short($comment->content, 50)}} </td>
                             <td>
-                                @if ($comment->confirmed)
-                                    <i class="fa fa-check text-success"></i>
-                                @else
-                                    <i class="fa fa-times text-danger"></i>
-                                @endif
+                                @include('dashboard.partials.yesno', ['boolean' => $comment->confirmed])
                             </td>
                             <td>
                                 <form class="d-inline" action="{{route('comment.confirm', $comment->id)}}" method="post">

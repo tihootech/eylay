@@ -6,3 +6,11 @@
 	font-family: "Dinar";
 	src: url(../fonts/Dinar.ttf);
 }
+
+.dinar {
+	font-family: 'Dinar' !important;
+}
+
+.yekan {
+	font-family: 'Yekan' !important;
+}

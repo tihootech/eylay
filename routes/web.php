@@ -43,6 +43,15 @@ Route::resource('comment', 'CommentController')->except('show');
 //files and downloads
 Route::resource('file', 'FileController')->except('show');
 
+//quiz
+Route::resource('quiz', 'QuizController');
+Route::resource('question', 'QuestionController')->except(['show', 'index']);
+Route::get('آزمون/{title}', 'QuizFillingController@preview')->name('quiz.preview');
+Route::get('quiz/fill/{uid}', 'QuizFillingController@fill')->name('quiz.fill');
+Route::get('quiz/analyze/{quiz_uid}/{filler_uid?}', 'QuizAnalyzeController@analyze')->name('quiz.analyze');
+Route::post('fill/{direction}/{question}/{position?}', 'QuizFillingController@submit_answer')->name('quiz.submit_answer');
+
+
 // blogs
 Route::resource('blog', 'BlogController')->except('show');
 Route::get('مطالب-منتشر-شده', 'LandingController@blogs')->name('blogs');

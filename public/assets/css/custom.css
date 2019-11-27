@@ -10,6 +10,9 @@
 .ml-2 {
 	margin-left: .25em
 }
+.mr-2 {
+	margin-right: .25em
+}
 .mt-4 {
 	margin-top: .75em
 }
@@ -57,6 +60,9 @@
 		border: 2px solid #fff;
 	}
 }
+
+/* real custom */
+
 
 /* same heights */
 .random-blogs .card-description {

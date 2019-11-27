@@ -55,6 +55,7 @@
     <script src="{{asset("dashboard/js/cats-treeview.js")}}"></script>
     <script src="{{asset("dashboard/js/pdp.min.js")}}"></script>
     <script src="{{asset("dashboard/js/dashmain.js")}}"></script>
+    <script src="{{asset("dashboard/js/dashcustom.js")}}"></script>
     <script src="{{asset("dashboard/js/plugins/chart.js")}}"></script>
 
 </body>

@@ -84,3 +84,38 @@ function liked($otype, $oid)
         return false;
     }
 }
+
+function prepare_multiple($inputs)
+{
+    $result = [];
+    foreach ($inputs as $key => $array) {
+        if(is_array($array) && count($array)){
+            foreach ($array as $i => $value) {
+                $result[$i][$key] = $value;
+            }
+        }
+    }
+    return $result;
+}
+
+function update_filling_session($question)
+{
+    $filling = session('filling');
+    $filling['question_id'] = $question->id;
+    session(compact('filling'));
+}
+
+
+function human_time($tatal_seconds, $display_seconds=true)
+{
+    $seconds = $tatal_seconds % 60;
+    $minutes = floor($tatal_seconds / 60);
+    $output = $minutes > 0 ? $minutes.' '.__('MINUTE') : '';
+    if ($minutes && $seconds && $display_seconds) {
+        $output .= __('AND');
+    }
+    if (!$minutes || $display_seconds) {
+        $output .= $seconds > 0 ? $seconds.' '.__('SECOND') : '';
+    }
+    return $output;
+}

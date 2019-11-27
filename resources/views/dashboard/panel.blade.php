@@ -36,6 +36,12 @@
 		</a>
 	</li>
 	<li>
+		<a class="app-menu__item @if( rn() == 'quiz.index' ) active @endif" href="{{route("quiz.index")}}">
+			<i class="ml-2 material-icons">help</i>
+			<span class="app-menu__label"> @lang('QUIZ') </span>
+		</a>
+	</li>
+	<li>
 		<a class="app-menu__item @if( rn() == 'comment.index' ) active @endif" href="{{route("comment.index")}}">
 			<i class="ml-2 material-icons">comment</i>
 			<span class="app-menu__label"> @lang('COMMENTS') </span>

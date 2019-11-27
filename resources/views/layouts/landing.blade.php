@@ -27,12 +27,16 @@
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/rtl.css')}}" rel="stylesheet" />
 
+    @yield('extra_styles')
+
 
 </head>
 
 <body class="@yield('body_class', 'index-page')">
 
-	@include('includes.header')
+	@if ( !isset($no_header) )
+        @include('includes.header')
+    @endif
 
     @yield('content')
 

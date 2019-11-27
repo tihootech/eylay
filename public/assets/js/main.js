@@ -1,15 +1,5 @@
 $(document).ready(function () {
 
-	$('form[method=AJAX]').submit(function (e) {
-		e.preventDefault();
-		var url = $(this).attr('action');
-		var data = {};
-		$(this).find('.data').each(function () {
-			data[$(this).attr('name')] = $(this).val();
-		});
-		ajax(url, data, $(this));
-	});
-
 	$('.signup-form').submit(function (e) {
 
 		e.preventDefault();
@@ -63,7 +53,33 @@ $(document).ready(function () {
 
 });
 
-function ajax(url, data, target=null) {
+$(document).on('submit', 'form[method=AJAX]', function (e) {
+	e.preventDefault();
+	var url = $(this).attr('action');
+	var data = {};
+	var value = null;
+	var target = $(this).data('target') ? $($(this).data('target')) : $(this);
+	$(this).find('.data').each(function () {
+		// for radios
+		if ($(this).attr('type') == 'radio') {
+			if ($(this).is(':checked')) {
+				value = $(this).val();
+			}
+		}else {
+			value = $(this).val();
+		}
+		data[$(this).attr('name')] = value;
+	});
+	ajax(url, data, target);
+});
+
+$(document).on('click', '.jump-to-question', function () {
+	var url = $(this).data('url');
+	ajax(url, null, $('#main-container'));
+});
+
+// ajax call
+function ajax(url, data=null, target=null) {
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
