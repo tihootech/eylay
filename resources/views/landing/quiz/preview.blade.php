@@ -39,7 +39,7 @@
                         		</h4>
                                 <p class="card-description">
                                     {{$quiz->info}}
-
+                                    <hr>
                                     @if ($quiz->active)
                                         @guest
                                             <a class="btn btn-primary btn-round" disabled>
@@ -50,7 +50,7 @@
                                                 برای پاسخ دهی به این آزمون باید وارد حساب کاربری خود شده باشید.
                                             </div>
                                         @else
-                                            <a href="{{route('quiz.fill', $quiz->uid)}}" target="_blank" class="btn btn-primary btn-round" rel="nofollow">
+                                            <a href="{{route('quiz.fill', $quiz->uid)}}" class="btn btn-primary btn-round" rel="nofollow">
                                                 <i class="material-icons ml-2">add_alarm</i> شروع پاسخ دهی
                                             </a>
                                         @endguest

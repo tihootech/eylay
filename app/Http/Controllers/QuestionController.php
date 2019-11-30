@@ -91,6 +91,7 @@ class QuestionController extends Controller
             'min' => 'nullable|integer',
             'max' => 'nullable|integer',
             'info' => 'nullable',
+            'reason' => 'nullable',
             'required' => 'nullable|boolean',
             'randomize' => 'nullable|boolean',
             'multiple' => 'nullable|boolean',

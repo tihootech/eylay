@@ -38,7 +38,7 @@
 	<li>
 		<a class="app-menu__item @if( rn() == 'quiz.index' ) active @endif" href="{{route("quiz.index")}}">
 			<i class="ml-2 material-icons">help</i>
-			<span class="app-menu__label"> @lang('QUIZ') </span>
+			<span class="app-menu__label"> @lang('QUIZZES') </span>
 		</a>
 	</li>
 	<li>
@@ -60,6 +60,21 @@
 		</a>
 	</li>
 @endmaster
+
+@notmaster
+	<li>
+		<a class="app-menu__item @if( rn() == 'quiz.quizzes_to_join' ) active @endif" href="{{route("quiz.quizzes_to_join")}}">
+			<i class="ml-2 material-icons">help</i>
+			<span class="app-menu__label"> @lang('QUIZZES') </span>
+		</a>
+	</li>
+	<li>
+		<a class="app-menu__item @if( rn() == 'quiz.personal_list' ) active @endif" href="{{route("quiz.personal_list")}}">
+			<i class="ml-2 material-icons">question_answer</i>
+			<span class="app-menu__label"> @lang('QUIZZES_RESULT') </span>
+		</a>
+	</li>
+@endnotmaster
 
 <li>
 	<a class="app-menu__item @if( rn() == 'acc' ) active @endif" href="{{route("acc")}}">

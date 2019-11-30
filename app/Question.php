@@ -59,4 +59,29 @@ class Question extends Model
 		Answer::where('question_id', $this->id)->where('filler_id', $filler_id)->delete();
 		return Answer::make($this, $raw_answer);
 	}
+
+	public function choices_statics()
+	{
+		$statics = [];
+		foreach ($this->choices as $choice) {
+			$statics []= Answer::where('question_id', $this->id)->whereBody($choice->content)->count();
+		}
+		return $statics;
+	}
+
+	public function choices_percents()
+	{
+		$statics = $this->choices_statics();
+		$total_count = array_sum($statics);
+		$percents = [];
+		foreach ($statics as $static) {
+			$percents []= round( ($static/$total_count)*100 );
+		}
+		return $percents;
+	}
+
+	public function correct_choice()
+	{
+		return QuestionChoice::where('question_id', $this->id)->where('correct', 1)->first();
+	}
 }

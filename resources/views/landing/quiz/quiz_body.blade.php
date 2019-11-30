@@ -121,7 +121,7 @@
 			</div>
 
 			<hr>
-			<a href="{{route('quiz.analyze', $quiz->id)}}" class="btn btn-primary btn-round">
+			<a href="{{route('quiz.analyze', [$quiz->uid, $filler->uid])}}" class="btn btn-primary btn-round">
 				<i class="material-icons ml-2">trending_up</i> آنالیز آزمون
 			</a>
 

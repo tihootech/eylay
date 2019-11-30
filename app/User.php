@@ -26,5 +26,10 @@ class User extends Authenticatable
     {
         return $this->email_verified_at ? true : false;
     }
-    
+
+    public function fillers()
+    {
+        return $this->hasMany(Filler::class)->latest();
+    }
+
 }

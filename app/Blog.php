@@ -20,7 +20,7 @@ class Blog extends Model
 
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'owner')->withCount('likes')->whereConfirmed(1)->orderBy('likes_count', 'desc')->latest();
+        return $this->morphMany(Comment::class, 'owner')->withCount('likes')->whereConfirmed(1)->orderBy('likes_count', 'desc');
     }
 
     public function likes()

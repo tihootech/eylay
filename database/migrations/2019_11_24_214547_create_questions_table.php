@@ -21,6 +21,7 @@ class CreateQuestionsTable extends Migration
             $table->unsignedInteger('position')->default(1);
             $table->string('type'); // number, string, text, message, multiple_choices
             $table->text('info')->nullable();
+            $table->text('reason')->nullable();
             $table->string('button')->nullable();
             $table->unsignedInteger('min')->nullable();
             $table->unsignedInteger('max')->nullable();

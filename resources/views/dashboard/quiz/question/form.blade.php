@@ -60,6 +60,13 @@
     				<textarea name="info" id="info" rows="4" class="form-control">{{old('info') ?? $question->info}}</textarea>
     			</div>
 
+                @if ($type == 'multiple_choices')
+                    <div class="col-md-12 form-group">
+        				<label for="reason"> @lang('WHY_THIS_CHOICE_IS_CORRECT') </label>
+        				<textarea name="reason" id="reason" rows="4" class="form-control">{{old('reason') ?? $question->reason}}</textarea>
+        			</div>
+                @endif
+
                 <input type="hidden" name="required" value="0">
                 <div class="col-md-4 form-group">
                     <div class="custom-control custom-checkbox">

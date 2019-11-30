@@ -58,6 +58,8 @@
     <script src="{{asset("dashboard/js/dashcustom.js")}}"></script>
     <script src="{{asset("dashboard/js/plugins/chart.js")}}"></script>
 
+    @yield('charts')
+
 </body>
 
 </html>
