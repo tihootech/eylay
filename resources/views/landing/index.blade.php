@@ -3,6 +3,10 @@
 @section('title')
     Eylay | با ما بیاموزید
 @endsection
+@section('metadata')
+    <meta name="description" content="Eylay | با ما بیاموزید | آموزش زبان های برنامه نویسی">
+    <meta name="keywords" content="برنامه نویسی, eylay, ایلای">
+@endsection
 
 
 @section('content')

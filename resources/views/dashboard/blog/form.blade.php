@@ -61,10 +61,20 @@
 				<label for="subtitle"> @lang('SUBTITLE') </label>
 				<textarea name="subtitle" id="subtitle" rows="1" class="form-control">{{old('subtitle') ?? $blog->subtitle}}</textarea>
 			</div>
-
+            <hr class="w-100">
             <div class="col-md-12 form-group">
-				<label for="content"> @lang('CONTENT') </label>
-				<textarea name="content" id="content" rows="8" class="form-control" required>{!!old('content') ?? $blog->content!!}</textarea>
+                <label> @lang('CONTENT') </label>
+                <label class="btn btn-outline-primary btn-sm float-left mx-1">
+                    <i class="fa fa-image m-0"></i>
+                    <input type="file" class="hidden text-editor-img" data-action="{{route('ajaxes', 'file_upload')}}">
+                </label>
+                <button type="button" class="btn btn-outline-primary btn-sm float-left mx-1" data-text-editor="code">
+                    <i class="fa fa-code m-0"></i>
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm float-left mx-1" data-text-editor="link">
+                    <i class="fa fa-chain m-0"></i>
+                </button>
+				<textarea name="content" rows="12" class="form-control text-editor mt-2" required>{!!old('content') ?? $blog->content!!}</textarea>
 			</div>
 
             <hr class="w-100">

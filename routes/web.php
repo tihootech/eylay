@@ -13,6 +13,9 @@ Route::get('download', function () {
     return redirect()->route('download_files');
 });
 
+// ajax
+Route::post('ajaxes/{action}', 'AjaxController@main')->name('ajaxes');
+
 // general user account control
 Route::get('acc', 'AccController@edit')->name('acc');
 Route::put('acc', 'AccController@update')->name('acc_update');

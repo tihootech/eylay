@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>@yield('title', 'Eylay')</title>
+
+    @yield('metadata')
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="root" content="{{ url('/') }}">
 
@@ -69,6 +72,7 @@
 
 <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 <script src="{{asset('assets/js/material-kit.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/js/prettify.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/main.js')}}" type="text/javascript"></script>
 
 </html>

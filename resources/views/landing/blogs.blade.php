@@ -3,7 +3,9 @@
 @section('title')
     Eylay | مطالب منتشر شده
 @endsection
-
+@section('metadata')
+    <meta name="description" content="مطالب منتشر شده توسط Eylay">
+@endsection
 
 @section('content')
     <div class="page-header header-filter header-small blogs-bg" data-parallax="true">

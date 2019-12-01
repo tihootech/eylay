@@ -1,4 +1,13 @@
-@extends('layouts.landing') @section('body_class') blog-posts @endsection @section('title') {{$blog->title}} @endsection @section('content')
+@extends('layouts.landing')
+
+@section('body_class') blog-posts @endsection
+@section('title') {{$blog->title}} @endsection
+@section('metadata')
+    <meta name="description" content="{{$blog->title}}">
+    <meta name="keywords" content="{{$blog->tags}}">
+@endsection
+
+@section('content')
 
 <div class="page-header header-filter" data-parallax="true" style="background-image:url('{{asset($blog->bg)}}')">
     <div class="container">
@@ -20,7 +29,9 @@
         <div class="section section-text">
             <h3 class="title">{{$blog->title}}</h3>
             <hr>
-            {!! $blog->content !!}
+            <div class="blog-content">
+                {!! $blog->content !!}
+            </div>
         </div>
 
         <div class="section section-blog-info">

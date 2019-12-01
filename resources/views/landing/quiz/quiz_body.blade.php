@@ -46,79 +46,83 @@
 		<div class="card quiz-finished text-center">
 
 			<h3 class="yekan text-primary"> تبریک! آزمون خاتمه یافت. </h3>
-			<h4> عملکرد : <span class="label label-primary roboto"> {{$filler->percentage}} % </span> </h4>
-			<hr>
 
-			<div class="row">
-				<div class="col-md-3 col-sm-6">
-					<div class="card">
-						<div class="card-content content-primary">
-							<h4 class="category-social yekan">
-								<i class="material-icons ml-2">insert_comment</i> نتیجه آزمون
-							</h4>
-							<hr>
-							<div class="footer">
-								<p> تعداد صحیح : <b> {{$filler->corrects}} </b> </p>
+
+			@if ($quiz->type == 'quiz')
+				<h4> عملکرد : <span class="label label-primary roboto"> {{$filler->percentage}} % </span> </h4>
+				<hr>
+
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-content content-primary">
+								<h4 class="category-social yekan">
+									<i class="material-icons ml-2">insert_comment</i> نتیجه آزمون
+								</h4>
 								<hr>
-								<p> تعداد غلط : <b> {{$filler->wrongs}} </b> </p>
+								<div class="footer">
+									<p> تعداد صحیح : <b> {{$filler->corrects}} </b> </p>
+									<hr>
+									<p> تعداد غلط : <b> {{$filler->wrongs}} </b> </p>
+									<hr>
+									<p> عملکرد : <b> {{$filler->percentage}} % </b> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-content content-rose">
+								<h4 class="category-social yekan">
+									<i class="material-icons ml-2">bar_chart</i> مقایسه
+								</h4>
 								<hr>
-								<p> عملکرد : <b> {{$filler->percentage}} % </b> </p>
+								<div class="footer">
+									<p> عملکرد شما : <b> {{$filler->percentage}} % </b> </p>
+									<hr>
+									<p> بهترین عملکرد : <b> {{$quiz->highest('percentage')}} % </b> </p>
+									<hr>
+									<p> ضعیف ترین عملکرد : <b> {{$quiz->lowest('percentage')}} % </b> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-content content-primary">
+								<h4 class="category-social yekan">
+									<i class="material-icons ml-2">pie_chart</i> آمار آزمون
+								</h4>
+								<hr>
+								<div class="footer">
+									<p> تعداد پاسخ دهی <b> {{$quiz->fillers->count()}} </b> </p>
+									<hr>
+									<p> تعداد خاتمه یافته : <b> {{$quiz->completes->count()}} </b> </p>
+									<hr>
+									<p> میانگین درصد : <b> {{$quiz->ave('percentage')}} % </b> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-content content-rose">
+								<h4 class="category-social yekan">
+									<i class="material-icons ml-2">schedule</i> زمان پاسخدهی
+								</h4>
+								<hr>
+								<div class="footer">
+									<p> زمان پاسخگویی شما : <b> {{human_time($filler->time, false)}} </b> </p>
+									<hr>
+									<p> میانگین: <b> {{human_time($quiz->ave('time'), false)}} </b> </p>
+									<hr>
+									<p> زمان مورد نیاز: <b> {{$quiz->max_time}} دقیقه </b> </p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="card">
-						<div class="card-content content-rose">
-							<h4 class="category-social yekan">
-								<i class="material-icons ml-2">bar_chart</i> مقایسه
-							</h4>
-							<hr>
-							<div class="footer">
-								<p> عملکرد شما : <b> {{$filler->percentage}} % </b> </p>
-								<hr>
-								<p> بهترین عملکرد : <b> {{$quiz->highest('percentage')}} % </b> </p>
-								<hr>
-								<p> ضعیف ترین عملکرد : <b> {{$quiz->lowest('percentage')}} % </b> </p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="card">
-						<div class="card-content content-primary">
-							<h4 class="category-social yekan">
-								<i class="material-icons ml-2">pie_chart</i> آمار آزمون
-							</h4>
-							<hr>
-							<div class="footer">
-								<p> تعداد پاسخ دهی <b> {{$quiz->fillers->count()}} </b> </p>
-								<hr>
-								<p> تعداد خاتمه یافته : <b> {{$quiz->completes->count()}} </b> </p>
-								<hr>
-								<p> میانگین درصد : <b> {{$quiz->ave('percentage')}} % </b> </p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="card">
-						<div class="card-content content-rose">
-							<h4 class="category-social yekan">
-								<i class="material-icons ml-2">schedule</i> زمان پاسخدهی
-							</h4>
-							<hr>
-							<div class="footer">
-								<p> زمان پاسخگویی شما : <b> {{human_time($filler->time, false)}} </b> </p>
-								<hr>
-								<p> میانگین: <b> {{human_time($quiz->ave('time'), false)}} </b> </p>
-								<hr>
-								<p> زمان مورد نیاز: <b> {{$quiz->max_time}} دقیقه </b> </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			@endif
 
 			<hr>
 			<a href="{{route('quiz.analyze', [$quiz->uid, $filler->uid])}}" class="btn btn-primary btn-round">

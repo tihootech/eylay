@@ -41,3 +41,50 @@ $(document).on('click','[data-check]',function () {
 	});
 
 });
+
+
+$(document).on('click', '[data-text-editor]', function () {
+	var action = $(this).data('text-editor');
+	var target = $(this).siblings('.text-editor');
+	var val = target.val();
+	var newVal = null;
+	if (action == 'code') {
+		newVal = val + '\n<pre class="prettyprint">\n\n</pre>';
+	}
+	if (action == 'link') {
+		newVal = val + '<a href="">  </a>';
+	}
+	target.val(newVal);
+	target.focus();
+});
+
+$(document).on('change', '.text-editor-img', function () {
+
+	var root = $('meta[name=root]').attr('content')
+
+	var formdata = new FormData();
+	if($(this).prop('files').length > 0){
+        file =$(this).prop('files')[0];
+        formdata.append("file", file);
+    }
+
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	})
+	$.ajax({
+		url: $(this).data('action'),
+		type: "POST",
+		data: formdata,
+		contentType: false,
+		cache: false,
+		processData:false,
+		success: function(data){
+			var output = '\n<img src="'+root+'/'+data+'" alt="">\n';
+			var currVal = $('.text-editor').val();
+			$('.text-editor').val(currVal+output);
+			$('.text-editor').focus();
+		}
+	});
+})

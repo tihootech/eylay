@@ -26,7 +26,10 @@
 
 			<div class="col-md-3 form-group">
 				<label for="type"> @lang('TYPE') </label>
-				<input type="text" class="form-control" name="type" id="type" value="quiz" readonly>
+                <select class="form-control" name="type" id="type">
+                    <option> quiz </option>
+                    <option @if($quiz->type == 'form') @endif> form </option>
+                </select>
 			</div>
 
             <div class="col-md-3 form-group">
@@ -67,7 +70,7 @@
             <input type="hidden" name="public" value="0">
             <div class="col-md-6">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" name="public" id="public" value="1" disabled
+                    <input type="checkbox" class="custom-control-input" name="public" id="public" value="1"
                         @if($quiz->public) checked @endif>
                     <label class="custom-control-label" for="public">
                         <span class="mr-2"> @lang('PUBLIC') </span>

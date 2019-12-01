@@ -63,6 +63,16 @@
 
 /* real custom */
 
+.blog-content > pre.prettyprint {
+	padding: 20px 10px;
+	border-color: #9C27B0;
+}
+
+.blog-content > img {
+	max-height: 400px;
+	margin: 10px auto;
+	display: block;
+}
 
 /* same heights */
 .random-blogs .card-description {
