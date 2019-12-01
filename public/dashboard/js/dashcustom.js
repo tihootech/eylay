@@ -49,10 +49,10 @@ $(document).on('click', '[data-text-editor]', function () {
 	var val = target.val();
 	var newVal = null;
 	if (action == 'code') {
-		newVal = val + '\n<pre class="prettyprint">\n\n</pre>';
+		newVal = val + '<pre class="prettyprint">\n\n</pre>\n';
 	}
 	if (action == 'paragraph') {
-		newVal = val + '\n<p>  </p>';
+		newVal = val + '<p>\n\n</p>\n';
 	}
 	if (action == 'link') {
 		newVal = val + '<a href="" target="_blank">  </a>';
