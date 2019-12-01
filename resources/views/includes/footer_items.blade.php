@@ -4,22 +4,22 @@
 	</a>
 </li>
 <li>
-	<a href="#">
+	<a href="{{route('blogs')}}">
 		وبلاگ
 	</a>
 </li>
 <li>
-	<a href="#">
+	<a href="https://www.limoonad.com/teacher/ali.seyfi68" target="_blank">
 		ویدئو های آموزشی
 	</a>
 </li>
 <li>
-	<a href="#">
+	<a href="{{route('signup_page')}}">
 		دوره های حضوری
 	</a>
 </li>
 <li>
-	<a href="#">
-		در باره من
+	<a href="{{route('about')}}">
+		در باره ما
 	</a>
 </li>
