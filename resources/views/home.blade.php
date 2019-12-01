@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-    <div class="tile">
+    {{-- <div class="tile">
         @if (auth()->user()->verified())
             <div class="alert alert-success">
                 <i class="fa fa-check ml-1"></i>
@@ -17,6 +17,6 @@
                 <a href="{{route('verification.notice')}}" class="btn btn-link"> @lang('CONFIRM_EMAIL') </a>
             </div>
         @endif
-    </div>
+    </div> --}}
 
 @endsection

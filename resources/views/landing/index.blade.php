@@ -76,7 +76,10 @@
                                     <i class="material-icons">perm_phone_msg</i>
                                 </div>
                                 <h4 class="info-title">پشتیبانی و همیاری</h4>
-                                <p>ضبط ویدئو های آموزشی پایان کار ما نیست. درصورتی که در حین مشاهده ویدئو ها با سوالی مواجه شدید میتوانید با ایجاد حساب کاربری سوالات خود را در همین سایت از ما بپرسید. ایلای میکوشد به سوالات شما پاسخ دهد.</p>
+                                <p>
+                                    ضبط ویدئو های آموزشی پایان کار ما نیست. درصورتی که در حین مشاهده ویدئو ها با سوالی مواجه شدید
+                                    میتوانید از طریق تلگرام از ما بپرسید. در آپدیت های بعدی، سیستم پرسش و پاسخ در همین وبسایت راه اندازی میشود.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +153,7 @@
                 <div class="features-1">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h2> معرفی ابزار های پرکاربرد </h2>
+                            <h2> وبلاگ و مطالب ما چگونه است؟ </h2>
                         </div>
                     </div>
 
@@ -159,30 +162,37 @@
                         <div class="col-md-4">
                             <div class="info">
                                 <div class="icon icon-primary">
-                                    <i class="material-icons">movie</i>
+                                    <i class="material-icons">code</i>
                                 </div>
-                                <h4 class="info-title">ویدئو های آموزشی</h4>
-                                <p>تهیه ویدئو های آموزشی از مباحث و زبان های مختلف برنامه نویسی در سطح های مختلف (از مبتدی تا پیشرفته) به صورت جامع و با الگوگیری از ویدئو های آموزشی سایت لیندا . لیندا یک از کامل ترین منابع آموزشی به زبان انگلیسی میباشد.</p>
+                                <h4 class="info-title"> کدهای آماده </h4>
+                                <p>
+                                    قرار دادن کدها و Template ها و Snippet های آماده جهت استفاده شما کدنویسان و کدآموزان عزیز.
+                                </p>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="info">
                                 <div class="icon icon-primary">
-                                    <i class="material-icons">file_copy</i>
+                                    <i class="material-icons">update</i>
                                 </div>
-                                <h4 class="info-title">فایل ها</h4>
-                                <p>یکی از مشکلاتی که برخی از ویدئو های آموزشی دارند این است که فایل های استفاده شده در اختیار کدآموزان قرار نمیگیرد. در ایلای تمام فایل ها و کد های استفاده شده در پروژه، در قالب یک فایل فشرده در اختیار کدآموز قرار میگیرد.</p>
+                                <h4 class="info-title"> مطالب روز </h4>
+                                <p>
+                                    Eylay میکوشد که به روز ترین مطالب دنیای برنامه نویسی را پوشش دهد و در قالب وبلاگ به این مطالب بپردازد.
+
+                                </p>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="info">
                                 <div class="icon icon-primary">
-                                    <i class="material-icons">perm_phone_msg</i>
+                                    <i class="material-icons">build</i>
                                 </div>
-                                <h4 class="info-title">پشتیبانی و همیاری</h4>
-                                <p>ضبط ویدئو های آموزشی پایان کار ما نیست. درصورتی که در حین مشاهده ویدئو ها با سوالی مواجه شدید میتوانید با ایجاد حساب کاربری سوالات خود را در همین سایت از ما بپرسید. ایلای میکوشد به سوالات شما پاسخ دهد.</p>
+                                <h4 class="info-title"> معرفی ابزار های پرکاربرد </h4>
+                                <p>
+                                    معرفی ابزار هایی که به برنامه نویسان در قالب های مختلف کمک میکند. ابزار های مانند owl-carousel و...
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -209,20 +219,21 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="card card-testimonial">
                                 <div class="icon">
                                     <i class="material-icons">format_quote</i>
                                 </div>
                                 <div class="card-content">
-                                    <h5 class="card-description">
-                                        Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!
-                                    </h5>
+                                    <p class="card-description">
+                                        سلام استاد، من آموزش های شما رو تو لیموناد دنبال میکنم، یه سوالی برام پیش اومده.
+                                        کلاس my-auto تو بوتسترپ چکاری رو انجام میده و کاربردش چیه؟
+                                    </p>
                                 </div>
 
                                 <div class="footer">
-                                    <h4 class="card-title">Alec Thompson</h4>
-                                    <h6 class="category">@alecthompson</h6>
+                                    <h4 class="card-title"> پرسیده شده در تلگرام </h4>
+                                    <h6 class="category">Bootstrap</h6>
                                     <div class="card-avatar">
                                         <a href="#pablo">
                                             <img class="img" src="{{asset('assets/img/faces/bg-avatar.png')}}" />
@@ -232,20 +243,20 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card card-testimonial">
                                 <div class="icon">
                                     <i class="material-icons">format_quote</i>
                                 </div>
                                 <div class="card-content">
-                                    <h5 class="card-description">
-                                        "Don't be scared of the truth because we need to restart the human foundation in truth. That's why I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is not so attractive"
-                                    </h5>
+                                    <p class="card-description">
+                                        سلام استاد وقت عالی بخیر باشه عذر خواهی میکنم بابات مزاحمت.یه سوال از خدمتتون داشتم اینکه من رو یه پروژه لاراولی سابدمین درست کردم که از طریق فایل روتر ادرس دهی شده.من دوتا زیر دامنه با نامه blog1.site.com وblog2.site.com چجوری میتونم وقتی کاربری لاگین شد توی blog1دیگه به اون یکی سابدامین هم دسترسی داشته باشه  الان که middelware auth رو روش صدا میزنم فقط رو یکی از سابدامینا کار میکنه و برای ورود به دومی باید مجددا یوزر پسورد وارد شه که نمیخام این شکلی باشه ممنون میشم راهنماییم کنین پوزش بابت طولانی شدن
+                                    </p>
                                 </div>
 
                                 <div class="footer">
-                                    <h4 class="card-title">Gina Andrew</h4>
-                                    <h6 class="category">@ginaandrew</h6>
+                                    <h4 class="card-title"> پرسیده شده در تلگرام </h4>
+                                    <h6 class="category"> Laravel </h6>
                                     <div class="card-avatar">
                                         <a href="#pablo">
                                             <img class="img" src="{{asset('assets/img/faces/bg-avatar.png')}}" />
@@ -255,20 +266,22 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="card card-testimonial">
                                 <div class="icon">
                                     <i class="material-icons">format_quote</i>
                                 </div>
                                 <div class="card-content">
-                                    <h5 class="card-description">
-                                        "Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!"
-                                    </h5>
+                                    <p class="card-description">
+                                        با سلام. ممنون از آموزش های خوبتون.
+                                        خواستم بپرسم
+                                        تو لاراول چطور میتونیم یه validation برای validate کردن کدملی ایجاد کنیم؟ ممنون میشم راهنمایی کنید.
+                                    </p>
                                 </div>
 
                                 <div class="footer">
-                                    <h4 class="card-title">George West</h4>
-                                    <h6 class="category">@georgewest</h6>
+                                    <h4 class="card-title"> پرسیده شده در تلگرام </h4>
+                                    <h6 class="category"> Laravel </h6>
                                     <div class="card-avatar">
                                         <a href="#pablo">
                                             <img class="img" src="{{asset('assets/img/faces/bg-avatar.png')}}" />
@@ -278,6 +291,13 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <div class="text-center mt-7">
+                        <a href="https://t.me/eylay" class="btn btn-round btn-rose">
+                            <i class="fa fa-telegram ml-2"></i>
+                            پرسیدن سوالات برنامه نویسی از طریق تلگرام
+                        </a>
                     </div>
 
                 </div>
@@ -379,7 +399,7 @@
             <li>
                 <a href="#features" data-number="3">
                     <span class="cd-dot"></span>
-                    <span class="cd-label"> معرفی ابزار های پرکاربرد </span>
+                    <span class="cd-label"> وبلاگ و مطالب ما چگونه است </span>
                 </a>
             </li>
             <li>

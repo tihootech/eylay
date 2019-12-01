@@ -16,6 +16,7 @@ function rs($length = 10) {
 
 function short($string, $n=100)
 {
+    $string = strip_tags($string);
     return strlen($string) > $n ? mb_substr($string, 0, $n).'...' : $string;
 }
 
