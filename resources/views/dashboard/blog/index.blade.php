@@ -60,6 +60,9 @@
                     @endforeach
                 </tbody>
             </table>
+
+            {{$blogs->appends($_GET)->links()}}
+
         @else
             <div class="alert alert-warning">
                 <i class="fa fa-warning ml-2"></i>

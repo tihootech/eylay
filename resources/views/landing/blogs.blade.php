@@ -65,7 +65,7 @@
                 @foreach ($blogs as $blog)
                     @include('landing.partials.blog')
                 @endforeach
-
+                {{$blogs->appends($_GET)->links()}}
 			</div>
 
 		</div>

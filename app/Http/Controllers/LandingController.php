@@ -49,13 +49,14 @@ class LandingController extends Controller
             }
         }
         if ($order == 'seens') {
-            $blogs = $blogs->orderBy('seens', 'DESC')->get();
+            $blogs = $blogs->orderBy('seens', 'DESC');
         }elseif($order == 'likes') {
-            $blogs = $blogs->withCount('likes')->orderBy('likes_count', 'DESC')->get();
+            $blogs = $blogs->withCount('likes')->orderBy('likes_count', 'DESC');
         }else {
-            $blogs = $blogs->latest()->get();
+            $blogs = $blogs->latest();
             $order = null;
         }
+        $blogs = $blogs->paginate(8);
         $random_blogs = Blog::inRandomOrder()->limit(3)->get();
         return view('landing.blogs', compact('blogs', 'cats', 'count', 'tag', 'current_cat', 'author', 'order', 'random_blogs'));
     }
