@@ -71,6 +71,9 @@
                 <button type="button" class="btn btn-outline-primary btn-sm float-left mx-1" data-text-editor="code">
                     <i class="fa fa-code m-0"></i>
                 </button>
+                <button type="button" class="btn btn-outline-primary btn-sm float-left mx-1" data-text-editor="paragraph">
+                    <i class="fa fa-paragraph m-0"></i>
+                </button>
                 <button type="button" class="btn btn-outline-primary btn-sm float-left mx-1" data-text-editor="link">
                     <i class="fa fa-chain m-0"></i>
                 </button>
