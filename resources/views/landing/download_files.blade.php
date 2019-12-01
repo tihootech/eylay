@@ -24,7 +24,7 @@
                 <div class="row">
                     @foreach ($files as $i => $file)
                         <div class="col-md-4">
-                            <div class="card">
+                            <div class="card text-center">
                                 <div class="card-content {{$i%2 == 0 ? 'content-primary' : 'content-rose'}}">
                                     <h4 class="card-title">
                                         {{$file->title}}
