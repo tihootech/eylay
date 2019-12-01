@@ -42,7 +42,8 @@
 	padding: 45px 0;
 }
 .label {
-	margin: 0 3px;
+	margin: 3px;
+	display: inline-block;
 }
 .not-shown {
 	display: none;
