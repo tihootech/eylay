@@ -52,7 +52,7 @@ $(document).on('click', '[data-text-editor]', function () {
 		newVal = val + '\n<pre class="prettyprint">\n\n</pre>';
 	}
 	if (action == 'link') {
-		newVal = val + '<a href="">  </a>';
+		newVal = val + '<a href="" target="_blank">  </a>';
 	}
 	target.val(newVal);
 	target.focus();

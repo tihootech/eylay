@@ -30,7 +30,7 @@
             <h3 class="title">{{$blog->title}}</h3>
             <hr>
             <div class="blog-content">
-                {!! nl2br($blog->content) !!}
+                {!! $blog->content !!}
             </div>
         </div>
 
