@@ -55,13 +55,14 @@
                                             </a>
                                         @endguest
                                     @else
-                                        <div class="alert alert-danger">
+                                        <div class="alert alert-danger mt-3">
                                             <i class="fa fa-warning ml-2"></i>
                                             متاسفانه این آزمون دیگر فعال نیست.
                                         </div>
                                     @endif
                                     @if (session('error'))
-                                    	<div class="alert alert-danger" role="alert">
+                                    	<div class="alert alert-danger mt-3" role="alert">
+                                            <i class="fa fa-warning ml-2"></i>
                                     		{{ session('error') }}
                                     	</div>
                                     @endif
