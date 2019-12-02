@@ -31,6 +31,7 @@
         <hr>
         <h2 class="mb-4"> @lang('QUESTIONS_LIST') </h2>
         @if ($quiz->questions->count())
+
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
@@ -72,6 +73,14 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <form class="form-inline" action="{{route('quiz.positions')}}" method="post">
+                @csrf
+                @foreach ($quiz->questions as $question)
+                    <input type="number" class="form-control m-1" name="positions[{{$question->id}}]" value="{{$question->position}}">
+                @endforeach
+                <button type="submit" class="btn btn-primary m-1"> تغییر ترتیب ها </button>
+            </form>
 
         @else
 

@@ -55,6 +55,20 @@ class QuizController extends Controller
         return redirect()->route('quiz.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }
 
+    public function update_positions(Request $request)
+    {
+        if (is_array($request->positions)) {
+            foreach ($request->positions as $question_id => $position) {
+                $question = Question::find($question_id);
+                $question->position = $position;
+                $question->save();
+            }
+            return back()->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
+        }else {
+            return back()->withError('Positions Not an Array');
+        }
+    }
+
     public function destroy(Quiz $quiz)
     {
         delete_file([$quiz->image, $quiz->bg]);

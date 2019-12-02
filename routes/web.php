@@ -59,6 +59,7 @@ Route::get('quiz/statics/{quiz_uid}/{filler_uid?}', 'QuizAnalyzeController@stati
 Route::post('fill/{direction}/{question}/{position?}', 'QuizFillingController@submit_answer')->name('quiz.submit_answer');
 Route::get('quizzes', 'QuizAnalyzeController@quizzes_to_join')->name('quiz.quizzes_to_join');
 Route::get('filleds', 'QuizAnalyzeController@personal_list')->name('quiz.personal_list');
+Route::post('positions/quiz', 'QuizController@update_positions')->name('quiz.positions');
 Route::delete('fillers/{filler}', 'QuizController@destroy_filler')->name('quiz.destroy_filler');
 
 
