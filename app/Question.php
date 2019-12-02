@@ -73,11 +73,15 @@ class Question extends Model
 	{
 		$statics = $this->choices_statics();
 		$total_count = array_sum($statics);
-		$percents = [];
-		foreach ($statics as $static) {
-			$percents []= round( ($static/$total_count)*100 );
+		if ($total_count) {
+			$percents = [];
+			foreach ($statics as $static) {
+				$percents []= round( ($static/$total_count)*100 );
+			}
+			return $percents;
+		}else {
+			return 0;
 		}
-		return $percents;
 	}
 
 	public function correct_choice()
