@@ -50,7 +50,7 @@ class QuizFillingController extends Controller
 			}else {
 				$found = Filler::where('user_id', auth()->id())->where('quiz_id', $quiz->id)->first();
 				if ($found) {
-					return redirect()->route('quiz.preview')->withError(__('YOU_HAVE_ALREADY_ANSWERED_THIS_QUIZ'));
+					return redirect()->route('quiz.preview', $quiz->title)->withError(__('YOU_HAVE_ALREADY_ANSWERED_THIS_QUIZ'));
 				}
 				$filler = Filler::make($quiz);
 				$question = $quiz->questions->first();
