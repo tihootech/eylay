@@ -61,7 +61,7 @@
                                         </div>
                                     @endif
                                     @if (session('error'))
-                                    	<div class="alert alert-danger mt-3" role="alert">
+                                    	<div class="alert alert-danger mt-4" role="alert">
                                             <i class="fa fa-warning ml-2"></i>
                                     		{{ session('error') }}
                                     	</div>
