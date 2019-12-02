@@ -38,6 +38,10 @@ class QuizFillingController extends Controller
 			$no_header = true;
 			$filling = session('filling');
 			if ($filling && $filling['quiz_id'] == $quiz->id) {
+				$found = Filler::where('user_id', auth()->id())->where('quiz_id', $quiz->id)->whereNotNull('finished_at')->first();
+				if ($found) {
+					return redirect()->route('quiz.preview', $quiz->title)->withError(__('YOU_HAVE_ALREADY_ANSWERED_THIS_QUIZ'));
+				}
 				if ( $process_finished = $filling['process_finished'] ) {
 					$filler = Filler::find($filling['filler_id']);
 					return view('landing.quiz.fill', compact('quiz', 'no_header', 'filler', 'process_finished'));
