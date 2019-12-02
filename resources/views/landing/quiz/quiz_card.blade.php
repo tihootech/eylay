@@ -6,7 +6,9 @@
 	@endif
 	{{$question->body}}
 </h4>
-<p class="text-muted">{{$question->info}}</p>
+<div class="text-muted">
+	{!! $question->info !!}
+</div>
 
 @if ($question->type == 'multiple_choices')
 	<div class="display-choices">
