@@ -123,19 +123,23 @@ function human_time($tatal_seconds, $display_seconds=true)
 
 function parray($array)
 {
-    $count = count($array);
-    $output = "[";
-    for ($i=0; $i < $count ; $i++) {
-        $value = $array[$i];
-        if (is_int($value)) {
-            $output .= $value;
-        }else {
-            $output .= "'$value'";
+    if (is_array($array)) {
+        $count = count($array);
+        $output = "[";
+        for ($i=0; $i < $count ; $i++) {
+            $value = $array[$i];
+            if (is_int($value)) {
+                $output .= $value;
+            }else {
+                $output .= "'$value'";
+            }
+            if ($i != $count-1) {
+                $output .= ",";
+            }
         }
-        if ($i != $count-1) {
-            $output .= ",";
-        }
+        $output .= "]";
+        return $output;
+    }else {
+        return "[]";
     }
-    $output .= "]";
-    return $output;
 }
