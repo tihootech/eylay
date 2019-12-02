@@ -122,6 +122,28 @@
 						</div>
 					</div>
 				</div>
+
+			@else
+				<hr>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+						<div class="card">
+							<div class="card-content content-rose">
+								<h4 class="category-social yekan">
+									<i class="material-icons ml-2">schedule</i> زمان پاسخدهی
+								</h4>
+								<hr>
+								<div class="footer">
+									<p> زمان پاسخگویی شما : <b> {{human_time($filler->time)}} </b> </p>
+									<hr>
+									<p> میانگین: <b> {{human_time($quiz->ave('time'))}} </b> </p>
+									<hr>
+									<p> زمان مورد نیاز: <b> {{$quiz->max_time}} دقیقه </b> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			@endif
 
 			<hr>

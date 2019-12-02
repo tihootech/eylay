@@ -46,6 +46,11 @@ function date_picker_date($income)
     return $income ? \Morilog\Jalali\Jalalian::forge($income)->format('%Y/%m/%d') : null;
 }
 
+function ago($income)
+{
+    return $income ? \Morilog\Jalali\Jalalian::forge($income)->ago() : null;
+}
+
 function short_date($timestamp)
 {
     return \Morilog\Jalali\Jalalian::forge($timestamp)->format('%y/%m/%d');

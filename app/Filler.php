@@ -22,6 +22,11 @@ class Filler extends Model
         return $this->belongsTo(Quiz::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function calculate_result()
     {
         $quiz = $this->quiz;

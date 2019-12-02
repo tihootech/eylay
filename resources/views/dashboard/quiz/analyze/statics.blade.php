@@ -16,22 +16,24 @@
             <hr>
             @if ($question->type == 'multiple_choices')
 
-                <p>
-                    پاسخ شما :
-                    @if ($answer = $question->filler_answer($filler->id, false))
-                        <b class="{{$answer->correct ? 'text-success' : 'text-danger'}}">
-                            {{$answer->body}}
-                        </b>
-                    @else
-                        <em> عدم پاسخدهی </em>
-                    @endif
-                </p>
+                @if ($filler)
+                    <p>
+                        پاسخ شما :
+                        @if ($answer = $question->filler_answer($filler->id, false))
+                            <b class="{{$answer->correct ? 'text-success' : 'text-danger'}}">
+                                {{$answer->body}}
+                            </b>
+                        @else
+                            <em> عدم پاسخدهی </em>
+                        @endif
+                    </p>
+                    <hr>
+                @endif
 
-                <hr>
 
-                <div class="row align-items-center">
+                <div class="row align-items-center statics">
 
-                    <div class="col-md-7">
+                    <div class="col-md-7 col-11">
                         <h6 class="text-primary yekan"> درصد پاسخگویی </h6>
                         <canvas class="embed-responsive-item" id="bar-chart-{{$question->id}}"></canvas>
                     </div>
@@ -42,9 +44,9 @@
 
                 </div>
 
-                <hr>
 
                 @if ($correct_choice = $question->correct_choice())
+                    <hr>
                     <p>
                         گزینه صحیح
                         <span class="text-success mx-2"> {{$correct_choice->content}} </span>
@@ -66,8 +68,10 @@
                 <div class="alert alert-info">
                     این نوع از سوال نیازی به پاسخ ندارد.
                 </div>
-            @else
+            @elseif($filler)
                 <p> پاسخ شما : <b class="text-primary"> {{$question->filler_answer($filler->id)}} </b> </p>
+            @else
+                <p> <i class="fa fa-warning ml-2"></i> بدون آمار </p>
             @endif
         </div>
 

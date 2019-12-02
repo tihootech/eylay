@@ -26,18 +26,21 @@ class QuizAnalyzeController extends Controller
 		return view('dashboard.quiz.personal_list', compact('list'));
 	}
 
-    public function analyze($quiz_uid, $filler_uid)
+    public function statics($quiz_uid, $filler_uid=null)
     {
+		if (!master() && !$filler_uid) {
+			abort(404);
+		}
     	$quiz = Quiz::whereUid($quiz_uid)->firstOrFail();
-		$filler = Filler::whereUid($filler_uid)->firstOrFail();
-		if (!master() && $filler->user_id != auth()->id()) {
+		$filler = Filler::whereUid($filler_uid)->first();
+		if (!master() && $filler && $filler->user_id != auth()->id()) {
 			abort(403);
 		}
-		return view('dashboard.quiz.analyze.personal', compact('quiz', 'filler'));
+		return view('dashboard.quiz.analyze.statics', compact('quiz', 'filler'));
     }
 
 	public function general_analyze(Quiz $quiz)
 	{
-		dd($quiz);
+		return view('dashboard.quiz.analyze.general', compact('quiz'));
 	}
 }

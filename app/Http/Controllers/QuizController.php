@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Quiz;
 use App\Question;
+use App\Filler;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -59,6 +60,13 @@ class QuizController extends Controller
         delete_file([$quiz->image, $quiz->bg]);
         $quiz->delete();
         return redirect()->route('quiz.index')->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
+    }
+
+    public function destroy_filler(Filler $filler)
+    {
+        \DB::table('answers')->where('filler_id', $filler->id)->delete();
+        $filler->delete();
+        return back()->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
     }
 
     public static function sort_questions($quiz)

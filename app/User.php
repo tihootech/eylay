@@ -32,4 +32,9 @@ class User extends Authenticatable
         return $this->hasMany(Filler::class)->latest();
     }
 
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
 }

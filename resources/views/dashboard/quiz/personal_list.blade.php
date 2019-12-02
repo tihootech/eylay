@@ -25,10 +25,10 @@
                         <tr>
                             <th scope="row"> {{$i+1}} </th>
                             <td> <a href="{{route('quiz.preview', $item->quiz->title)}}" target="_blank"> {{$item->quiz->title}} </a> </td>
-                            <td> {{$item->corrects}} </td>
-                            <td> {{$item->wrongs}} </td>
+                            <td> {{$item->quiz->type == 'quiz' ? $item->corrects : '-'}} </td>
+                            <td> {{$item->quiz->type == 'quiz' ? $item->wrongs : '-'}} </td>
                             <td> {{human_time($item->time)}} </td>
-                            <td> {{$item->percentage}} % </td>
+                            <td> {{$item->quiz->type == 'quiz' ? $item->percentage.'%' : '-'}} </td>
                             <td> {{date_picker_date($item->created_at)}} </td>
                             <td>
                                 <a href="{{route('quiz.analyze', [$item->quiz->uid, $item->uid])}}" class="btn btn-round btn-outline-primary">

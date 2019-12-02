@@ -38,6 +38,9 @@ Route::get('دانلود-فایل-های-آموزشی', 'LandingController@downl
 // like
 Route::post('like', 'LikeController@like')->name('like');
 
+// message
+Route::resource('message', 'MessageController');
+
 // comment
 Route::put('comment/{comment}/confirm', 'CommentController@confirm')->name('comment.confirm');
 Route::post('comment/confirm_all', 'CommentController@confirm_all')->name('confirm_all_comments');
@@ -52,10 +55,11 @@ Route::resource('question', 'QuestionController')->except(['show', 'index']);
 Route::get('آزمون/{title}', 'QuizFillingController@preview')->name('quiz.preview');
 Route::get('quiz/fill/{uid}', 'QuizFillingController@fill')->name('quiz.fill');
 Route::get('quiz/analyze/{quiz}', 'QuizAnalyzeController@general_analyze')->name('quiz.general_analyze');
-Route::get('quiz/analyze/{quiz_uid}/{filler_uid}', 'QuizAnalyzeController@analyze')->name('quiz.analyze');
+Route::get('quiz/statics/{quiz_uid}/{filler_uid?}', 'QuizAnalyzeController@statics')->name('quiz.analyze');
 Route::post('fill/{direction}/{question}/{position?}', 'QuizFillingController@submit_answer')->name('quiz.submit_answer');
 Route::get('quizzes', 'QuizAnalyzeController@quizzes_to_join')->name('quiz.quizzes_to_join');
 Route::get('filleds', 'QuizAnalyzeController@personal_list')->name('quiz.personal_list');
+Route::delete('fillers/{filler}', 'QuizController@destroy_filler')->name('quiz.destroy_filler');
 
 
 // blogs

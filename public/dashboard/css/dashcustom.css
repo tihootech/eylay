@@ -76,6 +76,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	text-decoration: underline;
 }
 
+.messanger .messages {
+	max-height: 55vh;
+}
+.messanger .messages .message i {
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 3px;
+
+}
 
 /*******************************/
 /* Realy Custom */
@@ -84,6 +93,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .text-editor {
 	direction: ltr;
 	font-family: 'Calibri', 'Yekan';
+}
+
+.messages::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.messages::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #f1f1f1;
+}
+.messages::-webkit-scrollbar-thumb {
+  background-color: #E91E63;
+  border-radius: 10px;
+}
+
+.table-responsive th:not(:first-child) {
+	min-width: 100px;
 }
 
 /*******************************/

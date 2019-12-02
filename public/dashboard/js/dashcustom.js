@@ -1,5 +1,10 @@
-// clone and unclone
+$(document).ready(function () {
+	var messangers = $('.messanger .messages')
+	messangers.animate({ scrollTop: messangers.prop("scrollHeight")}, 1000);
+});
 
+
+// clone and unclone
 $(document).on('click', '[data-action=clone]', function () {
 	var target = $($(this).data('target'));
 	var row = target.find('[data-row]').first();
@@ -59,6 +64,30 @@ $(document).on('click', '[data-text-editor]', function () {
 	}
 	target.val(newVal);
 	target.focus();
+});
+
+$(document).on('submit', '.messanger-form', function (e) {
+	e.preventDefault();
+	var input = $(this).find('input[name=body]');
+	var body = input.val();
+	var url = $(this).attr('action');
+	var formdata = {body:body};
+	var target = $(this).find('.messages');
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	})
+	$.ajax({
+		url: url,
+		type: "POST",
+		data: formdata,
+		success: function(data){
+			target.append(data);
+			target.animate({ scrollTop: target.prop("scrollHeight")}, 1000);
+			input.val(null);
+		}
+	});
 });
 
 $(document).on('change', '.text-editor-img', function () {
