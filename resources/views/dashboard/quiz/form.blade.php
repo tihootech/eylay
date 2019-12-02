@@ -28,7 +28,7 @@
 				<label for="type"> @lang('TYPE') </label>
                 <select class="form-control" name="type" id="type">
                     <option> quiz </option>
-                    <option @if($quiz->type == 'form') @endif> form </option>
+                    <option @if($quiz->type == 'form') selected @endif> form </option>
                 </select>
 			</div>
 
