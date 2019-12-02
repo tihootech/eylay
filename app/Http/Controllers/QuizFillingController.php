@@ -44,6 +44,10 @@ class QuizFillingController extends Controller
 				}
 				if ( $process_finished = $filling['process_finished'] ) {
 					$filler = Filler::find($filling['filler_id']);
+					if (!$filler) {
+						session(['filling'=>null]);
+						return redirect()->route('quiz.preview', $quiz->title);
+					}
 					return view('landing.quiz.fill', compact('quiz', 'no_header', 'filler', 'process_finished'));
 				}
 				$question = Question::find($filling['question_id']);

@@ -55,7 +55,7 @@
                                             </a>
                                         @endguest
                                     @else
-                                        <div class="alert alert-danger mt-3">
+                                        <div class="alert alert-danger mt-4">
                                             <i class="fa fa-warning ml-2"></i>
                                             متاسفانه این آزمون دیگر فعال نیست.
                                         </div>
