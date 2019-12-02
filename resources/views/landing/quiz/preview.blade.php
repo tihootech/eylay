@@ -60,6 +60,11 @@
                                             متاسفانه این آزمون دیگر فعال نیست.
                                         </div>
                                     @endif
+                                    @if (session('error'))
+                                    	<div class="alert alert-danger" role="alert">
+                                    		{{ session('error') }}
+                                    	</div>
+                                    @endif
                                 </p>
                                 <hr>
                                 <div class="footer">

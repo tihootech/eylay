@@ -24,6 +24,11 @@ class QuizFillingController extends Controller
 	{
 		$quiz = Quiz::whereUid($uid)->firstOrFail();
 
+		$found = Filler::where('user_id', auth()->id())->where('quiz_id', $quiz->id)->first();
+		if ($found) {
+			return redirect()->route('quiz.preview')->withError(__('YOU_HAVE_ALREADY_ANSWERED_THIS_QUIZ'));
+		}
+
 		if ($request->refresh) {
 			session(['filling' => null]);
 			return redirect()->route('quiz.fill', $quiz->uid);
