@@ -97,3 +97,9 @@ pre, code {
 .radio .radio-text {
 	margin-right: 20px;
 }
+@media (max-width: 768px) {
+	.navbar .navbar-collapse .caret {
+		right: unset;
+		left: 16px;
+	}
+}

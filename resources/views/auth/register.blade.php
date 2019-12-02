@@ -59,7 +59,7 @@
                                             <span class="input-group-addon">
                                                 <i class="material-icons">face</i>
                                             </span>
-                                            <input type="text" name="name" class="form-control" placeholder="نام شما..." required value="{{old('name')}}">
+                                            <input type="text" name="name" class="form-control" placeholder="نام و نام خانوادگی..." required value="{{old('name')}}">
                                             @error('name')
                                                 <span class="text-danger">
                                                     <strong>{{ $message }}</strong>
@@ -96,6 +96,18 @@
                                                 <i class="material-icons">lock_outline</i>
                                             </span>
                                             <input type="password" name="password_confirmation" placeholder="تکرار رمزعبور..." class="form-control" required/>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">developer_board</i>
+                                            </span>
+                                            <input type="text" name="code" placeholder="کد عضویت (الزامی نیست!)" class="form-control" value="{{old('code')}}"/>
+                                            @error('code')
+                                                <span class="text-danger">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
 
                                     </div>

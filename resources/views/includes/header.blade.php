@@ -12,15 +12,19 @@
 		</div>
 
 		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-left">
+			<ul class="nav navbar-nav navbar-right">
 				<li class="button-container">
 					<a href="{{route('dashboard')}}" class="btn btn-primary btn-round">
-						<i class="material-icons">person</i> ناحیه کاربری
+						<i class="material-icons ml-2">person</i> ناحیه کاربری
 					</a>
 				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-
+				@guest
+					<li class="button-container">
+						<a href="{{route('register')}}" class="btn btn-primary btn-round">
+							<i class="material-icons ml-2">person_add</i> ایجاد حساب کاربری
+						</a>
+					</li>
+				@endguest
 				<li>
 					<a href="{{route('signup_page')}}">
 						<i class="material-icons">group_add</i> ثبت نام در دوره های آموزشی
@@ -53,8 +57,6 @@
 
 					</ul>
 				</li>
-
-
 			</ul>
 		</div>
 	</div>

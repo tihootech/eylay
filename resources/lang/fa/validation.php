@@ -43,7 +43,7 @@ return [
     'file'                 => ' :attribute must be a file.',
     'filled'               => ' :attribute field must have a value.',
     'image'                => ' :attribute must be an image.',
-    'in'                   => ' selected :attribute is invalid.',
+    'in'                   => ' :attribute وارد شده، صحیح نیست.',
     'in_array'             => ' :attribute field does not exist in :other.',
     'integer'              => ' :attribute باید عدد باشد.',
     'ip'                   => ' :attribute must be a valid IP address.',
@@ -153,6 +153,7 @@ return [
         'image'=> 'انتخاب تصویر',
         'bg'=> 'انتخاب تصویر پس زمینه',
         'category_name'=> 'دسته بندی',
+        'code'=> 'کد',
     ],
 
 ];

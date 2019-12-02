@@ -1,29 +1,32 @@
+.m-2 {
+	margin: .25em !important;
+}
 .mx-2 {
-	margin: 0 .25em
+	margin: 0 .25em !important;
 }
 .mx-3 {
-	margin: 0 .5em
+	margin: 0 .5em !important;
 }
 .mt-2 {
-	margin-top: .25em
+	margin-top: .25em !important;
 }
 .ml-2 {
-	margin-left: .25em
+	margin-left: .25em !important;
 }
 .mr-2 {
-	margin-right: .25em
+	margin-right: .25em !important;
 }
 .mt-4 {
-	margin-top: .75em
+	margin-top: .75em !important;
 }
 .mt-5 {
-	margin-top: 1.25em
+	margin-top: 1.25em !important;
 }
 .mt-6 {
-	margin-top: 1.75em
+	margin-top: 1.75em !important;
 }
 .mt-7 {
-	margin-top: 3em
+	margin-top: 3em !important;
 }
 
 .nav-pills > li {
@@ -65,6 +68,18 @@
 	}
 	100% {
 		border: 2px solid #fff;
+	}
+}
+.btn.btn-round, .navbar .navbar-nav > li > a.btn.btn-round {
+	margin: 0 4px;
+}
+@media (max-width: 768px) {
+	.navbar .navbar-collapse .navbar-nav > li.button-container > a {
+		text-align: center;
+		margin: 15px;
+	}
+	.navbar .navbar-collapse .navbar-nav > li > a {
+		text-align: right;
 	}
 }
 
