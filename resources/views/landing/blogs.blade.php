@@ -23,6 +23,38 @@
 
 			<div class="section">
 
+                <div class="subscribe-line subscribe-line-image" style="background-image: url('assets/img/search.jpg');">
+	        		<div class="container">
+	        			<div class="row">
+	        				<div class="col-md-6 col-md-offset-3">
+	        					<div class="card card-raised card-form-horizontal">
+	        						<div class="card-content">
+	        							<form method="" action="">
+	        								<div class="row">
+	        									<div class="col-sm-8">
+	        										<div class="input-group">
+	        											<span class="input-group-addon">
+	        												<i class="material-icons">search</i>
+	        											</span>
+	        											<div class="form-group @unless(request('search')) is-empty @endunless">
+                                                            <input type="text" value="{{request('search')}}" placeholder="جستجو..." class="form-control" name="search">
+                                                            <span class="material-input"></span>
+                                                        </div>
+	        										</div>
+	        									</div>
+	        									<div class="col-sm-4">
+	        										<button type="button" class="btn btn-primary btn-block">جستجو</button>
+	        									</div>
+	        								</div>
+	        							</form>
+	        						</div>
+	        					</div>
+
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+                <hr>
                 <div class="row">
 					<div class="col-md-6 col-md-offset-3">
 
@@ -62,10 +94,17 @@
                         </div>
                     </div>
                 @endif
-                @foreach ($blogs as $blog)
-                    @include('landing.partials.blog')
-                @endforeach
-                {{$blogs->appends($_GET)->links()}}
+                @if ($blogs->count())
+                    @foreach ($blogs as $blog)
+                        @include('landing.partials.blog')
+                    @endforeach
+                    {{$blogs->appends($_GET)->links()}}                    
+                @else
+                    <div class="alert alert-warning">
+                        <i class="fa fa-warning"></i>
+                        موردی یافت نشد.
+                    </div>
+                @endif
 			</div>
 
 		</div>

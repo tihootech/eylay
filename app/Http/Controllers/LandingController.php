@@ -20,7 +20,7 @@ class LandingController extends Controller
     	return view('landing.index', compact('courses', 'blog', 'latest_blogs', 'random_blogs'));
     }
 
-    public function blogs($text=null)
+    public function blogs($text=null, Request $request)
     {
         // init vars
         $current_cat = null;
@@ -47,6 +47,11 @@ class LandingController extends Controller
                 $tag = $text;
                 $blogs = $blogs->whereRaw("FIND_IN_SET('$tag',tags)");
             }
+        }
+        if ($phrase = $request->search) {
+            $blogs = $blogs->where(function ($query) use ($phrase) {
+                $query->orWhere('title', 'like', "%$phrase%")->orWhere('subtitle', 'like', "%$phrase%")->orWhere('tags', 'like', "%$phrase%");
+            });
         }
         if ($order == 'seens') {
             $blogs = $blogs->orderBy('seens', 'DESC');
