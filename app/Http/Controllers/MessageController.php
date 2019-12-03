@@ -32,9 +32,14 @@ class MessageController extends Controller
 
         if ($request->ajax()) {
 
-            $data['user_id'] = auth()->id();
+            if (master()) {
+                $data['user_id'] = $request->user_id;
+                $data['master'] = true;
+            }else {
+                $data['user_id'] = auth()->id();
+            }
             Message::create($data);
-            return view('ajaxes.message', ['body'=>$request->body]);
+            return view('ajaxes.message', ['body'=>$request->body, 'message_type'=>$request->message_type]);
 
         }elseif(master()) {
 

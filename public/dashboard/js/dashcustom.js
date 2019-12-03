@@ -69,9 +69,11 @@ $(document).on('click', '[data-text-editor]', function () {
 $(document).on('submit', '.messanger-form', function (e) {
 	e.preventDefault();
 	var input = $(this).find('input[name=body]');
+	var user_id = $(this).find('input[name=user_id]').val();
+	var message_type = $(this).data('message-type');
 	var body = input.val();
 	var url = $(this).attr('action');
-	var formdata = {body:body};
+	var formdata = {body:body, user_id:user_id, message_type:message_type};
 	var target = $(this).find('.messages');
 	$.ajaxSetup({
 		headers: {
