@@ -6,7 +6,7 @@
 
     <div class="tile text-left">
         <a href="{{route('quiz.create')}}" class="btn btn-primary btn-round">
-            <i class="fa fa-plus ml-2"></i>
+            <i class="fa fa-plus m-0"></i>
             @lang('NEW_QUIZ')
         </a>
     </div>
@@ -14,7 +14,7 @@
 	<div class="tile">
         @if ($quizzes->count())
 
-            <div class="table-responsive">
+            <div class="table-responsive-md">
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
@@ -38,32 +38,32 @@
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $quiz->public]) </td>
                                 <td>
                                     <a href="{{route('quiz.preview', urf($quiz->title))}}" class="btn btn-outline-info btn-round mx-1" target="_blank">
-                                        <i class="fa fa-eye ml-2"></i>
-                                        @lang('PREVIEW')
+                                        <i class="fa fa-eye m-0"></i>
+                                        {{-- @lang('PREVIEW') --}}
                                     </a>
                                 </td>
                                 <td>
                                     <a href="{{route('quiz.analyze', $quiz->uid)}}" class="btn btn-outline-info btn-round mx-1">
-                                        <i class="fa fa-pie-chart ml-2"></i>
-                                        @lang('STATICS')
+                                        <i class="fa fa-pie-chart m-0"></i>
+                                        {{-- @lang('STATICS') --}}
                                     </a>
                                 </td>
                                 <td>
                                     <a href="{{route('quiz.general_analyze', $quiz->id)}}" class="btn btn-outline-info btn-round mx-1">
-                                        <i class="fa fa-bar-chart ml-2"></i>
-                                        @lang('GENERAL_ANALYZE')
+                                        <i class="fa fa-bar-chart m-0"></i>
+                                        {{-- @lang('GENERAL_ANALYZE') --}}
                                     </a>
                                 </td>
                                 <td>
                                     <a href="{{route('quiz.show', $quiz->id)}}" class="btn btn-round btn-outline-primary">
-                                        <i class="fa fa-cogs ml-2"></i>
-                                        @lang('MANAGE')
+                                        <i class="fa fa-cogs m-0"></i>
+                                        {{-- @lang('MANAGE') --}}
                                     </a>
                                 </td>
                                 <td>
                                     <a href="{{route('quiz.edit', $quiz->id)}}" class="btn btn-round btn-outline-success">
-                                        <i class="fa fa-edit ml-2"></i>
-                                        @lang('EDIT')
+                                        <i class="fa fa-edit m-0"></i>
+                                        {{-- @lang('EDIT') --}}
                                     </a>
                                 </td>
                                 <td>
@@ -71,8 +71,8 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-round btn-outline-danger delete">
-                                            <i class="fa fa-trash ml-2"></i>
-                                            @lang('DELETE')
+                                            <i class="fa fa-trash m-0"></i>
+                                            {{-- @lang('DELETE') --}}
                                         </button>
                                     </form>
                                 </td>

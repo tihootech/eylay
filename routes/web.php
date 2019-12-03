@@ -19,6 +19,9 @@ Route::post('ajaxes/{action}', 'AjaxController@main')->name('ajaxes');
 // general user account control
 Route::get('acc', 'AccController@edit')->name('acc');
 Route::put('acc', 'AccController@update')->name('acc_update');
+Route::get('user/list', 'AccController@list')->name('user.list');
+Route::delete('user/{user}', 'AccController@destroy')->name('user.destroy');
+Route::put('user/{user}', 'AccController@master_update')->name('user.master_update');
 
 // newsletter
 Route::post('newsletter', 'NewsletterController@join')->name('newsletter');

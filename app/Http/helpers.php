@@ -147,5 +147,5 @@ function parray($array)
 
 function user_types()
 {
-    return ['student', 'admin'];
+    return ['code_amooz', 'student', 'admin'];
 }

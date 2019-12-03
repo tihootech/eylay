@@ -24,6 +24,12 @@
 
 @master
 	<li>
+		<a class="app-menu__item @if( rn() == 'user.list' ) active @endif" href="{{route("user.list")}}">
+			<i class="ml-2 material-icons">group</i>
+			<span class="app-menu__label"> @lang('USERS') </span>
+		</a>
+	</li>
+	<li>
 		<a class="app-menu__item @if( rn() == 'course.index' ) active @endif" href="{{route("course.index")}}">
 			<i class="ml-2 material-icons">perm_contact_calendar</i>
 			<span class="app-menu__label"> @lang('COURSES') </span>

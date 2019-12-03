@@ -12,6 +12,13 @@ class AccController extends Controller
 	{
 		// all users can edit and update their own credentials
 		$this->middleware('auth');
+		$this->middleware('master')->only(['list','master_update','distroy']);
+	}
+
+	public function list()
+	{
+		$users = User::paginate(20);
+		return view('dashboard.acc.list', compact('users'));
 	}
 
     public function edit()
@@ -48,6 +55,26 @@ class AccController extends Controller
 			}
 		}else {
 			return back()->withError(__('WRONG_CURRENT_PASSWORD'));
+		}
+	}
+
+	public function master_update(User $user, Request $request)
+	{
+		$user->type = $request->type;
+		if ($request->new_password) {
+			$user->password = bcrypt($request->new_password);
+		}
+		$user->save();
+		return back()->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
+	}
+
+	public function destroy(User $user)
+	{
+		if ($user->type == 'master') {
+			return back()->withError(__('CANT_DELETE_MASTER'));
+		}else {
+			$user->delete();
+			return back()->withMessage(__('CHANGES_MADE_SUCCESSFULLY'));
 		}
 	}
 

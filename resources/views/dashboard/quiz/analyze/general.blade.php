@@ -14,7 +14,7 @@
 	<div class="tile">
         @if ($quiz->fillers->count())
 
-            <div class="table-responsive">
+            <div class="table-responsive-md">
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
