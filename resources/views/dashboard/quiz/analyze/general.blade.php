@@ -20,6 +20,8 @@
                         <tr>
                             <th scope="col"> @lang('ROW') </th>
                             <th scope="col"> پاسخ دهنده </th>
+                            <th> عملکرد </th>
+                            <th> زمان </th>
                             @foreach ($quiz->questions as $question)
                                 <th scope="col"> {{$question->title}} </th>
                             @endforeach
@@ -31,8 +33,20 @@
                             <tr>
                                 <th scope="row"> {{$i+1}} </th>
                                 <td> <a href="#"> {{$filler->user->name ?? 'Database Error'}} </a> </td>
+                                <td>
+                                    {{$filler->percentage}}%
+                                </td>
+                                <td>
+                                    {{$filler->time}} ثانیه
+                                </td>
                                 @foreach ($quiz->questions as $question)
-                                    <td> {{$question->filler_answer($filler->id)}} </td>
+                                    @if ($quiz->type == 'quiz')
+                                        <td class="{{$question->correct_choice(true) == $question->filler_answer($filler->id) ? 'text-success' : 'text-danger'}}">
+                                    @else
+                                        <td>
+                                    @endif
+                                        {{$question->filler_answer($filler->id)}}
+                                    </td>
                                 @endforeach
                                 <td>
                                     <form class="d-inline" action="{{route('quiz.destroy_filler', $filler->id)}}" method="post">

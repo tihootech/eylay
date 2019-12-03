@@ -15,7 +15,12 @@ class Quiz extends Model
 
     public function fillers()
     {
-        return $this->hasMany(Filler::class)->latest();
+        return $this->hasMany(Filler::class)->orderBy('percentage', 'DESC')->orderBy('time');
+    }
+
+    public function top3()
+    {
+        return $this->hasMany(Filler::class)->orderBy('percentage', 'DESC')->orderBy('time')->take(3);
     }
 
     public function completes()

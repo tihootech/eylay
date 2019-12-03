@@ -84,8 +84,13 @@ class Question extends Model
 		}
 	}
 
-	public function correct_choice()
+	public function correct_choice($raw=false)
 	{
-		return QuestionChoice::where('question_id', $this->id)->where('correct', 1)->first();
+		$object = QuestionChoice::where('question_id', $this->id)->where('correct', 1)->first();
+		if ($raw) {
+			return $object->content;
+		}else {
+			return $object;
+		}
 	}
 }

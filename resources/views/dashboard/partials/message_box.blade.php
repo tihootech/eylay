@@ -1,12 +1,12 @@
 <div class="row justify-content-center">
-	<div class="col-md-{{$message_type == 'master' ? 6 : 8}}">
+	<div class="col-md-{{$message_type == 'master' ? 12 : 9}}">
 		<form class="tile messanger-form" action="{{route('message.store')}}" data-message-type="{{$message_type}}" >
 			@master
 				<input type="hidden" name="user_id" value="{{$messages[0]->user_id}}">
 			@else
 				<input type="hidden" name="user_id" value="0">
 			@endmaster
-			<h3 class="tile-title"> پیام های شما </h3>
+			<h3 class="tile-title"> @if($message_type == 'master') {{$messages[0]->user->name ?? 'Error'}} @else پیام های شما  @endif </h3>
 			<div class="messanger">
 				<div class="messages">
 					<div class="message">

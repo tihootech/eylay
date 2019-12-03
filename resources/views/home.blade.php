@@ -20,9 +20,30 @@
     </div> --}}
 
     @master
-        @foreach ($messages_list as $messages)
-            @include('dashboard.partials.message_box', ['message_type' => 'master'])
-        @endforeach
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bs-component">
+                    <ul class="list-group">
+                        @foreach ($messages_list as $i => $messages)
+                            <a class="list-group-item list-group-item-action @if($i==0) active @endif"
+                                href="#dm-messages-{{$i}}" data-toggle="tab">
+                                {{$messages[0]->user->name ?? 'Error'}}
+                            </a>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content">
+                    @foreach ($messages_list as $i => $messages)
+                        <div class="tab-pane fade @if($i==0) active show @endif" id="dm-messages-{{$i}}">
+                            @include('dashboard.partials.message_box', ['message_type' => 'master'])
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
     @else
         @include('dashboard.partials.message_box', ['messages' => $user->messages, 'message_type'=>'user'])
     @endmaster
