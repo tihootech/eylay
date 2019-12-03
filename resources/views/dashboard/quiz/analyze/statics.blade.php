@@ -4,35 +4,37 @@
 @endsection
 @section('content')
 
-    <div class="tile">
-        <div class="row">
-            @foreach ($quiz->top3 as $rank => $top)
-                <div class="col-md-4">
-                    <div class="card
-                        @if($rank == 0) bg-warning @endif
-                        @if($rank == 1) text-light bg-secondary @endif
-                        @if($rank == 2) text-light bg-danger @endif">
-                        <div class="card-body">
-                            <i class="material-icons ml-2">filter_{{$rank+1}}</i>
-                            {{$top->user->name ?? 'NO NAME'}}
-                        </div>
-                        <div class="card-footer font-weight-bold">
-                            <div class="row">
-                                <div class="col-6">
-                                    <i class="fa fa-line-chart ml-1"></i>
-                                    {{$top->percentage}} %
-                                </div>
-                                <div class="col-6 text-left">
-                                    <i class="fa fa-clock-o ml-1"></i>
-                                    {{$top->time}} ثانیه
+    @if ($quiz->type == 'quiz')
+        <div class="tile">
+            <div class="row">
+                @foreach ($quiz->top3 as $rank => $top)
+                    <div class="col-md-4">
+                        <div class="card my-2
+                            @if($rank == 0) bg-warning @endif
+                            @if($rank == 1) text-light bg-secondary @endif
+                            @if($rank == 2) text-light bg-danger @endif">
+                            <div class="card-body">
+                                <i class="material-icons ml-2">filter_{{$rank+1}}</i>
+                                {{$top->user->name ?? 'NO NAME'}}
+                            </div>
+                            <div class="card-footer font-weight-bold">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <i class="fa fa-line-chart ml-1"></i>
+                                        {{$top->percentage}} %
+                                    </div>
+                                    <div class="col-8 text-left">
+                                        <i class="fa fa-clock-o ml-1"></i>
+                                        {{human_time($top->time)}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
+    @endif
 
     @foreach ($quiz->questions as $question)
 
