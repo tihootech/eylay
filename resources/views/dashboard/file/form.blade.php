@@ -40,7 +40,14 @@
 
             <div class="col-md-4 form-group">
 				<label for="access"> @lang('ACCESS') </label>
-				<input type="text" class="form-control" name="access" id="access" value="{{old('access') ?? $file->access ?? 'public'}}">
+                <select class="form-control" name="access">
+                    <option @if($file->access == 'public') selected @endif value="public"> public </option>
+                    @foreach (user_types() as $user_type)
+                        <option value="{{$user_type}}" @if($user_type==$file->access) selected @endif>
+                            {{__(strtoupper($user_type))}}
+                        </option>
+                    @endforeach
+                </select>
 			</div>
 
             <div class="col-md-12 form-group">

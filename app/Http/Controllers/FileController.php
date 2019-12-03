@@ -11,12 +11,17 @@ class FileController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('master');
+        $this->middleware('master')->except('index');
     }
 
     public function index()
     {
-        $files = File::latest()->get();
+        if (master()) {
+            $files = File::latest()->get();
+        }else {
+            $user = auth()->user();
+            $files = File::whereAccess($user->type)->latest()->get();
+        }
         return view('dashboard.file.index', compact('files'));
     }
 

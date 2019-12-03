@@ -54,12 +54,6 @@
 		</a>
 	</li>
 	<li>
-		<a class="app-menu__item @if( rn() == 'file.index' ) active @endif" href="{{route("file.index")}}">
-			<i class="ml-2 material-icons">cloud</i>
-			<span class="app-menu__label"> @lang('FILES') </span>
-		</a>
-	</li>
-	<li>
 		<a class="app-menu__item @if( rn() == 'newsletter.index' ) active @endif" href="{{route("newsletter.index")}}">
 			<i class="ml-2 material-icons">style</i>
 			<span class="app-menu__label"> @lang('NEWSLETTER') </span>
@@ -81,6 +75,13 @@
 		</a>
 	</li>
 @endnotmaster
+
+<li>
+	<a class="app-menu__item @if( rn() == 'file.index' ) active @endif" href="{{route("file.index")}}">
+		<i class="ml-2 material-icons">cloud</i>
+		<span class="app-menu__label"> @lang('FILES') </span>
+	</a>
+</li>
 
 <li>
 	<a class="app-menu__item @if( rn() == 'acc' ) active @endif" href="{{route("acc")}}">
