@@ -32,6 +32,16 @@
                 </select>
 			</div>
 
+			<div class="col-md-3 form-group">
+				<label for="access"> سطح دسترسی </label>
+                <select class="form-control" name="access" id="access">
+                    <option value=""> همگانی </option>
+                    @foreach (user_types() as $user_type)
+                        <option @if($quiz->access == $user_type) selected @endif> {{$user_type}} </option>
+                    @endforeach
+                </select>
+			</div>
+
             <div class="col-md-3 form-group">
 				<label for="image"> @lang('IMAGE') </label>
 				<input type="file" class="form-control" name="image" id="image">

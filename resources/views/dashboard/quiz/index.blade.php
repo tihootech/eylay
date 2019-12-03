@@ -21,6 +21,7 @@
                             <th scope="col"> @lang('ROW') </th>
                             <th scope="col"> @lang('TITLE') </th>
                             <th scope="col"> @lang('TYPE') </th>
+                            <th scope="col"> @lang('ACCESS_LEVEL') </th>
                             <th scope="col"> @lang('ACTIVE') </th>
                             <th scope="col"> @lang('PUBLIC') </th>
                             <th scope="col" colspan="6"> @lang('OPERATIONS') </th>
@@ -32,6 +33,7 @@
                                 <th scope="row"> {{$i+1}} </th>
                                 <td> {{$quiz->title}} </td>
                                 <td> {{$quiz->type}} </td>
+                                <td> {{$quiz->access}} </td>
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $quiz->active]) </td>
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $quiz->public]) </td>
                                 <td>

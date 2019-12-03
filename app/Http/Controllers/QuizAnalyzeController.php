@@ -16,7 +16,8 @@ class QuizAnalyzeController extends Controller
 
 	public function quizzes_to_join()
 	{
-		$quizzes = Quiz::whereActive(true)->latest()->paginate(6);
+		$user = auth()->user();
+		$quizzes = Quiz::whereActive(true)->whereAccess($user->type)->orWhereNull('access')->latest()->paginate(6);
         return view('dashboard.quiz.quizzes_to_join', compact('quizzes'));
 	}
 

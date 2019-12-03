@@ -143,3 +143,9 @@ function parray($array)
         return "[]";
     }
 }
+
+
+function user_types()
+{
+    return ['student', 'admin'];
+}

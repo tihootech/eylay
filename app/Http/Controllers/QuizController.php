@@ -96,6 +96,7 @@ class QuizController extends Controller
         $data = request()->validate([
             'title' => 'required|unique:quizzes,title,'.$quiz->id,
             'type' => 'nullable',
+            'access' => 'nullable',
             'info' => 'required',
             'image' => 'nullable',
             'bg' => 'nullable',
