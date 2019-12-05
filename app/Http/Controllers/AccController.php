@@ -30,7 +30,8 @@ class AccController extends Controller
 
 	public function show(User $user)
 	{
-		return view('dashboard.acc.show', compact('user'));
+		$activities = $user->activities()->paginate(25);
+		return view('dashboard.acc.show', compact('user', 'activities'));
 	}
 
     public function edit()
