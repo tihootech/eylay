@@ -22,6 +22,7 @@ Route::group(['middleware' => 'user_activity'], function () {
     // general user account control
     Route::get('acc', 'AccController@edit')->name('acc');
     Route::put('acc', 'AccController@update')->name('acc_update');
+    Route::get('user/activities', 'AccController@activities')->name('user.activities');
     Route::get('user/list', 'AccController@list')->name('user.list');
     Route::get('user/{user}', 'AccController@show')->name('user.show');
     Route::delete('user/{user}', 'AccController@destroy')->name('user.destroy');

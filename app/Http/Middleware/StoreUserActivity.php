@@ -18,7 +18,7 @@ class StoreUserActivity
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if ($user && $user->type != 'master') {
+        if ($user && $user->type != 'master' && request()->method() == 'GET') {
         	$ua = new UserActivity;
         	$ua->user_id = $user->id;
         	$ua->method = request()->method();

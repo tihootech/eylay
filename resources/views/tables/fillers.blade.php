@@ -1,5 +1,5 @@
 <div class="table-responsive-md">
-	<table class="table table-bordered table-striped table-hover">
+	<table class="table table-bordered table-striped table-hover table-sm">
 		<thead>
 			<tr>
 				@unless ($single)
@@ -72,7 +72,7 @@
 							<form class="d-inline" action="{{route('quiz.destroy_filler', $filler->id)}}" method="post">
 								@csrf
 								@method('DELETE')
-								<button type="button" class="btn btn-round btn-outline-danger delete">
+								<button type="button" class="btn btn-round btn-sm btn-outline-danger delete">
 									<i class="fa fa-trash m-0"></i>
 								</button>
 							</form>

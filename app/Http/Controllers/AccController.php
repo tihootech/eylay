@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\User;
+use App\UserActivity;
 
 class AccController extends Controller
 {
@@ -26,6 +27,12 @@ class AccController extends Controller
 		}
 		$users = $users->paginate(20);
 		return view('dashboard.acc.list', compact('users'));
+	}
+
+	public function activities()
+	{
+		$activities = UserActivity::latest()->paginate(25);
+		return view('dashboard.acc.activities', compact('activities'));
 	}
 
 	public function show(User $user)

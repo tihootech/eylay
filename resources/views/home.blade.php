@@ -22,6 +22,7 @@
     @master
         <div class="text-center">
             <a href="#master-messages" data-toggle="collapse" class="btn btn-primary"> نمایش پیام های ارسالی </a>
+            <a href="{{route('user.activities')}}" class="btn btn-primary"> ACTIVITIES </a>
         </div>
         <div class="collapse" id="master-messages">
 
