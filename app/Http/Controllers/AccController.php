@@ -15,9 +15,16 @@ class AccController extends Controller
 		$this->middleware('master')->only(['list','master_update','distroy']);
 	}
 
-	public function list()
+	public function list(Request $request)
 	{
-		$users = User::paginate(20);
+		$users = User::query();
+		if ($type = $request->type) {
+			$users = $users->where('type', $type);
+		}
+		if ($phrase = $request->search) {
+			$users = $users->where('name', 'like', "%$phrase%")->orWhere('email', 'like', "%$phrase%");
+		}
+		$users = $users->paginate(20);
 		return view('dashboard.acc.list', compact('users'));
 	}
 

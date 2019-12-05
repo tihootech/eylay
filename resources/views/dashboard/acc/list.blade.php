@@ -4,6 +4,40 @@
 @endsection
 @section('content')
 
+    <div class="tile">
+        <form class="row justify-content-center">
+            <div class="col-md-4">
+                <label for="search"> جستجو </label>
+                <input type="text" name="search" id="search" value="{{request('search')}}" class="form-control">
+            </div>
+            <div class="w-100 my-1"></div>
+            @if (request('search'))
+                <div class="col-md-1">
+                    <a href="{{route('user.list')}}" class="btn btn-warning btn-block btn-sm">
+                        <i class="fa fa-times m-0"></i>
+                    </a>
+                </div>
+            @endif
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary btn-block btn-sm">
+                    <i class="fa fa-search ml-1"></i>
+                    جستجو
+                </button>
+            </div>
+        </form>
+        <hr>
+        <div class="text-center">
+            <a href="{{route('user.list')}}" class="btn @if(!request('type')) btn-primary @else btn-outline-primary @endif btn-round btn-sm mx-1">
+                همه کاربران
+            </a>
+            @foreach (user_types() as $user_type)
+                <a href="{{route('user.list')}}?type={{$user_type}}" class="btn @if(request('type')==$user_type) btn-primary @else btn-outline-primary @endif btn-round btn-sm mx-1">
+                    {{__(strtoupper($user_type))}}
+                </a>
+            @endforeach
+        </div>
+    </div>
+
 	<div class="tile">
         @if ($users->count())
 
