@@ -19,14 +19,14 @@
 						@if ($dm->master)
 							<div class="message">
 								<img src="{{asset('assets/img/me.jpg')}}">
-								<p class="info">
+								<p class="info" data-toggle="popover" data-html="true" data-placement="top" data-content='@include('dashboard.partials.date_popver', ['object'=>$dm])'>
 									{{$dm->body}}
 								</p>
 							</div>
 						@else
 							<div class="message me">
 								<img src="{{asset('assets/img/placeholder.jpg')}}">
-								<p class="info">
+								<p class="info" data-toggle="popover" data-html="true" data-placement="top" data-content='@include('dashboard.partials.date_popver', ['object'=>$dm])'>
 									{{$dm->body}}
 									<i class="material-icons">{{$dm->read ? 'done_all' : 'done'}}</i>
 								</p>

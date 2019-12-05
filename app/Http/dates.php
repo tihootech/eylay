@@ -41,9 +41,9 @@ function modern_date($timestamp)
 }
 
 
-function date_picker_date($income)
+function date_picker_date($income, $sep="/")
 {
-    return $income ? \Morilog\Jalali\Jalalian::forge($income)->format('%Y/%m/%d') : null;
+    return $income ? \Morilog\Jalali\Jalalian::forge($income)->format("%Y$sep%m$sep%d") : null;
 }
 
 function ago($income)

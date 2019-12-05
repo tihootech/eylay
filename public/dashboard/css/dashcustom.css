@@ -18,15 +18,15 @@
 }
 
 .yekan {
-	font-family: 'Yekan';
+	font-family: 'Yekan' !important;
 }
 
 .dinar {
-	font-family: 'Dinar';
+	font-family: 'Dinar' !important;
 }
 
 .calibri {
-	font-family: 'Calibri';
+	font-family: 'Calibri' !important;
 }
 
 /*******************************/
@@ -79,13 +79,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .messanger .messages {
 	max-height: 55vh;
 }
+.messanger .messages .message {
+	cursor: pointer;
+}
 .messanger .messages .message i {
 	font-size: 14px;
 	font-weight: bold;
 	margin-right: 3px;
 
 }
-
+.one-half {
+	font-size: 1.5em;
+}
 /*******************************/
 /* Realy Custom */
 /*******************************/

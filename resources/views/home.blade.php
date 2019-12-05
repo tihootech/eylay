@@ -20,28 +20,37 @@
     </div> --}}
 
     @master
-        <div class="row">
-            <div class="col-md-3">
-                <div class="bs-component">
-                    <ul class="list-group">
-                        @foreach ($messages_list as $i => $messages)
-                            <a class="list-group-item list-group-item-action @if($i==0) active @endif"
-                                href="#dm-messages-{{$i}}" data-toggle="tab">
-                                {{$messages[0]->user->name ?? 'Error'}}
-                            </a>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="tab-content">
-                    @foreach ($messages_list as $i => $messages)
-                        <div class="tab-pane fade @if($i==0) active show @endif" id="dm-messages-{{$i}}">
-                            @include('dashboard.partials.message_box', ['message_type' => 'master'])
+        <div class="text-center">
+            <a href="#master-messages" data-toggle="collapse" class="btn btn-primary"> نمایش پیام های ارسالی </a>
+        </div>
+        <div class="collapse" id="master-messages">
+
+            <hr>
+            <div class="tile">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="nav flex-column nav-pills">
+                            @foreach ($messages_list as $i => $messages)
+                                <a class="nav-link @if($i==0) active @endif" data-toggle="pill" href="#dm-messages-{{$i+1}}">
+                                    {{$messages[0]->user->name ?? 'Error'}}
+                                </a>
+                            @endforeach
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-md-9">
+                        <div class="tab-content">
+                            @foreach ($messages_list as $i => $messages)
+                                <div class="tab-pane fade @if($i==0) show active @endif" id="dm-messages-{{$i+1}}">
+                                    @include('dashboard.partials.message_box', ['message_type' => 'master'])
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
         </div>
 
     @else

@@ -21,7 +21,9 @@
                     <tbody>
                         @foreach ($users as $i => $user)
                             <tr>
-                                <th scope="row"> {{$i+1}} </th>
+                                <th scope="row" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top" data-content='@include('dashboard.partials.date_popver', ['object'=>$user])'>
+                                    {{$i+1}}
+                                </th>
                                 <td> {{$user->name}} </td>
                                 <td class="calibri"> {{$user->email}} </td>
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $user->email_verified_at]) </td>

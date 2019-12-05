@@ -23,7 +23,20 @@
                             <th> عملکرد </th>
                             <th> زمان </th>
                             @foreach ($quiz->questions as $question)
-                                <th scope="col"> {{$question->title}} </th>
+                                <th scope="col" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true"
+                                    data-content="
+                                        <h6>{{$question->body}}</h6>
+                                        @if ($question->choices->count())
+                                            <hr>
+                                            @foreach ($question->choices as $i => $choice)
+                                                <span> {{$i+1}}) {{$choice->content}} </span>
+                                                <br>
+                                            @endforeach
+                                        @endif
+                                    "
+                                    >
+                                    {{$question->title}}
+                                </th>
                             @endforeach
                             <th scope="col" colspan="6"> @lang('OPERATIONS') </th>
                         </tr>
@@ -32,7 +45,19 @@
                         @foreach ($quiz->fillers as $i => $filler)
                             <tr>
                                 <th scope="row"> {{$i+1}} </th>
-                                <td> <a href="#"> {{$filler->user->name ?? 'Database Error'}} </a> </td>
+                                <td>
+                                    <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true"
+                                        data-content="
+                                            <i class='fa fa-calendar-o ml-2'></i>
+                                            تاریخ پرکردن : {{date_picker_date($filler->created_at)}}
+                                            <br>
+                                            <i class='fa fa-clock-o ml-2'></i>
+                                            ساعت {{$filler->created_at->format('H:i')}}
+                                        "
+                                        >
+                                        {{$filler->user->name ?? 'Database Error'}}
+                                    </a>
+                                </td>
                                 <td>
                                     {{$filler->percentage}}%
                                 </td>
@@ -53,8 +78,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-round btn-outline-danger delete">
-                                            <i class="fa fa-trash ml-2"></i>
-                                            @lang('DELETE')
+                                            <i class="fa fa-trash m-0"></i>
                                         </button>
                                     </form>
                                 </td>

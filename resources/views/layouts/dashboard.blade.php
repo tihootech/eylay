@@ -24,7 +24,7 @@
     <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/pdp.css")}}">
     <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/dashmain.css?v=1.1")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/dashcustom.css?v=1.1")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("dashboard/css/dashcustom.css?v=1.2")}}">
 
 </head>
 
