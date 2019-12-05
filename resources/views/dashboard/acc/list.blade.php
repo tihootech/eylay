@@ -58,7 +58,7 @@
                                 <th scope="row" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top" data-content='@include('dashboard.partials.date_popver', ['object'=>$user])'>
                                     {{$i+1}}
                                 </th>
-                                <td> {{$user->name}} </td>
+                                <td> <a href="{{route('user.show', $user->id)}}"> {{$user->name}} </a> </td>
                                 <td class="calibri"> {{$user->email}} </td>
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $user->email_verified_at]) </td>
 								<td>

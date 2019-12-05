@@ -12,12 +12,12 @@ class AccController extends Controller
 	{
 		// all users can edit and update their own credentials
 		$this->middleware('auth');
-		$this->middleware('master')->only(['list','master_update','distroy']);
+		$this->middleware('master')->except(['edit', 'update']);
 	}
 
 	public function list(Request $request)
 	{
-		$users = User::query();
+		$users = User::where('type', '!=', 'master');
 		if ($type = $request->type) {
 			$users = $users->where('type', $type);
 		}
@@ -26,6 +26,11 @@ class AccController extends Controller
 		}
 		$users = $users->paginate(20);
 		return view('dashboard.acc.list', compact('users'));
+	}
+
+	public function show(User $user)
+	{
+		return view('dashboard.acc.show', compact('user'));
 	}
 
     public function edit()

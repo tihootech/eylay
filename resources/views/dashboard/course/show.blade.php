@@ -39,7 +39,7 @@
                             <td> {{$signup->created_at->format('H:i')}} </td>
                             <td>
                                 @if ($signup->user)
-                                    <a href="#"> {{$signup->user->name ?? 'Database Error'}} </a>
+                                    <a href="{{route('user.show', $signup->user_id)}}"> {{$signup->user->name ?? 'Database Error'}} </a>
                                 @else
                                     -
                                 @endif

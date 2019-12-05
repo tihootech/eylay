@@ -20,6 +20,7 @@ Route::post('ajaxes/{action}', 'AjaxController@main')->name('ajaxes');
 Route::get('acc', 'AccController@edit')->name('acc');
 Route::put('acc', 'AccController@update')->name('acc_update');
 Route::get('user/list', 'AccController@list')->name('user.list');
+Route::get('user/{user}', 'AccController@show')->name('user.show');
 Route::delete('user/{user}', 'AccController@destroy')->name('user.destroy');
 Route::put('user/{user}', 'AccController@master_update')->name('user.master_update');
 

@@ -30,7 +30,7 @@ class Comment extends Model
 
     public function author_name()
     {
-        return $this->author ? $this->author->name : __('GUEST');
+        return $this->author ? $this->author->name : null;
     }
 
     public function public_link()

@@ -15,4 +15,9 @@ class Like extends Model
 		$like->save();
 		return $like;
     }
+
+    public function owner()
+    {
+        return $this->morphTo();
+    }
 }

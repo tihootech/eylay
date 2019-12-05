@@ -1,4 +1,4 @@
-<i class="fa fa-clock-o"></i>
+<i class="fa fa-clock-o ml-1"></i>
 {{ago($object->created_at)}}
 <b class="text-danger">-</b>
 <span dir="ltr" class="calibri"> {{$object->created_at ? $object->created_at->format('H:i') : ''}} </span>

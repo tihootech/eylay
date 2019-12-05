@@ -32,6 +32,16 @@ class User extends Authenticatable
         return $this->hasMany(Filler::class)->latest();
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'author_id')->latest();
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'liker_id')->latest();
+    }
+
     public function messages()
     {
         return $this->hasMany(Message::class);

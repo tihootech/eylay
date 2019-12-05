@@ -40,7 +40,15 @@
                                     {{$comment->owner_type}}\{{$comment->owner_id}}
                                 </a>
                             </td>
-                            <td> {{$comment->author_name()}} </td>
+                            <td>
+                                @if ($comment->author_name())
+                                    <a href="{{route('user.show', $comment->author_id)}}">
+                                        {{$comment->author_name()}}
+                                    </a>
+                                @else
+                                    <em> {{ __('GUEST') }} </em>
+                                @endif
+                            </td>
                             <td> {{short($comment->content, 50)}} </td>
                             <td>
                                 @include('dashboard.partials.yesno', ['boolean' => $comment->confirmed])
