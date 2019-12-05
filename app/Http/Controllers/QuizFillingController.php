@@ -34,7 +34,7 @@ class QuizFillingController extends Controller
 			return redirect()->route('quiz.preview', $quiz->title);
 		}
 
-		if ($quiz->active && $quiz->questions->count()) {
+		if ( ($quiz->active || master()) && $quiz->questions->count()) {
 			$no_header = true;
 			$filling = session('filling');
 			if ($filling && $filling['quiz_id'] == $quiz->id) {
@@ -84,7 +84,7 @@ class QuizFillingController extends Controller
 	public function submit_answer($direction, Question $question, $position=null, Request $request)
 	{
 		$quiz = $question->quiz;
-		if ($quiz->active) {
+		if ($quiz->active || master()) {
 
 			if ($request->direction == 'next') { // next question
 

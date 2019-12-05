@@ -40,7 +40,7 @@
                                 <p class="card-description">
                                     {{$quiz->info}}
                                     <hr>
-                                    @if ($quiz->active)
+                                    @if ($quiz->active || master())
                                         @guest
                                             <a class="btn btn-primary btn-round" disabled>
                                                 <i class="material-icons ml-2">add_alarm</i> شروع پاسخ دهی
