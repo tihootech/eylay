@@ -43,7 +43,7 @@
 	        										</div>
 	        									</div>
 	        									<div class="col-sm-4">
-	        										<button type="button" class="btn btn-primary btn-block">جستجو</button>
+	        										<button type="submit" class="btn btn-primary btn-block">جستجو</button>
 	        									</div>
 	        								</div>
 	        							</form>
@@ -98,7 +98,7 @@
                     @foreach ($blogs as $blog)
                         @include('landing.partials.blog')
                     @endforeach
-                    {{$blogs->appends($_GET)->links()}}                    
+                    {{$blogs->appends($_GET)->links()}}
                 @else
                     <div class="alert alert-warning">
                         <i class="fa fa-warning"></i>

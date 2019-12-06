@@ -69,8 +69,7 @@
 			</div>
 		@else
 			<div class="alert alert-warning">
-				کامنتی
-				یافت نشد.
+				هنوز چیزی را لایک نکرده.
 			</div>
 		@endif
 
