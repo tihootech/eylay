@@ -104,6 +104,7 @@ class QuizController extends Controller
             'max_time' => 'nullable',
             'active' => 'nullable',
             'public' => 'nullable',
+            'show_answers' => 'nullable',
         ]);
 
         if ( isset($data['image']) && $data['image'] ) {

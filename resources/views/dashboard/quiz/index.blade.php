@@ -24,6 +24,7 @@
                             <th scope="col"> @lang('QUESTIONS') </th>
                             <th scope="col"> @lang('ACCESS') </th>
                             <th scope="col"> @lang('ACTIVE') </th>
+                            <th scope="col"> @lang('SHOW_ANSWERS') </th>
                             <th scope="col"> @lang('PUBLIC') </th>
                             <th scope="col" colspan="6"> @lang('OPERATIONS') </th>
                         </tr>
@@ -37,6 +38,7 @@
                                 <td class="calibri"> {{$quiz->questions->count()}} </td>
                                 <td> {{$quiz->access}} </td>
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $quiz->active]) </td>
+                                <td> @include('dashboard.partials.yesno', ['boolean' => $quiz->show_answers]) </td>
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $quiz->public]) </td>
                                 <td>
                                     <a href="{{route('quiz.preview', urf($quiz->title))}}" class="btn btn-sm btn-outline-info btn-round mx-1" target="_blank">

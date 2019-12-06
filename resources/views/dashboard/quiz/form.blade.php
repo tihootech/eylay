@@ -68,7 +68,7 @@
 			</div>
 
             <input type="hidden" name="active" value="0">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" name="active" id="active" value="1"
                         @if(!$quiz->id || $quiz->active) checked @endif>
@@ -77,8 +77,20 @@
                     </label>
                 </div>
             </div>
+
+            <input type="hidden" name="show_answers" value="0">
+            <div class="col-md-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="show_answers" id="show-answers" value="1"
+                        @if($quiz->show_answers) checked @endif>
+                    <label class="custom-control-label" for="show-answers">
+                        <span class="mr-2"> @lang('SHOW_ANSWERS') </span>
+                    </label>
+                </div>
+            </div>
+
             <input type="hidden" name="public" value="0">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" name="public" id="public" value="1"
                         @if($quiz->public) checked @endif>
