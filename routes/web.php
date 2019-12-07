@@ -63,6 +63,7 @@ Route::group(['middleware' => 'user_activity'], function () {
     Route::get('آزمون/{title}', 'QuizFillingController@preview')->name('quiz.preview');
     Route::get('quiz/fill/{uid}', 'QuizFillingController@fill')->name('quiz.fill');
     Route::get('quiz/analyze/{quiz}', 'QuizAnalyzeController@general_analyze')->name('quiz.general_analyze');
+    Route::get('quiz/see/{quiz_uid}', 'QuizAnalyzeController@see')->name('quiz.see');
     Route::get('quiz/statics/{quiz_uid}/{filler_uid?}', 'QuizAnalyzeController@statics')->name('quiz.analyze');
     Route::post('fill/{direction}/{question}/{position?}', 'QuizFillingController@submit_answer')->name('quiz.submit_answer');
     Route::get('quizzes', 'QuizAnalyzeController@quizzes_to_join')->name('quiz.quizzes_to_join');

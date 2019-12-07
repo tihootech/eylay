@@ -14,7 +14,7 @@
 	<div class="tile">
         @if ($quizzes->count())
 
-            <div class="table-responsive-md">
+            <div class="table-responsive">
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
@@ -26,7 +26,7 @@
                             <th scope="col"> @lang('ACTIVE') </th>
                             <th scope="col"> @lang('SHOW_ANSWERS') </th>
                             <th scope="col"> @lang('PUBLIC') </th>
-                            <th scope="col" colspan="6"> @lang('OPERATIONS') </th>
+                            <th scope="col" colspan="7"> @lang('OPERATIONS') </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,8 +42,13 @@
                                 <td> @include('dashboard.partials.yesno', ['boolean' => $quiz->public]) </td>
                                 <td>
                                     <a href="{{route('quiz.preview', urf($quiz->title))}}" class="btn btn-sm btn-outline-info btn-round mx-1" target="_blank">
-                                        <i class="fa fa-eye m-0"></i>
+                                        <i class="fa fa-external-link m-0"></i>
                                         {{-- @lang('PREVIEW') --}}
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{route('quiz.see', $quiz->uid)}}" class="btn btn-sm btn-outline-info btn-round mx-1">
+                                        <i class="fa fa-eye m-0"></i>
                                     </a>
                                 </td>
                                 <td>

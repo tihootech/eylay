@@ -17,8 +17,9 @@
                             <th scope="col"> @lang('WRONGS') </th>
                             <th scope="col"> @lang('TIME_LENGTH') </th>
                             <th scope="col"> @lang('PERCENTAGE') </th>
+                            <th scope="col" class="text-danger"> @lang('RANK') </th>
                             <th scope="col"> @lang('DATE') </th>
-                            <th scope="col"> @lang('OPERATIONS') </th>
+                            <th scope="col" colspan="2"> @lang('OPERATIONS') </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,7 +31,14 @@
                                 <td> {{$item->quiz->type == 'quiz' ? $item->wrongs : '-'}} </td>
                                 <td> {{human_time($item->time)}} </td>
                                 <td> {{$item->quiz->type == 'quiz' ? $item->percentage.'%' : '-'}} </td>
+                                <td class="text-danger"> {{$item->rank() ?? '-'}} </td>
                                 <td> {{date_picker_date($item->created_at)}} </td>
+                                <td>
+                                    <a href="{{route('quiz.see', $item->quiz->uid)}}" class="btn btn-round btn-outline-info">
+                                        <i class="fa fa-eye ml-2"></i>
+                                        مشاهده آزمون
+                                    </a>
+                                </td>
                                 <td>
                                     <a href="{{route('quiz.analyze', [$item->quiz->uid, $item->uid])}}" class="btn btn-round btn-outline-primary">
                                         <i class="fa fa-line-chart ml-2"></i>

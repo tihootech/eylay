@@ -27,6 +27,17 @@ class Filler extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function rank()
+    {
+        if ($this->finished_at) {
+            $quiz = $this->quiz;
+            $ids = $quiz->fillers->pluck('id')->toArray();
+            return array_search($this->id, $ids) + 1;
+        }else {
+            return null;
+        }
+    }
+
     public function calculate_result()
     {
         $quiz = $this->quiz;

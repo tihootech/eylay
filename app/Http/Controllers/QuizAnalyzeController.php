@@ -14,6 +14,12 @@ class QuizAnalyzeController extends Controller
         $this->middleware('master')->only('general_analyze');
     }
 
+	public function see($uid)
+	{
+		$quiz = Quiz::where('uid', $uid)->firstOrFail();
+		return view('dashboard.quiz.see', compact('quiz'));
+	}
+
 	public function quizzes_to_join()
 	{
 		$user = auth()->user();

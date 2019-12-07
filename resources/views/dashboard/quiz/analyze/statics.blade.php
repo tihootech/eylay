@@ -35,6 +35,46 @@
                         </div>
                     @endforeach
                 </div>
+
+                <hr>
+                <div class="alert alert-info text-center">
+
+                    <div class="row justify-content-center">
+
+                        @if ($filler)
+                            <div class="col-md-4 my-1">
+                                <i class="fa fa-arrow-left ml-1"></i>
+                                عملکرد شما :
+                                @if ($filler->percentage)
+                                    <b class="calibri"> {{$filler->percentage}} % </b>
+                                @else
+                                    <em> تعریف نشده </em>
+                                @endif
+                            </div>
+
+                            <div class="col-md-4 my-1">
+                                <i class="fa fa-arrow-left ml-1"></i>
+                                رتبه شما :
+                                @if ($rank = $filler->rank())
+                                    <b class="calibri"> {{$rank}} </b>
+                                    از
+                                    <b class="calibri">{{$quiz->fillers->count()}} </b>
+
+                                @else
+                                    <em> تعریف نشده </em>
+                                @endif
+                            </div>
+                        @endif
+
+                        <div class="col-md-4 my-1">
+                            <i class="fa fa-arrow-left ml-1"></i>
+                            میانگین عملکرد شرکت کنندگان
+                            <b class="calibri"> {{$quiz->ave('percentage')}} % </b>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         @endif
 
