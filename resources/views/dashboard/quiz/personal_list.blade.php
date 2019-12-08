@@ -31,7 +31,13 @@
                                 <td> {{$item->quiz->type == 'quiz' ? $item->wrongs : '-'}} </td>
                                 <td> {{human_time($item->time)}} </td>
                                 <td> {{$item->quiz->type == 'quiz' ? $item->percentage.'%' : '-'}} </td>
-                                <td class="text-danger"> {{$item->rank() ?? '-'}} </td>
+                                <td class="text-danger">
+                                    @if ($item->quiz->type == 'quiz')
+                                        {{$item->rank() ?? '-'}}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
                                 <td> {{date_picker_date($item->created_at)}} </td>
                                 <td>
                                     <a href="{{route('quiz.see', $item->quiz->uid)}}" class="btn btn-round btn-outline-info">
