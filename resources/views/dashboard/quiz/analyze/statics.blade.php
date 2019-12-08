@@ -83,8 +83,8 @@
             <div class="tile text-center">
 
                 <h5>
-                    <span data-toggle="popover" data-trigger="hover" data-content="{{$question->info}}" data-placement="top">
-                        {{$question->position}}. {{$question->title}} : {{$question->body}}
+                    <span data-toggle="popover" data-trigger="hover" data-content="{{$question->info}}" data-placement="top" data-html="true">
+                        {{$question->position}} : {{$question->body}}
                     </span>
                 </h5>
                 <hr>
