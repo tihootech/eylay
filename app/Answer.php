@@ -8,6 +8,11 @@ class Answer extends Model
 {
     protected $guarded = ['id'];
 
+    public function filler()
+    {
+        return $this->belongsTo(Filler::class);
+    }
+
     public static function make($question, $body)
     {
         $answer = new self;

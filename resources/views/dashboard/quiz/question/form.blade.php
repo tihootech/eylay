@@ -35,7 +35,7 @@
 
                 <div class="col-md-3 form-group">
                     <label for="title"> @lang('TITLE') </label>
-                    <input type="text" class="form-control" name="title" id="title" value="{{old('title') ?? $question->title}}" required>
+                    <input type="text" class="form-control" name="title" id="title" value="{{old('title') ?? $question->title ?? $default_title}}" required>
                 </div>
 
                 <div class="col-md-3 form-group">

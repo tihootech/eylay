@@ -68,4 +68,5 @@ class Quiz extends Model
         $ids = $this->questions->pluck('id')->toArray();
 		return Answer::whereIn('question_id', $ids)->where('filler_id', $filler_id)->count();
 	}
+
 }

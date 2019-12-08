@@ -136,6 +136,45 @@
                                 <p> {{$question->reason}} </p>
                             </div>
                         @endif
+                        @master
+                            <div class="text-right">
+                                <a href="#who-answered-{{$question->id}}" data-toggle="collapse">
+                                    <i class="fa fa-list mx-2"></i>
+                                    نمایش عملکرد شرکت کنندگان
+                                </a>
+                                <div class="collapse" id="who-answered-{{$question->id}}">
+                                    <div class="card card-body mt-3">
+                                        <h5 class="mb-3 text-success"> کسانی که درست پاسخ دادند : </h5>
+                                        <div class="row">
+                                            @foreach ($question->correct_fillers() as $answerer)
+                                                <div class="col-md-3">
+                                                    <div class="alert alert-success my-1">
+                                                        <a href="{{route('user.show', $answerer->filler->user->id ?? 0)}}" class="text-success">
+                                                            {{$answerer->filler->user->name ?? 'Error'}}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <hr>
+                                        <h5 class="mb-3 text-danger"> کسانی که غلط پاسخ دادند : </h5>
+                                        <div class="row">
+                                            @foreach ($question->wrong_fillers() as $answerer)
+                                                <div class="col-md-3">
+                                                    <div class="alert alert-danger my-1">
+                                                        <a href="{{route('user.show', $answerer->filler->user->id ?? 0)}}" class="text-danger">
+                                                            {{$answerer->filler->user->name ?? 'Error'}}
+                                                            <hr>
+                                                            {{$answerer->body}}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endmaster
                     @endif
 
                 @elseif ($question->type == 'message')

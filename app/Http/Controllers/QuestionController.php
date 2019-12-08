@@ -27,7 +27,10 @@ class QuestionController extends Controller
         $question = new Question;
         $quiz = Quiz::find($request->quiz);
         $type = $request->type;
-        return view('dashboard.quiz.question.form', compact('question', 'type', 'quiz', 'choices'));
+        $max_position = Question::where('quiz_id', $request->quiz_id)->max('position');
+        $next = $max_position + 1;
+        $default_title = __('QUESTION'). ' '. $next;
+        return view('dashboard.quiz.question.form', compact('question', 'type', 'quiz', 'choices', 'default_title'));
     }
 
     public function store(Request $request)

@@ -88,9 +88,19 @@ class Question extends Model
 	{
 		$object = QuestionChoice::where('question_id', $this->id)->where('correct', 1)->first();
 		if ($raw) {
-			return $object->content;
+			return $object ? $object->content : null;
 		}else {
 			return $object;
 		}
 	}
+
+	public function correct_fillers()
+    {
+		return Answer::where('question_id', $this->id)->whereCorrect(1)->get();
+    }
+
+	public function wrong_fillers()
+    {
+		return Answer::where('question_id', $this->id)->whereCorrect(0)->get();
+    }
 }
