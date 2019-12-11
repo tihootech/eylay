@@ -21,7 +21,7 @@
 				<td> {{$activity->method}} </td>
 				<td>
 					@if ($activity->method == 'GET')
-						<a href="{{$activity->url}}" target="_blank"> {{$activity->url}} </a>
+						<a href="{{$activity->url}}" target="_blank"> {{short($activity->url)}} </a>
 					@else
 						<em> {{$activity->url}} </em>
 					@endif
