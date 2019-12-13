@@ -6,6 +6,10 @@
 	font-family: "Dinar";
 	src: url(../fonts/Dinar.ttf);
 }
+@font-face {
+	font-family: "Calibri";
+	src: url(../fonts/Calibri.ttf);
+}
 
 .dinar {
 	font-family: 'Dinar' !important;
@@ -13,4 +17,8 @@
 
 .yekan {
 	font-family: 'Yekan' !important;
+}
+
+.calibri {
+	font-family: 'Calibri' !important;
 }

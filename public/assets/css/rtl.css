@@ -4,11 +4,11 @@ body {
 }
 
 body, .tooltip-inner {
-	font-family: "Yekan", "Roboto", "Helvetica", "Arial", sans-serif;
+	font-family: "Yekan", "Calibri";
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-	font-family: "Dinar", "Roboto", "Helvetica", "Arial", sans-serif;
+	font-family: "Dinar", "Calibri";
 	font-weight: normal;
 }
 
