@@ -1,6 +1,6 @@
 @extends('layouts.landing')
 @section('extra_styles')
-    <link href="{{asset('assets/css/quiz.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/quiz.css?v=1.1')}}" rel="stylesheet" />
 @endsection
 @section('title')
     {{$quiz->title}}
