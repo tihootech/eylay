@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="page-header header-filter header-small" data-parallax="true" style="background-image:url('{{asset($quiz->bg)}}')">
+    <div class="page-header header-filter header-small" data-parallax="true" style="background-image:url('{{asset($quiz->bg ?? 'assets/img/quiz-bg.jpg')}}')">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
@@ -26,9 +26,7 @@
 
                         <div class="card card-blog">
                             <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="{{asset($quiz->image)}}" alt="{{$quiz->title}}" />
-                                </a>
+                                <img class="img" src="{{asset($quiz->image ?? 'assets/img/quiz.jpg')}}" alt="{{$quiz->title}}" />
                             </div>
 
                             <div class="card-content">

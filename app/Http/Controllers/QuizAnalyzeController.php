@@ -20,12 +20,16 @@ class QuizAnalyzeController extends Controller
 		return view('dashboard.quiz.see', compact('quiz'));
 	}
 
-	public function quizzes_to_join()
+	public function quizzes_to_join(Request $request)
 	{
 		$user = auth()->user();
-		$quizzes = Quiz::whereActive(true)->where(function ($query) use ($user) {
+		$quizzes = Quiz::query();
+		if ($request->search) {
+			$quizzes = $quizzes->where('title', 'like', "%$request->search%");
+		}
+		$quizzes = $quizzes->whereActive(true)->where(function ($query) use ($user) {
 			$query->whereNull('access')->orWhere('access', $user->type);
-		})->latest()->paginate(6);
+		})->latest()->paginate(12);
         return view('dashboard.quiz.quizzes_to_join', compact('quizzes'));
 	}
 

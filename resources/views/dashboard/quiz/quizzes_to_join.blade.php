@@ -4,6 +4,18 @@
 @endsection
 @section('content')
 
+    <div class="tile">
+        <form class="row justify-content-center" method="get">
+            <div class="col-md-4">
+                <label for="search"> جست و جو در آزمون ها </label>
+                <input type="text" name="search" id="search" value="{{request('search')}}" class="form-control">
+            </div>
+            <div class="col-md-2 mt-auto">
+                <button type="submit" class="btn btn-primary btn-block"> <i class="fa fa-search ml-1"></i> جستجو </button>
+            </div>
+        </form>
+    </div>
+
     @if ($quizzes->count())
 
         <div class="container">
