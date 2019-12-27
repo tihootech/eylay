@@ -1,9 +1,5 @@
 /** main page **/
 
-#main-container {
-	font-family: 'Calibri', 'Yekan';
-}
-
 .quiz-container {
 	display: flex;
 	flex-flow: row wrap;
