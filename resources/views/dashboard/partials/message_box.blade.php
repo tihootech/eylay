@@ -1,4 +1,4 @@
-<div class="alert alert-info">
+<div class="alert alert-warning">
 	در صورتی که تمایل دارید سریع تر به شما پاسخ داده شود، از طریق تلگرام به آیدی @eylay پیام دهید.
 </div>
 <div class="row justify-content-center">
