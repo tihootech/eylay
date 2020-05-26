@@ -1,3 +1,6 @@
+<div class="alert alert-info">
+	در صورتی که تمایل دارید سریع تر به شما پاسخ داده شود، از طریق تلگرام به آیدی @eylay پیام دهید.
+</div>
 <div class="row justify-content-center">
 	<div class="col-md-{{$message_type == 'master' ? 12 : 9}}">
 		<form class="tile messanger-form" action="{{route('message.store')}}" data-message-type="{{$message_type}}" >
