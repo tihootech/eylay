@@ -24,11 +24,12 @@
                         <div class="alert alert-danger mt-5">
                             <p class="lead mb-4">
                                 لطفا و خواهشا ویدئو های ما را فقط از وبسایت
-                                <a href="https://www.limoonad.com/"> لیموناد </a>
+                                "<a href="https://www.limoonad.com/"> لیموناد </a>"
                                 یا
-                                <a href="https://www.danup.ir/"> داناپ </a>
+                                "<a href="https://www.danup.ir/"> داناپ </a>"
                                 تهیه کنید.
                             </p>
+                            <hr>
                             برخی از وبسایت ها بدون رضایت ما ویدئو ها را برای فروش گذاشته و ما به هیچ وجه راضی نیستیم.
                         </div>
                     </div>
