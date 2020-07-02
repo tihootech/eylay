@@ -6,6 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('favicon/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" href="{{asset('favicon/favicon.ico')}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="root" content="{{url('/')}}" />
 
     <title>@yield('title', 'Eylay')</title>
 
@@ -27,7 +28,7 @@
     <link href="{{asset('assets/css/material-kit.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/fonts.css?v=1.1')}}" rel="stylesheet" />
-    <link href="{{asset('assets/css/custom.css?v=1.6')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/custom.css?v=1.7')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/rtl.css?v=1.2')}}" rel="stylesheet" />
 
     @yield('extra_styles')
@@ -74,5 +75,6 @@
 <script src="{{asset('assets/js/material-kit.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/prettify.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/main.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/js/custom.js')}}" type="text/javascript"></script>
 
 </html>

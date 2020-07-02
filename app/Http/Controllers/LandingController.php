@@ -7,6 +7,7 @@ use App\Course;
 use App\Blog;
 use App\User;
 use App\Category;
+use App\Donation;
 use App\File;
 
 class LandingController extends Controller
@@ -15,9 +16,14 @@ class LandingController extends Controller
     {
         $courses = Course::latest()->limit(2)->get();
         $blog = Blog::latest()->first();
+
         $latest_blogs = Blog::latest()->skip(1)->limit(3)->get();
         $random_blogs = Blog::inRandomOrder()->limit(3)->get();
-    	return view('landing.index', compact('courses', 'blog', 'latest_blogs', 'random_blogs'));
+
+        $latest_donations = Donation::latest()->limit(6)->get();
+        $toppest_donations = Donation::orderBy('amount', 'DESC')->limit(6)->get();
+
+    	return view('landing.index', compact('courses', 'blog', 'latest_blogs', 'random_blogs', 'latest_donations', 'toppest_donations'));
     }
 
     public function blogs($text=null, Request $request)

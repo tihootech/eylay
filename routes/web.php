@@ -57,6 +57,12 @@ Route::group(['middleware' => 'user_activity'], function () {
     //files and downloads
     Route::resource('file', 'FileController')->except('show');
 
+
+    // donations
+    Route::resource('donation', 'DonationController')->except('show');
+    Route::get('more-donates/{step}', 'DonationController@more_donates');
+
+
     //quiz
     Route::resource('quiz', 'QuizController');
     Route::resource('question', 'QuestionController')->except(['show', 'index']);

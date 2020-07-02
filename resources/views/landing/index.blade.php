@@ -47,6 +47,7 @@
                 <!--     *********     FEATURES 1      *********      -->
 
                 <div class="features-1">
+
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <h2 class="title">سوال برنامه نویسی داری؟</h2>
@@ -55,44 +56,65 @@
                                 ایلای میکوشد که در کوتاه ترین زمان به شما پاسخ دهد.
                             </h5>
                             <a href="https://t.me/eylay" target="_blank" class="btn btn-primary"> پرسیدن سوال </a>
-                            <hr>
-                            <h2> نحوه آموزش ما چگونه است؟ </h2>
                         </div>
                     </div>
 
+                    <hr>
+
+                    <h3 class="title mb-5"> برای حمایت از ما میتوانید دونیت کنید! </h3>
                     <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="info">
-                                <div class="icon icon-primary">
-                                    <i class="material-icons">movie</i>
+                        <div class="col-md-2">
+                            <ul class="nav nav-pills nav-pills-icons nav-stacked" role="tablist">
+                                <li class="active">
+                                    <a href="#toppest-donations" role="tab" data-toggle="tab">
+                                        <i class="material-icons">trending_up</i>
+                                        بیشترین دونیت ها
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#latest-donations" role="tab" data-toggle="tab">
+                                        <i class="material-icons">schedule</i>
+                                        جدیدترین دونیت ها
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="toppest-donations">
+                                    <div class="row">
+                                        @include('landing.partials.donations', ['donations' => $toppest_donations])
+                                    </div>
                                 </div>
-                                <h4 class="info-title">ویدئو های آموزشی</h4>
-                                <p>تهیه ویدئو های آموزشی از مباحث و زبان های مختلف برنامه نویسی در سطح های مختلف (از مبتدی تا پیشرفته) به صورت جامع و با الگوگیری از ویدئو های آموزشی سایت لیندا . لیندا یک از کامل ترین منابع آموزشی به زبان انگلیسی میباشد.</p>
+                                <div class="tab-pane" id="latest-donations">
+                                    <div id="latest-donates-row" class="row">
+                                        @include('landing.partials.donations', ['donations' => $latest_donations])
+                                    </div>
+                                    <div id="no-more-donates" class="alert alert-warning collapse">
+                                        مورد بیشتری وجود ندارد.
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="javascript:void" id="load-more-donations" data-step="1" class="btn btn-primary"> موارد بیشتر </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-md-4">
-                            <div class="info">
-                                <div class="icon icon-primary">
-                                    <i class="material-icons">file_copy</i>
-                                </div>
-                                <h4 class="info-title">فایل ها</h4>
-                                <p>یکی از مشکلاتی که برخی از ویدئو های آموزشی دارند این است که فایل های استفاده شده در اختیار کدآموزان قرار نمیگیرد. در ایلای تمام فایل ها و کد های استفاده شده در پروژه، در قالب یک فایل فشرده در اختیار کدآموز قرار میگیرد.</p>
-                            </div>
-                        </div>
+                    <hr>
 
-                        <div class="col-md-4">
-                            <div class="info">
-                                <div class="icon icon-primary">
-                                    <i class="material-icons">perm_phone_msg</i>
-                                </div>
-                                <h4 class="info-title">پشتیبانی و همیاری</h4>
-                                <p>
-                                    ضبط ویدئو های آموزشی پایان کار ما نیست. درصورتی که در حین مشاهده ویدئو ها با سوالی مواجه شدید
-                                    میتوانید از طریق تلگرام از ما بپرسید. در آپدیت های بعدی، سیستم پرسش و پاسخ در همین وبسایت راه اندازی میشود.
-                                </p>
+                    <div class="card card-pricing">
+                        <div class="card-content content-primary">
+                            <div class="icon">
+                                <i class="material-icons">insert_emoticon</i>
                             </div>
+                            <h3 class="card-title">شما هم دونیت کنید!</h3>
+                            <p class="card-description">
+                                با دونیت کردن میتوانید از ما حمایت کنید، تا ما بتوانیم بازهم برای شما دوره های آموزشی تهیه کنیم
+                            </p>
+                            <a href="https://idpay.ir/eylay" target="_blank" class="btn btn-white btn-round btn-lg">
+                                برای دونیت کردن کلیک کنید!
+                            </a>
                         </div>
                     </div>
 
@@ -204,6 +226,44 @@
                                 <h4 class="info-title"> معرفی ابزار های پرکاربرد </h4>
                                 <p>
                                     معرفی ابزار هایی که به برنامه نویسان در قالب های مختلف کمک میکند. ابزار های مانند owl-carousel و...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2> نحوه آموزش ما چگونه است؟ </h2>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-primary">
+                                    <i class="material-icons">movie</i>
+                                </div>
+                                <h4 class="info-title">ویدئو های آموزشی</h4>
+                                <p>تهیه ویدئو های آموزشی از مباحث و زبان های مختلف برنامه نویسی در سطح های مختلف (از مبتدی تا پیشرفته) به صورت جامع و با الگوگیری از ویدئو های آموزشی سایت لیندا . لیندا یک از کامل ترین منابع آموزشی به زبان انگلیسی میباشد.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-primary">
+                                    <i class="material-icons">file_copy</i>
+                                </div>
+                                <h4 class="info-title">فایل ها</h4>
+                                <p>یکی از مشکلاتی که برخی از ویدئو های آموزشی دارند این است که فایل های استفاده شده در اختیار کدآموزان قرار نمیگیرد. در ایلای تمام فایل ها و کد های استفاده شده در پروژه، در قالب یک فایل فشرده در اختیار کدآموز قرار میگیرد.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-primary">
+                                    <i class="material-icons">perm_phone_msg</i>
+                                </div>
+                                <h4 class="info-title">پشتیبانی و همیاری</h4>
+                                <p>
+                                    ضبط ویدئو های آموزشی پایان کار ما نیست. درصورتی که در حین مشاهده ویدئو ها با سوالی مواجه شدید
+                                    میتوانید از طریق تلگرام از ما بپرسید. در آپدیت های بعدی، سیستم پرسش و پاسخ در همین وبسایت راه اندازی میشود.
                                 </p>
                             </div>
                         </div>
