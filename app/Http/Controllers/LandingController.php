@@ -21,7 +21,7 @@ class LandingController extends Controller
         $random_blogs = Blog::inRandomOrder()->limit(3)->get();
 
         $latest_donations = Donation::latest()->limit(6)->get();
-        $toppest_donations = Donation::orderBy('amount', 'DESC')->limit(6)->get();
+        $toppest_donations = Donation::orderBy('amount', 'DESC')->latest()->limit(6)->get();
 
     	return view('landing.index', compact('courses', 'blog', 'latest_blogs', 'random_blogs', 'latest_donations', 'toppest_donations'));
     }
