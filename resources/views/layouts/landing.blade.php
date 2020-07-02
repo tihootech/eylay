@@ -28,7 +28,7 @@
     <link href="{{asset('assets/css/material-kit.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/fonts.css?v=1.1')}}" rel="stylesheet" />
-    <link href="{{asset('assets/css/custom.css?v=1.7')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/custom.css?v=1.8')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/rtl.css?v=1.2')}}" rel="stylesheet" />
 
     @yield('extra_styles')

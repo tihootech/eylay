@@ -82,12 +82,12 @@
                         <div class="col-md-10">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="toppest-donations">
-                                    <div class="row">
+                                    <div class="row donations-row">
                                         @include('landing.partials.donations', ['donations' => $toppest_donations])
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="latest-donations">
-                                    <div id="latest-donates-row" class="row">
+                                    <div id="latest-donates-row" class="row donations-row">
                                         @include('landing.partials.donations', ['donations' => $latest_donations])
                                     </div>
                                     <div id="no-more-donates" class="alert alert-warning collapse">

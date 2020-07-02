@@ -147,3 +147,9 @@
 .background-fixed {
     background-attachment: fixed;
 }
+
+
+.donations-row .donated {
+	height: 333px;
+	overflow-y: auto;
+}
