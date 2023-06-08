@@ -58,9 +58,9 @@
                             <hr />
                             <h5 class="description text-danger">
                                 آیدی جدید ما در تلگرام :
-                                <b dir="ltr"> @yourdailycodes </b>
+                                <b dir="ltr"> @eylayir </b>
                             </h5>
-                            <a href="https://t.me/yourdailycodes" target="_blank" class="btn btn-primary"> پرسیدن سوال </a>
+                            <a href="https://t.me/eylayir" target="_blank" class="btn btn-primary"> پرسیدن سوال </a>
                         </div>
                     </div>
 
@@ -371,7 +371,7 @@
                     </div>
 
                     <div class="text-center mt-7">
-                        <a href="https://t.me/yourdailycodes" class="btn btn-round btn-rose">
+                        <a href="https://t.me/eylayir" class="btn btn-round btn-rose">
                             <i class="fa fa-telegram ml-2"></i>
                             پرسیدن سوالات برنامه نویسی از طریق تلگرام
                         </a>
